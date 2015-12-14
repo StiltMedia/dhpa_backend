@@ -1,0 +1,57 @@
+.container.img-responsive
+  = form_for [:admin, @event] do |f|
+    .row
+      - if @event.image_url_id.present?
+        .three.columns
+          = f.label :image_url, "Event Main Image"
+          = image_tag attachment_url(@event, :image_url)
+        .four.columns
+          = f.label :image_url, "Update Event Main Image"
+          = f.attachment_field :image_url, direct: true, presigned: true
+      - else
+        .twelve-columns
+          = f.label :image_url, "Event Main Image"
+          = f.attachment_field :image_url, direct: true, presigned: true
+    .four.columns
+    .row
+      .six.columns
+        = f.label :title
+        = f.text_field :title, class: "w-100"
+        = f.label :sub_title
+        = f.text_field :sub_title, class: "w-100"
+        = f.label :photos_files
+        = f.attachment_field :photos_files, direct: true, multiple: true, presigned: true
+        = label_tag :is_featured do
+          = f.check_box :is_featured, {}, "true", "false"
+          Is this a featured event?
+      .six.columns
+        = f.label :location
+        = f.text_field :location, class: "w-100"
+        = f.label :photographer
+        = f.text_field :photographer, class: "w-100"
+        = f.label :date, "Date of Event"
+        = f.date_field :date, class: "date-select"
+        = f.label :vips, "People at event"
+        = text_field_tag :vips, nil, class: "w-100", placeholder: "Please separate people using commas, ie. John Smith, Jada Smith, Pharrell Williams"
+        - if @event.vips.present?
+          = label_tag "Current people listed at event"
+          %p
+            = vip_list(@event)
+    .row
+      .twelve.columns
+        = f.submit 'submit', :class => "button w-100"
+
+      - @event.photos.each_slice(4) do |photos|
+        .row
+          - photos.each do |photo|
+            .three.columns.img-size-edit
+              %strong Image ID:
+              #{photo.image_id}
+              = image_tag attachment_url(photo, :file)
+              %p.u-pull-left
+                = link_to "Edit Image", edit_admin_event_photo_path(@event, photo)
+              %p.u-pull-right Delete Image
+              %p.u-cf
+                %strong People:
+                - photo.vips.each do |vip|
+                  #{vip.name}

@@ -1,0 +1,32 @@
+%section
+  %a.btn-close ×
+  .container
+    .row
+      .seven.columns
+        .image-content
+          = image_tag attachment_url(photo, :file, :fill, 564, 323)
+      .five.columns
+        %p
+          %b IMAGE ID:
+          = photo.image_id
+        %p
+          %b People:
+          = vip_list(photo)
+        %p
+          %b Event:
+          = photo.event.title
+        %p
+          %b Location:
+          = photo.event.location
+        %p
+          %b PHOTOGRAPHER:
+          = photo.event.photographer
+        %p
+          %b Copyright:
+          = photo.copyright
+        %p
+          %b Date:
+          = photo.event.date
+        = link_to "PURCHASE", new_line_item_path(photo_id: photo.id), class: "button", remote: true
+        #purchase-form
+

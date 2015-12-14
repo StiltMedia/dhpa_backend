@@ -1,0 +1,32 @@
+= render "layouts/admin/nav"
+.container.img-responsive
+  .row
+    .four.columns
+      = image_tag attachment_url(@photo, :file)
+    = form_for [:admin, @event, @photo] do |f|
+      .six.columns
+        = f.label :image_id, "Image ID"
+        = f.text_field :image_id
+        = f.label :copyright
+        = f.text_field :copyright
+        = f.label :digital_price_in_dollars
+        = f.text_field :digital_price_in_dollars
+
+        = f.label :physical_price_4x6_in_dollars
+        = f.text_field :physical_price_4x6_in_dollars
+        = f.label :physical_price_5x7_in_dollars
+        = f.text_field :physical_price_5x7_in_dollars
+        = f.label :physical_price_8x10_in_dollars
+        = f.text_field :physical_price_8x10_in_dollars
+        = f.label :physical_price_10x14_in_dollars
+        = f.text_field :physical_price_10x14_in_dollars
+
+        = f.label :vips, "Add specific people to this photo"
+        = text_field_tag :vips, nil, class: "w-100", placeholder: "Please separate people using commas, ie. John Smith, Jada Smith, Pharrell Williams"
+
+        - if @photo.vips.present?
+          = label_tag "Current people listed in photo"
+          %p
+            = vip_list(@photo)
+        = f.submit
+        / = f.select :model_ids, options_from_collection_for_select(@event.vips.all, :id, :name, :selected => @video.model_ids), {}, { :multiple => true, class: "full-width", :size => "10" }

@@ -1,0 +1,835 @@
+
+/*Small*/
+html {
+  font-size: 12px;
+}
+
+/*Medium*/
+@media screen and (min-width: 36.57143em) {
+  html {
+    font-size: 12px;
+  }
+}
+
+/*Large*/
+@media screen and (min-width: 73.14286em) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 1500px) {
+.instagramfeed h5 {
+  font-size: 1.3rem;
+}
+
+.instagram-list li {
+    float: none;
+}
+}
+
+@media (max-width: 1300px) {
+.bxslider li .caption {
+  top: 20%;
+}
+
+.top-images {
+  margin-right: 11%;
+  width: 55%;
+}
+
+.content-box form #submit {
+    margin-top: 0rem;
+}
+#tab-container.sign-tab form #submit {
+  margin-top: 2rem;
+}
+
+#checkout-step2 .six.columns.align-right img {
+  margin-right: 0;
+  width: 100%;
+}
+#checkout-step2 .six.columns.align-right .details {
+  width: 100%;
+}
+}
+
+
+@media (max-width: 1505px) {
+.instagram-list li {
+    display: inline-block;
+    float: left;
+    font-size: 0;
+    margin: 5px;
+    width: 18%;
+}
+
+.instagram-list li a img {
+    height: auto;
+    min-height: 0;
+    min-width: 0;
+    width: 100%;
+}
+.instagramfeed h5 {
+    font-size: 1.5rem;
+}
+.instagram-list li a {
+    display: inline-block;
+    height: auto;
+    width: auto;
+}
+.instagram-list li {
+    display: inline-block;
+    float: left;
+    font-size: 0;
+    margin: 5px;
+    overflow: hidden;
+    width: 18%;
+}
+.instagram-list {
+    display: inline-block;
+    text-align: left;
+    width: 100%;
+}
+
+}
+
+@media (max-width: 1200px) {
+
+.instagramfeed h5 {
+    font-size: 1.3rem;
+}
+}
+
+@media (max-width: 1100px) {
+.bxslider li .caption span {
+  margin-bottom: 10px;
+}
+.bg-grey .search-input {
+}
+.bg-grey .photos {
+  padding: 5px 65px 3px 50px;
+}
+.bg-grey .refine {
+  padding: 6px 50px 3px 49px;
+}
+.instagram-list li {
+  margin: 5px;
+  overflow: hidden;
+  width: 31%;
+}
+.instagram-list li a {
+  display: inline-block;
+  height: auto;
+  width: 100%;
+}
+.event-list-tabs li {
+  width: calc(89% / 3);
+}
+.open-image-box .container {
+    width: 90%;
+}
+.content-box .container {
+    width: 90%;
+}
+.content-box form {
+  max-width: 100%;
+}
+.events-box .container {
+    width: 90%;
+}
+.lightboxes-box .container {
+    width: 90%;
+}
+.gallery-box .container {
+    width: 90%;
+}
+.purchased .button {
+  border: 4px solid rgb(0, 0, 0);
+  display: inline-block;
+  height: auto;
+  margin-bottom: 35px;
+  margin-top: 0;
+  overflow: hidden;
+  padding: 10px;
+  text-align: center;
+  white-space: initial;
+  width: 100%;
+}
+#menu li a {
+  margin-left: 0;
+}
+
+
+}
+
+
+
+@media (max-width: 970px) {
+#menu li a {
+  padding: 5px 10px;
+}
+#menu li .user, #menu li .cart {
+  margin: 7px 10px -4px;
+}
+.bxslider li .caption {
+    left: 35%;
+    margin-left: -20%;
+    position: absolute;
+    text-align: center;
+    top: 23%;
+    width: 70%;
+}
+.home .events {
+  padding: 60px 0;
+}
+.event-list.four-columns li {
+    width: calc(93.6% / 4);
+}
+.event-list li {
+    display: inline-block;
+    float: left;
+    font-size: 0;
+    margin: 0 0.8% 15px;
+}
+.event-list.three-columns li {
+  width: calc(95.2% / 3);
+}
+
+
+.instagramfeed .container {
+    width: 90%;
+}
+.events-box {
+  padding: 60px 0;
+}
+.tab a {
+  padding: 5px 75px;
+}
+.etabs {
+  margin: 0 auto 60px;
+}
+.top-images {
+  margin-right: 0;
+  width: 89%;
+}
+.albumbar.carousel .menu {
+    display: inline-block;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+}
+.albumbar .menu li.nameof {
+  float: none;
+  margin-right: 0;
+}
+.albumbar.carousel .menu li a {
+  margin-right: 0;
+  margin-top: 15px;
+}
+.content-box {
+  padding: 60px 0;
+}
+.row.services {
+  margin-bottom: 60px;
+}
+.testimonial {
+  padding: 60px 0;
+}
+.logos-box {
+  padding: 60px 0;
+}
+.slider-box {
+  padding: 60px 0;
+}
+.albumbar .menu li a {
+  width: 210px;
+}
+.albumbar .menu {
+  text-align: center;
+}
+.gallery-box {
+  padding: 60px 0;
+}
+.event-header {
+  margin-bottom: 60px;
+}
+.six.columns #tab-container.sign-tab {
+  width: 95%;
+}
+
+#checkout-step1 .six.columns.align-right .mandatory {
+    width: 90%;
+}
+
+#checkout-step1 .six.columns.align-right .blackbutton {
+    width: 90%;
+}
+
+
+.purchased .button {
+  padding: 7px;
+}
+.open-image-box {
+    padding: 60px 0;
+}
+.instagramfeed {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.lightboxes-box {
+    padding: 60px 0;
+}
+
+}
+
+@media (max-width: 810px) {
+
+.instagram-list li {
+  margin: 5px;
+  overflow: hidden;
+  width: 48%;
+}
+.instagramfeed h5 {
+  line-height: 30px;
+}
+.instagramfeed h5 i {
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+.by {
+  margin-top: 0;
+}
+#footer-menu li a {
+  padding: 0 9px;
+}
+#footer .social li a {
+  margin: 0 14px 15px 0;
+}
+.by {
+  line-height: 30px;
+  margin-top: 0;
+}
+
+.event-list-tabs li {
+    width: calc(89% / 2);
+}
+
+.event-list-tabs {
+    text-align: center;
+}
+.event-gallery-list li {
+  width: 290px;
+}
+.event-gallery-list li ul li a {
+  margin: 15px 10px 10px;
+}
+.open-image-box .sizes li a {
+  padding: 7px 11px;
+}
+.slick-prev.slick-arrow {
+  left: -60px;
+}
+.slick-next.slick-arrow {
+  right: -60px;
+}
+.content-box p {
+  font-size: 14px;
+}
+.purchased .filename a {
+  border: medium none;
+  color: rgb(0, 0, 0);
+  display: inline-block;
+  font-family: Open Sans;
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+}
+
+#resume label {
+  padding-right: 130px;
+}
+.purchased .button {
+  padding: 7px;
+}
+
+}
+
+@media (max-width: 768px) {
+.bxslider li .caption h5 {
+  margin-bottom: 0;
+  font-size: 2.563rem;
+}
+.instagramfeed h5 {
+    font-size: 2.3rem;
+}
+.bxslider li .caption a {
+  border: 3px solid rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+  display: inline-block;
+  font-family: Open Sans;
+  margin-top: 15px;
+  padding: 3px 19px;
+  text-decoration: none;
+}
+.bxslider li .caption span {
+    margin-bottom: 0;
+}
+.bxslider li .caption {
+  left: 35%;
+  margin-left: -20%;
+  position: absolute;
+  text-align: center;
+  top: 29%;
+  width: 70%;
+}
+#footer-menu li a {
+  padding: 0 4px;
+}
+.darkbar .menu li a {
+  color: rgb(255, 255, 255);
+  display: inline-block;
+  font-family: Open Sans;
+  font-weight: normal;
+  padding: 17px 10px;
+  text-decoration: none;
+}
+#getintouch .three.columns p b {
+  width: 100%;
+  display: inline-block;
+}
+.albumbar .menu li a {
+  width: 189px;
+}
+.albumbar .menu li.nameof a::after {
+    height: 13px;
+}
+
+.albumbar .menu li.addimage a::before {
+    height: 11px;
+}
+.featured-list li a {
+    font-size: 1.5rem;
+}
+
+
+}
+
+@media (max-width: 640px) {
+.bxslider li .caption h5 {
+  font-size: 21px;
+  margin-bottom: 0;
+}
+.bxslider li .caption span {
+    font-size: 18px;
+    margin-bottom: 0;
+}
+.bxslider li .caption a {
+  font-size: 12px;
+}
+.bxslider li .caption {
+  left: 35%;
+  margin-left: -20%;
+  position: absolute;
+  text-align: center;
+  top: 35%;
+  width: 70%;
+}
+.bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto {
+  bottom: 8px !important;
+}
+.bg-grey .search-input {
+  margin: 18px 0;
+  padding-left: 56px;
+}
+.bg-grey .photos {
+  margin-right: 0;
+}
+.bg-grey .refine {
+    font-size: 1.125;
+    padding: 7px 40px 10px 20px;
+}
+.bg-grey .photos {
+  background-position: right 10px top 19px;
+  font-size: 18px;
+  padding: 7px 40px 10px 20px;
+}
+.event-list li {
+  margin: 0 0 15px;
+}
+.event-list.three-columns li {
+  width: 100%;
+}
+.instagram-list li {
+  margin: 5px;
+  overflow: hidden;
+  width: 100%;
+}
+.instagramfeed h5 i {
+  font-size: 30px;
+  margin-bottom: 15px;
+  margin-right: 15px;
+}
+.instagramfeed .three.columns {
+  width: 100%;
+}
+.instagramfeed .nine.columns {
+  width: 100%;
+}
+.event-list.four-columns li {
+  width: 100%;
+}
+
+.instagramfeed .nine.columns {
+    margin: 0;
+    width: 100%;
+}
+.instagram-list li {
+    margin: 5px;
+    overflow: hidden;
+    width: 47%;
+}
+.by {
+  text-align: center;
+}
+
+#footer .columns {
+    margin: 0;
+    text-align: center;
+    width: 100%;
+}
+.darkbar .columns{
+    margin: 0;
+    text-align: center;
+    width: 100%;
+}
+.open-image-box .columns{
+    margin: 0;
+    text-align: center;
+    width: 100%;
+}
+#getintouch  .columns{
+    margin: 0;
+    text-align: center;
+    width: 100%;
+}
+.row.services .columns{
+    margin: 0;
+    text-align: center;
+    width: 100%;
+}
+.open-image-box .image-content {
+  margin-bottom: 30px;
+  position: relative;
+}
+.slick-prev.slick-arrow {
+    left: -40px;
+}
+.slick-next.slick-arrow {
+    right: -40px;
+}
+.top-images .slick-prev.slick-arrow {
+    left: -35px;
+}
+.top-images .slick-next.slick-arrow {
+    right: -35px;
+}
+.albumbar .menu li {
+  display: inline-block;
+  margin: 0 0 15px;
+}
+.albumbar {
+  background: rgb(18, 18, 18) none repeat scroll 0 0;
+  display: inline-block;
+  padding: 50px 0 35px;
+  width: 100%;
+}
+#checkout-step1 .columns{
+    margin: 0;
+    text-align: center;
+    width: 100%;
+}
+#cart  .columns{
+    margin: 0;
+    text-align: center;
+    width: 100%;
+}
+#checkout-step2 .columns {
+  margin: 0;
+  text-align: center;
+  width: 100% !important;
+}
+#checkout-step1 .row {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  padding: 10px 0;
+}
+.content-box #checkout-step2.confirmation .edit-info {
+  top: -45px;
+}
+.content-box.purchased .columns {
+  margin: 0;
+  text-align: center;
+  width: 100% !important;
+}
+.purchased .button {
+  font-size: 15px;
+  padding: 11px;
+}
+
+}
+
+@media (max-width: 480px) {
+.home .bxslider li .caption {
+    display: none
+}
+.column, .columns {
+  box-sizing: border-box;
+  float: left;
+  text-align: center;
+  width: 100%;
+}
+#menu {
+    display: inline-block;
+    text-align: center;
+}
+#menu ul {
+  margin-top: 0;
+  text-align: right;
+}
+.bg-grey .photos {
+  background-position: right 10px top 19px;
+  font-size: 1.125rem;
+  padding: 7px 40px 10px 20px;
+  margin-top: 0;
+  margin: 18px 0;
+}
+.bg-grey .photos {
+  border: medium none;
+}
+
+.bg-grey .refine {
+    border: medium none;
+}
+.bg-grey .search-input {
+  margin: 18px 0;
+  padding-left: 30px;
+  text-align: center;
+  width: 85px
+
+}
+
+.event-list-tabs li {
+  width: 100%;
+}
+.slider-box .bxslider .caption p {
+  font-size: 13px;
+}
+.slider-box .bxslider .caption h5 {
+  font-size: 17px;
+}
+.slider-box .bxslider .caption span {
+    font-size: 13px;
+}
+#tab-container.sign-tab .tab a {
+  padding: 5px 47px;
+}
+
+.event-list-tabs li {
+    margin: 0 0 50px;
+    overflow: hidden;
+    width: 100%;
+}
+
+
+.event-list-tabs li .imagebox {
+    display: inline-block;
+    height: auto;
+    overflow: hidden;
+    width: 100%;
+}
+
+.event-list-tabs li a img {
+    width: 100%;
+}
+}
+
+
+@media (max-width: 400px) {
+
+.instagram-list li {
+    width: 46%;
+}
+
+}
+
+
+@media (max-width: 360px) {
+.bg-grey .search-input {
+  margin: 25px 0 0px 52px;
+  padding-left: 56px;
+}
+#menu li a {
+    font-size: 14px;
+    padding: 5px;
+}
+#header h1{
+    margin-bottom: 1rem;
+}
+#menu ul {
+    margin-bottom: 0;
+    margin-top: 0;
+    text-align: right;
+}
+
+.featured-list li a {
+    font-size: 16px;
+}
+.container {
+  padding: 0 !important;
+}
+
+.instagram-list li {
+    width: 45%;
+}
+.tab a {
+  font-size: 17px;
+  padding: 5px 38px;
+}
+.darkbar .menu li a {
+  color: rgb(255, 255, 255);
+  display: inline-block;
+  font-family: Open Sans;
+  font-size: 13px;
+  font-weight: normal;
+  padding: 12px 8px;
+  text-decoration: none;
+}
+.event-header h3 {
+  font-size: 19px;
+}
+.event-header .subtitle {
+  font-size: 22px;
+}
+.event-header .image-number {
+    font-size: 17px;
+}
+.open-image-box .image-content .caption b {
+  font-size: 60px;
+}
+.open-image-box .image-content .caption p {
+  font-size: 17px;
+}
+.open-image-box .image-content .caption {
+  bottom: 5px;
+}
+.open-image-box .image-content .caption b {
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 50px;
+}
+.slick-prev.slick-arrow {
+    left: -35px;
+}
+.slick-next.slick-arrow {
+    right: -35px;
+}
+.related-box .view-all {
+  color: rgb(0, 0, 0);
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  padding-top: 4px;
+  text-align: center;
+  vertical-align: top;
+  width: 100%;
+}
+.top-images .slick-prev.slick-arrow {
+  left: -22px;
+  width: 13px;
+}
+.top-images .slick-next.slick-arrow {
+  right: -22px;
+  width: 13px;
+}
+.slick-prev.slick-arrow {
+  left: -30px;
+  width: 20px;
+}
+.slick-next.slick-arrow {
+    right: -30px;
+    width: 20px;
+}
+.button {
+  font-size: 16px;
+}
+.content-box form .half {
+  display: inline-block;
+  margin-right: 0;
+  width: 100%;
+}
+#tab-container.sign-tab .tab a {
+    padding: 1px 36px;
+}
+.lightboxes-list li {
+    display: inline-block;
+    margin: 0;
+    overflow: hidden;
+    vertical-align: top;
+    width: 100%;
+}
+.lightboxes-list li .imagebox {
+    background: rgba(0, 0, 0, 0) url("../images/lightbox-hover.png") repeat scroll center center;
+    display: inline-block;
+    height: 290px;
+    overflow: hidden;
+    width: 100%;
+}
+}
+
+@media (max-width: 320px) {
+  #header h1 {
+    margin-bottom: 0rem;
+  }
+  .event-gallery-list li {
+    margin: 0 0 60px;
+    width: 100%;
+  }
+  .button {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+  #footer-menu li a {
+    font-size: 12px;
+    padding: 0 12px;
+  }
+  #tab-container.sign-tab .tab a {
+      padding: 1px 27px;
+  }
+  
+}
+
+
+@media only screen and (max-width: 40em) { 
+  .lightboxes-list li {
+    width: 49%;
+  }
+  .lightboxes-list li.add-lightbox {
+    height: 100px;
+  }
+  .darkbar .menu {
+
+  }
+  .gallery-box .container {
+    padding: 0px;
+  }
+  .event-gallery-list li {
+    width: 100%;
+    margin: 0px;
+  }
+}

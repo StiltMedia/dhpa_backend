@@ -1,0 +1,60 @@
+%section.content-box.purchased
+  .container
+    %h2.page-title CART
+    #cart
+      - @cart.line_items.each do |item|
+        %div{:id => "item_#{item.id}", :class => "row item"}
+          .three.columns
+            = image_tag attachment_url(item.photo, :file)
+            %span.filename
+              DH1726437
+              = link_to "DELETE", line_item_path(item), method: :delete, remote: true
+          .three.columns
+            %p
+              %strong> People: 
+              = vip_list(item.photo.event)
+            %p
+              %strong Event:
+              = item.photo.event.title
+            %h5 Date:
+            %p= item.photo.event.date
+          .three.columns.offset-by-one
+            - if item.is_digital?
+              %p
+                %strong LICENSE TYPE:
+                = item.delivery_option.license
+              %p
+                %strong
+                  National or International:
+                  = item.delivery_option.nationality
+
+            - else
+              %p
+                %strong Quantity
+                = item.delivery_option.quantity
+              %p
+                %strong Border
+                = item.delivery_option.border
+              %p
+                %strong Size
+                = item.delivery_option.size
+
+          .two.columns
+            .change-options
+              = link_to "CHANGE OPTIONS", edit_line_item_path(item), remote: true, class: "button"
+            %h5 ITEMS TOTAL:
+            %span.price= number_to_currency item.price
+    #resume
+      %p
+        %label SUBTOTAL:
+        %span.price= number_to_currency @sub_total
+      %p
+        %label TAX:
+        %span.price $0.00
+      %p
+        %label Shipping  Handling:
+        %span.price= number_to_currency Order::SHIPPING_PRICE
+      %p
+        %label TOTAL:
+        %span.price= number_to_currency @sub_total + Order::SHIPPING_PRICE
+      = link_to "CHECK OUT", checkout_path, class: "blackbutton"

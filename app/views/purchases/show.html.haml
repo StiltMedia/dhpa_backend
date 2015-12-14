@@ -1,0 +1,29 @@
+%section.content-box.purchased
+  .container
+    %h2.page-title PURCHASED
+    .row
+      - @order.line_items.each do |line_item|
+        .three.columns
+          = image_tag attachment_url(line_item.photo, :file)
+          %span.filename DH1726437
+        .three.columns
+          %p
+            %strong> People:
+            justin timberlake, tori kelly
+          %p
+            %strong Event:
+            THE FASHION GROUP INTERNATIONAL: 31ST ANNUAL NIGHT OF STARS
+          %h5 Date:
+          %p 2015-10-23
+        .three.columns.offset-by-one
+          %p
+            %strong LICENSE TYPE:
+            %a{:href => "#"} RIGHTS MANAGED
+          %h5 How can I use it?
+          %p
+            Available for all permitted uses under our
+            %a{:href => "#"} License Terms
+        .two.columns
+          - if line_item.is_digital?
+            = link_to "DOWNLOAD", attachment_url(line_item.photo, :file), class: "button"
+

@@ -1,0 +1,74 @@
+%ul.bxslider
+  %li
+    .caption
+      %h5 WELCOME TO DHPA.COM
+      %span Photo Agency
+      %a{:href => "#"} LEARN MORE
+    = image_tag "slide1.jpg"
+  %li
+    .caption
+      %h5 WELCOME TO DHPA.COM
+      %span Photo Agency
+      %a{:href => "#"} LEARN MORE
+    = image_tag "slide2.jpg"
+  %li
+    .caption
+      %h5 WELCOME TO DHPA.COM
+      %span Photo Agency
+      %a{:href => "#"} LEARN MORE
+    = image_tag "slide3.jpg"
+:javascript
+  $(document).ready(function(){
+
+      $('.bxslider').bxSlider({
+        mode: 'fade',
+        infiniteLoop: 'true',
+        responsive: 'false',
+        controls: 'true',
+        pager: 'true',
+        auto: 'true',
+        pause: 8000
+      });
+
+      $("body").attr("class", "home");
+  });
+= render "layouts/mid_searchbar"
+%section.events
+  .container
+    .events-content
+      %h5 LATEST EVENTS
+      %ul.event-list.three-columns
+        - @latest_events.each do |event|
+          %li
+            = link_to event do
+              = image_tag attachment_url(event, :image_url)
+              %span.caption= event.title
+
+
+%section.bg-dark.homefeatured
+  .container
+    %h5 FEATURED CONTENT
+    %ul.featured-list
+      %li
+        %a{:href => "#"} H&amp;M X ALEXANDER WANG
+
+      %li
+        %a{:href => "#"} H&amp;M X ALEXANDER WANG
+
+      %li
+        %a{:href => "#"} H&amp;M X ALEXANDER WANG
+
+%section.instagramfeed
+  .container
+    .row
+      .three.columns
+        %h5
+          %i.fa.fa-instagram>
+          Instagram Feed
+        %p
+      .nine.columns
+        %ul.instagram-list
+          - @instagram_feed.each do |post|
+            %li
+              = link_to "#{post.link}", target: "_blank" do
+                = image_tag post.images.low_resolution.url

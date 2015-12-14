@@ -1,0 +1,71 @@
+#checkout-step2.confirmation
+  .row
+    .six.columns.align-left
+      %form
+        %h2.page-title PAYMENT CONFIRMATION
+        %p
+        %p
+          %label * FIRST NAME
+          %span= @cart.address.first_name
+        %p
+          %label * LAST NAME
+          %span= @cart.address.last_name
+        %p
+          %label * ADDRESS
+          %span= @cart.address.street
+        %p.third
+          %label * CITY
+          %span= @cart.address.city
+        %p.third
+          %label * STATE
+          %span= @cart.address.state
+        %p.third.last
+          %label * ZIPCODE
+          %span= @cart.address.zipcode
+        %p
+          %label * COUNTRY
+          %span= @cart.address.country
+        %p
+          %label * CARD NUMBER
+          %span= @cart.payment_info.last4
+        %p.third
+          %label * MONTH
+          %span= @cart.payment_info.exp_month
+        %p.third.last
+          %label * YEAR
+          %span= @cart.payment_info.exp_year
+        %p
+        %h2.page-title CONTACT INFO
+        %p
+        %p
+          %label * EMAIL
+          %span= @cart.order_contact_info.email
+        = link_to "SUBMIT PAYMENT", confirm_path, method: :post
+
+      .six.columns.align-right
+        %a.edit-info{:href => "#"} Edit Information
+        %img{:src => "images/event1.jpg"}
+          .details
+            %p
+              %strong> IMAGE:
+              DH1726437
+            %p
+              %strong> SIZE:
+              479 x 359 px (6.65 x 4.99 in.) 72 dpi - RGB
+            %p
+              %strong License TYPE:
+              %a{:href => "#"} RIGHTS MANAGED
+          %hr
+            #resume
+              %p
+                %label SUBTOTAL:
+                %span.price $75.00
+              %p
+                %label TAX:
+                %span.price $0.00
+              %p
+                %label Shipping  Handling:
+                %span.price $0.00
+              %p
+                %label TOTAL:
+                %span.price $75.00

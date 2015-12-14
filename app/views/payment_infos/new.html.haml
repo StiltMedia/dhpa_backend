@@ -1,0 +1,130 @@
+%section.content-box
+  .container
+    
+    - if current_or_guest_user
+
+      #checkout-step2
+        .row
+          .six.columns.align-left
+            = form_for @payment_info, url: payment_infos_path, html: { id: "payment-form", "data-stripe-key": "#{ENV['STRIPE_PUBLISHABLE_KEY']}"} do |f|
+              %h2.page-title PAYMENT INFO
+              %span.mandatory * fields with an asterisk are mandatory
+              %p
+              %p
+                = f.label :first_name, "* FIRST NAME"
+                = f.text_field :first_name
+                %p
+                  = f.label :last_name, "* Last NAME"
+                  = f.text_field :last_name
+                  %p
+                    = f.label :street, "* ADDRESS"
+                    = f.text_field :street
+                    %p.third
+                      = f.label :city, "* CITY"
+                      = f.text_field :city
+                      %p.third
+                        = f.label :state, "* STATE"
+                        = f.text_field :state
+                        %p.third.last
+                          = f.label :zipcode, "* ZIPCODE"
+                          = f.text_field :zipcode
+                          %p
+                            = f.label :country, "* COUNTRY"
+                            = f.text_field :country
+                            %p
+                              %span.payment-errors
+                              %label * CARD NUMBER
+                              %input{:type => "text", size: "20", "data-stripe": "number"}/
+                              %p.third
+                                %label * MONTH
+                                %input{:type => "text", size: "2", "data-stripe": "exp-month"}/
+                                %p.third
+                                  %label * YEAR
+                                  %input{:type => "text", size: "4", "data-stripe": "exp-year"}/
+                                  %p.third.last
+                                    %label * CVC
+                                    %input{:type => "text", size: "20", "data-stripe": "cvc"}/
+                                    %p
+                                    %h2.page-title CONTACT INFO
+                                    %p
+                                    %p
+                                      = f.label :email, "* EMAIL"
+                                      = f.email_field :email
+                                      = f.submit "NEXT STEP: CONFIRM PURCHASE"
+          .six.columns.align-right
+            %img{:src => "images/event1.jpg"}
+              .details
+                %p
+                  %strong> IMAGE:
+                  DH1726437
+                %p
+                  %strong> SIZE:
+                  479 x 359 px (6.65 x 4.99 in.) 72 dpi - RGB
+                %p
+                  %strong License TYPE:
+                  %a{:href => "#"} RIGHTS MANAGED
+              %hr
+                #resume
+                  %p
+                    %label SUBTOTAL:
+                    %span.price $75.00
+                  %p
+                    %label TAX:
+                    %span.price $0.00
+                  %p
+                    %label Shipping  Handling:
+                    %span.price $0.00
+                  %p
+                    %label TOTAL:
+                    %span.price $75.00
+
+
+    - else
+      %h2.page-title CHECK OUT
+      #checkout-step1
+        .row
+          .six.columns.align-left
+            #tab-container.sign-tab.tab-container
+              %ul.etabs
+                %li.tab
+                  %a{:href => "#signin"} SIGN IN
+                %li.tab
+                  %a{:href => "#signup"} SIGN UP
+              #signin
+                = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+                  %p
+                    = f.label "EMAIL"
+                    = f.email_field :email, autofocus: true
+                  %p
+                    = f.label "PASSWORD"
+                    = f.password_field :password, autocomplete: "off"
+                    %span.forgot
+                      Forgot your password?
+                      = link_to "Send reset instructions", new_password_path(resource_name)
+                  = f.submit "Sign in", id: "submit"
+                  %span.mandatory
+                    * fields with an asterisk are mandatory
+              #signup
+                %form
+                  %p
+                    %label FIRST NAME
+                    %input{:type => "text"}/
+                  %p
+                    %label LAST NAME
+                    %input{:type => "text"}/
+                  %p
+                    %label * EMAIL
+                    %input{:type => "text"}/
+                  %p
+                    %label * PASSWORD
+                    %input{:type => "password"}/
+                  %input#submit{:type => "submit", :value => "SIGN UP"}/
+                  %span.mandatory
+                    * fields with an asterisk are mandatory
+            :javascript
+              $(document).ready(function(){
+                  $('#tab-container').easytabs();
+              });
+          .six.columns.align-right
+            %span.mandatory +PROCEED TO CHECK OUT AS A GUEST
+            = link_to "CONTINUE AS A GUEST", create_guest_user_path, class: "blackbutton"

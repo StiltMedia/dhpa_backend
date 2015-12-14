@@ -1,0 +1,95 @@
+.popup-style {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.black {
+  color: black
+}
+
+.white-bg {
+  background-color: white;
+}
+
+footer {
+  clear: both;
+}
+
+.admin {
+  font-size: 2em;
+  margin-top: 1em;
+  li {
+    display: inline;
+    list-style-type: none;
+  }
+
+  a {
+    color: black;
+    text-transform: uppercase;
+  }
+}
+
+.flash-box {
+  padding: 20px;
+  background-color: black;
+  color:white
+}
+
+#tab-container.sign-tab form label {
+  text-transform: uppercase;
+}
+
+.w-100 { width: 100%; }
+
+.date-select { padding: 6px 10px 6px 10px; }
+img { max-width: 100%!important; }
+
+.img-size-edit img{
+  overflow: hidden;
+  object-fit: contain;
+}
+
+#popup section {
+  content: "";
+  display: block;
+  background: rgba(0,0,0,.9);
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 10;
+  color: #fff;
+  padding-top: 100px;
+
+  a.button {
+    border: 3px solid #fff;
+    color: #fff;
+  }
+
+  .btn-close{
+    color: #aaa;
+    font-size: 30px;
+    text-decoration: none;
+    position: absolute; right: 5px; top: 0;
+
+    &:hover{
+       color: #777;
+       cursor: pointer;
+    }
+  }
+
+  form {
+    select, input {
+      color: #000;
+    }
+  }
+}
+
+.select-box-height {
+  height: 110px;
+}
+
+.height-fix {
+  height: 10px;
+}

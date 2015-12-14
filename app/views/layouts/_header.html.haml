@@ -1,0 +1,24 @@
+%header#header
+  .container
+    .row
+      .six.columns
+        %h1
+          %a.logo{:href => "/"} DHPA.com
+      .six.columns
+        %nav#menu
+          %ul
+            %li
+              = link_to "HOME", root_path
+            %li
+              = link_to "ABOUT", about_path
+            %li
+              %a{:href => "#"} HIRE DHPA
+            %li
+              - if current_user.present?
+                = link_to "LOGOUT", destroy_user_session_path, method: "delete"
+              - else
+                = link_to("", new_user_session_path, class: "user")
+            %li
+              = link_to "", cart_path, class: "cart"
+
+

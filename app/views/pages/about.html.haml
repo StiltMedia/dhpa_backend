@@ -1,0 +1,57 @@
+%section.content-box
+  .container
+    %h2.page-title.center DHPA SERVICES
+    .row.services
+      .three.columns
+        = image_tag "studio"
+        %h5 STUDIO
+      .three.columns
+        = image_tag "video"
+        %h5 VIDEO
+      .three.columns
+        = image_tag "weddings"
+        %h5 WEDDINGS
+      .three.columns
+        = image_tag "socialmedia"
+        %h5 SOCIAL MEDIA
+    %hr/
+    .testimonial
+      %p NOBODY WANTS TO BE INUNDATED. THERE IS SO MUCH OUT THERE. WHAT WE NEED IS FEWER THINGS, BETTER EDITED.
+      %span - Anna Wintour (The New York Times - 09/28/06)
+%section.logos-box
+  .container
+    %ul.bxslider.testimonial-slider
+      %li
+        %img{:src => "images/logos1.png"}/
+      %li
+        %img{:src => "images/logos1.png"}/
+      %li
+        %img{:src => "images/logos1.png"}/
+%section.slider-box
+  .container
+    %ul.bxslider.testimonial-slider
+      %li
+        .caption
+          %p Billy Farrell and his team at BFA are the gold standard in event photography. Again and again, they have proven to be a valuable asset to Vogue.
+          %h5 Ivan Shaw
+          %span (Director of Photography,)
+      %li
+        .caption
+          %p Again and again, they have proven to be a valuable asset to Vogue.
+          %h5 Ivan Shaw2
+          %span (Director of Art,)
+      %li
+        .caption
+          %p Billy Farrell and his team at BFA are the gold standard in event photography.
+          %h5 Ivan Shaw3
+          %span (Director of Demo,)
+    :javascript
+      $(document).ready(function(){
+          $('.bxslider').bxSlider({
+            mode: 'fade'
+          });
+      });
+%section.content-box
+  .container.center
+    %h2.page-title.center HAVE AN UPCOMING EVENT?
+    %a.button{:href => "#"} BOOK A PHOTOGRAPHER

@@ -1,0 +1,13 @@
+%section.content-box
+  .container
+    #tab-container.sign-tab.tab-container
+      %h2.center Forgot your password?
+      #signin
+        = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+          %p
+            = f.label "EMAIL"
+            = f.email_field :email, autofocus: true
+          %p
+            = f.submit "Send me reset password instructions", id: "submit"
+            %span.mandatory
+              = link_to "Return", new_user_session_path, class: "black"

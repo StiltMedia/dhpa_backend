@@ -1,0 +1,50 @@
+= render "layouts/mid_searchbar"
+%section.darkbar
+  .container
+    .row
+      .twelve.columns.align-right
+        %ul.menu
+          %li
+            %a{:href => "#"} People
+          %li
+            %a{:href => "#"} Event
+          %liok
+            %a{:href => "#"} Location
+          %li
+            %a{:href => "#"} Date
+          %li
+            %a{:href => "#"} Photographer
+%section.gallery-box
+  .container
+    .event-header
+      %span.image-number #{@event.photos.count} Images
+      %h3 #{@event.title}
+      %span.subtitle #{@event.sub_title}
+      %span.photographer Photographer: #{@event.photographer}
+      %span.location #{@event.location}
+      %span.date
+        = date_of_event(@event)
+    %ul.event-gallery-list
+      - @event.photos.each do |photo|
+        %li
+          = link_to photo, remote: true, class: "popup-link" do
+            = image_tag attachment_url(photo, :file)
+          %span.filename #{photo.image_id}
+          %ul
+            %li
+              %a.cart
+            / %li
+            /   %a.lamp
+            / %li
+            /   %a.download
+          %h5
+            = link_to "#{photo.event.title}", event_path(@event)
+          %span.subtitle #{@event.sub_title}
+          %span.tags
+            = vip_list(photo)
+:javascript
+  $(document).ready(function(){
+      $('#tab-container').easytabs();
+  });
+
+#popup

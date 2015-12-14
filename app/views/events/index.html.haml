@@ -1,0 +1,140 @@
+= render "layouts/mid_searchbar"
+%section.events-box
+  .container
+    #tab-container.tab-container
+      %ul.etabs
+        %li.tab
+          %a{:href => "#tabs1-all"} ALL
+        %li.tab
+          %a{:href => "#tabs1-newest"} NEWEST
+      #tabs1-all
+        %ul.event-list-tabs
+          - @events.each do |event|
+            %li
+              = link_to event_path(event) do
+                = image_tag attachment_url(event, :image_url)
+              %h5
+                = link_to "#{event.title}"
+              %span.subtitle #{event.sub_title}
+              %span.location #{date_of_event(event)}
+              %span.date Wed, Oct 21 2015
+
+      #tabs1-newest
+        %ul.event-list-tabs
+          %li
+            %a.imagebox{:href => "#"}
+              %img{:src => "images/event1.jpg"}/
+            %h5
+              %a{:href => "#"} LOWLINE 2015
+            %span.subtitle (ANTI-GALA)
+            %span.location ANGEL ORENSANZ FOUNDATION, NYC
+            %span.date Wed, Oct 21 2015
+          %li
+            %a.imagebox{:href => "#"}
+              %img{:src => "images/event2.jpg"}/
+            %h5
+              %a{:href => "#"} LOWLINE 2015
+            %span.subtitle (ANTI-GALA)
+            %span.location ANGEL ORENSANZ FOUNDATION, NYC
+            %span.date Wed, Oct 21 2015
+          %li
+            %a.imagebox{:href => "#"}
+              %img{:src => "images/event3.jpg"}/
+            %h5
+              %a{:href => "#"} LOWLINE 2015
+            %span.subtitle (ANTI-GALA)
+            %span.location ANGEL ORENSANZ FOUNDATION, NYC
+            %span.date Wed, Oct 21 2015
+          %li
+            %a.imagebox{:href => "#"}
+              %img{:src => "images/event4.jpg"}/
+            %h5
+              %a{:href => "#"} LOWLINE 2015
+            %span.subtitle (ANTI-GALA)
+            %span.location ANGEL ORENSANZ FOUNDATION, NYC
+            %span.date Wed, Oct 21 2015
+          %li
+            %a.imagebox{:href => "#"}
+              %img{:src => "images/event5.jpg"}/
+            %h5
+              %a{:href => "#"} LOWLINE 2015
+            %span.subtitle (ANTI-GALA)
+            %span.location ANGEL ORENSANZ FOUNDATION, NYC
+            %span.date Wed, Oct 21 2015
+          %li
+            %a.imagebox{:href => "#"}
+              %img{:src => "images/event6.jpg"}/
+            %h5
+              %a{:href => "#"} LOWLINE 2015
+            %span.subtitle (ANTI-GALA)
+            %span.location ANGEL ORENSANZ FOUNDATION, NYC
+            %span.date Wed, Oct 21 2015
+          %li
+            %a.imagebox{:href => "#"}
+              %img{:src => "images/event7.jpg"}/
+            %h5
+              %a{:href => "#"} LOWLINE 2015
+            %span.subtitle (ANTI-GALA)
+            %span.location ANGEL ORENSANZ FOUNDATION, NYC
+            %span.date Wed, Oct 21 2015
+          %li
+            %a.imagebox{:href => "#"}
+              %img{:src => "images/event8.jpg"}/
+            %h5
+              %a{:href => "#"} LOWLINE 2015
+            %span.subtitle (ANTI-GALA)
+            %span.location ANGEL ORENSANZ FOUNDATION, NYC
+            %span.date Wed, Oct 21 2015
+          %li
+            %a.imagebox{:href => "#"}
+              %img{:src => "images/event9.jpg"}/
+            %h5
+              %a{:href => "#"} LOWLINE 2015
+            %span.subtitle (ANTI-GALA)
+            %span.location ANGEL ORENSANZ FOUNDATION, NYC
+            %span.date Wed, Oct 21 2015
+          %li
+            %a.imagebox{:href => "#"}
+              %img{:src => "images/event10.jpg"}/
+            %h5
+              %a{:href => "#"} LOWLINE 2015
+            %span.subtitle (ANTI-GALA)
+            %span.location ANGEL ORENSANZ FOUNDATION, NYC
+            %span.date Wed, Oct 21 2015
+          %li
+            %a.imagebox{:href => "#"}
+              %img{:src => "images/event11.jpg"}/
+            %h5
+              %a{:href => "#"} LOWLINE 2015
+            %span.subtitle (ANTI-GALA)
+            %span.location ANGEL ORENSANZ FOUNDATION, NYC
+            %span.date Wed, Oct 21 2015
+          %li
+            %a.imagebox{:href => "#"}
+              %img{:src => "images/event12.jpg"}/
+            %h5
+              %a{:href => "#"} LOWLINE 2015
+            %span.subtitle (ANTI-GALA)
+            %span.location ANGEL ORENSANZ FOUNDATION, NYC
+            %span.date Wed, Oct 21 2015
+          %li
+            %a.imagebox{:href => "#"}
+              %img{:src => "images/event13.jpg"}/
+            %h5
+              %a{:href => "#"} LOWLINE 2015
+            %span.subtitle (ANTI-GALA)
+            %span.location ANGEL ORENSANZ FOUNDATION, NYC
+            %span.date Wed, Oct 21 2015
+          %li
+            %a.imagebox{:href => "#"}
+              %img{:src => "images/event14.jpg"}/
+            %h5
+              %a{:href => "#"} LOWLINE 2015
+            %span.subtitle (ANTI-GALA)
+            %span.location ANGEL ORENSANZ FOUNDATION, NYC
+            %span.date Wed, Oct 21 2015
+        %img.loader{:src => "images/loader.gif"}/
+:javascript
+  $(document).ready(function(){
+      $('#tab-container').easytabs();
+  });

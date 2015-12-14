@@ -1,0 +1,6 @@
+= render "layouts/admin/nav"
+.container
+  %h1 Events
+
+  - @events.each do |event|
+    %li= link_to event.title, edit_admin_event_path(event)
