@@ -1,49 +1,11 @@
-== README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
-
 == Todo & Scope
 
 See TODO.rdoc
 
-* Image uploads cannot be stored in root of app
-* Client wants EXIF data to be interpreted from photos, not currently
-* "People" is inputted on a per-event basis but displayed on a per-photo basis and is null.
-* Cart issues
-  * Add to Cart button from event page doesn't work (only Purchase after viewing)
-  * No cart link except on main page
-  * The only way to set prices right now is to edit each photo individually, and if a price isn't set checkout will crash
-  * Preview image on payment page is broken
-* Client wants separate images for thumbnail, watermark, and full resolution.
-  * Client needs to specify the method by which they will batch-upload all these different versions while keeping them linked. (Special naming?)
-* Most pages are basically blank, most links don't work
-
 == Dependencies
+
+* Ruby 2.2.4 (see .versions.conf and rvm)
+* Gems from gemfile (see bundler)
 
 * Ubuntu:
   * libgmp3-dev
@@ -53,12 +15,29 @@ See TODO.rdoc
 Copy env.dist to .env and edit as desired, for development/testing.
 
 * Production only
-  * ENV["SECRET_KEY_BASE"]
+  * ENV['SECRET_KEY_BASE']
 * All Environments
   * ENV['RAILS_SERVE_STATIC_FILES']
-  * ENV["instagram_id"]
-  * ENV["instagram_token"]
-  * ENV["AWS_ACCESS_KEY"],
-  * ENV["AWS_SECRET_ACCESS_KEY"],
-  * ENV['STRIPE_PUBLISHABLE_KEY'],
+  * ENV['instagram_id']
+  * ENV['instagram_token']
+  * ENV['AWS_ACCESS_KEY']
+  * ENV['AWS_SECRET_ACCESS_KEY']
+  * ENV['STRIPE_PUBLISHABLE_KEY']
   * ENV['STRIPE_SECRET_KEY']
+
+== Configuration
+
+For development/testing use sqlite3.
+
+* Use normal <tt>rake db:migrate</tt> for database initialization.
+* See db/seeds.rb for default usernames and <tt>rake db:seed</tt> to insert these defaults into the db.
+
+Production db not determined yet.
+
+== Testing
+
+No tests created yet. Please create tests, tests are good.
+
+== Documentation
+
+Run <tt>rake doc:app</tt> to generate HTML documentation from classes.
