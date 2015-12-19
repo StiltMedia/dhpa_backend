@@ -1,0 +1,72 @@
+= Goal
+
+* A photography website similar to bfa.com, having photographs available for purchase as well as other informational (static) pages.
+
+= Disclaimer
+
+* Zyphon LLC is being hired in an hourly capacity to improve upon existing code written by a third party, and so cannot warranty that the resulting code or website will be free from defects. Zyphon LLC is not selling the website, just consultation hours.
+* As this is an eCommerce website which makes use of credit card payments but which Zyphon LLC did not entirely program, Zyphon LLC cannot accept liability for any breaches or failures which may occur, and cannot guarantee that this website is PCI compliant or follows security best practices. We recommend an independent code audit by a PCI-certified security professional to verify PCI compliance.
+
+= Methodology
+
+* The very first thing I'm going to do once we actually get started is upload it somewhere so you and/or the client can play around with it as we finish it; ideally each chunk gets tested and approved before moving on so we don't have delivery-day "this isn't anything like what I asked for" syndrome.
+
+= Scope
+
+* Frontend shall match provided HTML/CSS/JS files as closely as possible
+  * Home
+  * About
+  * Book Now (contact form)
+  * Search
+    * Partial exact match based on image tags and fields
+    * No autocomplete, autocorrect, or partial match of queries needed
+  * Inside Album
+  * Picture Detail
+  * Shopping Cart
+  * Checkout
+  * Admin Dashboard
+  * Registered User Dashboard
+  * Wishlist (lightbox)
+    * For registered users only
+  * Register/Log in
+* Admin:
+  * Ability to create albums (events)
+  * Ability to mark albums as public or private
+    * Only accessible via a password (unique password per event)
+  * Able to bulk-upload hundreds of images at once (thousands per week)
+  * Thumbnails and watermarks should be automatically generated upon upload
+    * Watermark should be similar to BFA.com: a semitransparent gray square with image ID and the website logo overlaid over about a quarter of the image.
+    * Only one "full resolution" size is needed: on the designs there is an option for image size (S/M/L) but that is not needed. There will only be 1 size.
+    * No watermark will be applied to full-resolution image or thumbnail (three total image types: original full-res; watermark; thumbnail)
+  * Tags from EXIF should be automatically parsed and saved in the database for each image:
+    * Location
+    * Subject
+    * Photographer
+    * People
+  * Photographer should be able to edit these "EXIF" tags manually as well, however editing will be on a per-image basis.
+  * Other tags should be auto-generated:
+    * Image ID (plain database ID, starting at 1)
+    * Copyright (always just "DHPA")
+  * Finally, "Other Keywords" should be available at the event and image level.
+  * No batch-image-editing of tags will be programmed into the website at this time; only event-level and image-level editing.
+  * Search should make use of all event and image tags.
+  * Admin should be able to edit the price for images in one place; all images will be the same price.
+* Unregistered User:
+  * Ability to view all public albums
+  * Ability to freely search for public images
+  * Will NOT be able to “right click > save” any album photos
+  * Will NOT be able to “drag and drop” any album photos
+* Registered User:
+  * Able to save purchased images in their user library
+  * Ability to create a “wish list” of images
+* All users:
+  * Only able to view private albums via password
+  * Able to send an email via the Contact Us form
+    * Email sent to an address the client specifies (hardcoded, not editable)
+  * Able to purchase and download digital full-resolution copies of images
+  * Not able to view or download full-resolution images unless they have purchased them
+    * Perhaps images are protected by token/url/cookie/password? Should not just be an easily-guessable URL.
+    * Disable right-click and dragging of images
+    * No physical products will be sold, only digital downloads.
+* No CMS feature will be programmed at this time -- text and style changes will require a Rails programmer.
+* Instagram front page display will be temporarily disabled during launch (however it does appear to be partially programmed)

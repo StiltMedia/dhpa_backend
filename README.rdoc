@@ -26,3 +26,39 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+== Todo & Scope
+
+See TODO.rdoc
+
+* Image uploads cannot be stored in root of app
+* Client wants EXIF data to be interpreted from photos, not currently
+* "People" is inputted on a per-event basis but displayed on a per-photo basis and is null.
+* Cart issues
+  * Add to Cart button from event page doesn't work (only Purchase after viewing)
+  * No cart link except on main page
+  * The only way to set prices right now is to edit each photo individually, and if a price isn't set checkout will crash
+  * Preview image on payment page is broken
+* Client wants separate images for thumbnail, watermark, and full resolution.
+  * Client needs to specify the method by which they will batch-upload all these different versions while keeping them linked. (Special naming?)
+* Most pages are basically blank, most links don't work
+
+== Dependencies
+
+* Ubuntu:
+  * libgmp3-dev
+
+== Environment Variables
+
+Copy env.dist to .env and edit as desired, for development/testing.
+
+* Production only
+  * ENV["SECRET_KEY_BASE"]
+* All Environments
+  * ENV['RAILS_SERVE_STATIC_FILES']
+  * ENV["instagram_id"]
+  * ENV["instagram_token"]
+  * ENV["AWS_ACCESS_KEY"],
+  * ENV["AWS_SECRET_ACCESS_KEY"],
+  * ENV['STRIPE_PUBLISHABLE_KEY'],
+  * ENV['STRIPE_SECRET_KEY']

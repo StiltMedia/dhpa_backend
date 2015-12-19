@@ -19,7 +19,11 @@ class Photo < ActiveRecord::Base
   end
 
   def digital_price_in_dollars
-    digital_price.to_d / 100 if digital_price
+    if digital_price
+      digital_price.to_d / 100
+    else
+      0
+    end
   end
 
   def physical_price_4x6_in_dollars=(dollars)
@@ -27,7 +31,11 @@ class Photo < ActiveRecord::Base
   end
 
   def physical_price_4x6_in_dollars
-    physical_price_4x6.to_d / 100 if physical_price_4x6
+    if physical_price_4x6
+      physical_price_4x6.to_d / 100
+    else
+      0
+    end
   end
 
   def physical_price_5x7_in_dollars=(dollars)
@@ -35,7 +43,11 @@ class Photo < ActiveRecord::Base
   end
 
   def physical_price_5x7_in_dollars
-    physical_price_5x7.to_d / 100 if physical_price_5x7
+    if physical_price_5x7
+      physical_price_5x7.to_d / 100
+    else
+      0
+    end
   end
 
   def physical_price_8x10_in_dollars=(dollars)
@@ -43,7 +55,11 @@ class Photo < ActiveRecord::Base
   end
 
   def physical_price_8x10_in_dollars
-    physical_price_8x10.to_d / 100 if physical_price_8x10
+    if physical_price_8x10
+      physical_price_8x10.to_d / 100
+    else
+      0
+    end
   end
 
   def physical_price_10x14_in_dollars=(dollars)
@@ -51,7 +67,11 @@ class Photo < ActiveRecord::Base
   end
 
   def physical_price_10x14_in_dollars
-    physical_price_10x14.to_d / 100 if physical_price_10x14
+    if physical_price_10x14
+      physical_price_10x14.to_d / 100
+    else
+      0
+    end
   end
 
   private
