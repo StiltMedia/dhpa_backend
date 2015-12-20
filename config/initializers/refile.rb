@@ -1,4 +1,7 @@
 require "refile/s3"
+require "refile/watermark"
+
+Refile.secret_key = Rails.application.secrets.secret_key_base
 
 if Rails.env.production?
 

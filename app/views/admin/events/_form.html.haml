@@ -47,7 +47,7 @@
             .three.columns.img-size-edit
               %strong Image ID:
               #{photo.image_id}
-              = image_tag attachment_url(photo, :file)
+              = image_tag attachment_url(photo, :file, :limit, 270, 270) # The only time photo.file should be shown without thumbnailing or watermarking is on the purchase page
               %p.u-pull-left
                 = link_to "Edit Image", edit_admin_event_photo_path(@event, photo)
               %p.u-pull-right Delete Image

@@ -41,7 +41,7 @@
         - @latest_events.each do |event|
           %li
             = link_to event do
-              = image_tag attachment_url(event, :image_url)
+              = image_tag attachment_url(event, :image_url, :fill, 275, 175)
               %span.caption= event.title
 
 

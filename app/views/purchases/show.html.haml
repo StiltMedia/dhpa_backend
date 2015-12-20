@@ -4,7 +4,7 @@
     .row
       - @order.line_items.each do |line_item|
         .three.columns
-          = image_tag attachment_url(line_item.photo, :file)
+          = image_tag attachment_url(line_item.photo, :file) # The only time photo.file should be shown without thumbnailing or watermarking is on the purchase page
           %span.filename DH1726437
         .three.columns
           %p
@@ -25,5 +25,5 @@
             %a{:href => "#"} License Terms
         .two.columns
           - if line_item.is_digital?
-            = link_to "DOWNLOAD", attachment_url(line_item.photo, :file), class: "button"
+            = link_to "DOWNLOAD", attachment_url(line_item.photo, :file), class: "button" # The only time photo.file should be shown without thumbnailing or watermarking is on the purchase page
 

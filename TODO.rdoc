@@ -15,6 +15,7 @@
 
 * Frontend shall match provided HTML/CSS/JS files as closely as possible
   * Home
+    * *QUESTION* Will event images always be landscape? Portrait images don't look good on the homepage.
   * *TODO* About
   * *TODO* Book Now (contact form)
   * *TODO* Search
@@ -63,10 +64,10 @@
   * *TODO* Only able to view private albums via password
   * *TODO* Able to send an email via the Contact Us form
     * Email sent to an address the client specifies (hardcoded, not editable)
-  * Able to purchase and download digital full-resolution copies of images
-  * *VERIFY* Not able to view or download full-resolution images unless they have purchased them
-    * Perhaps images are protected by token/url/cookie/password? Should not just be an easily-guessable URL.
-    * Disable right-click and dragging of images
+  * *VERIFY* Able to purchase and download digital full-resolution copies of images
+  * Not able to view or download full-resolution images unless they have purchased them
+    * Image URLs cannot be guessed: each file has a random ID.
+    * *TODO* Disable right-click and dragging of images
     * No physical products will be sold, only digital downloads.
 * No CMS feature will be programmed at this time -- text and style changes will require a Rails programmer.
 

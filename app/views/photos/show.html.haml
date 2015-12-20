@@ -8,25 +8,25 @@
       .five.columns
         %p
           %b IMAGE ID:
-          = photo.image_id
+          = @photo.image_id
         %p
           %b People:
-          = vip_list(photo)
+          = vip_list(@photo)
         %p
           %b Event:
-          = photo.event.title
+          = @photo.event.title
         %p
           %b Location:
-          = photo.event.location
+          = @photo.event.location
         %p
-          %b PHOTOGRAPHER:
-          = photo.event.photographer
+          %b @PHOTOGRAPHER:
+          = @photo.event.photographer
         %p
           %b Copyright:
-          = photo.copyright
+          = @photo.copyright
         %p
           %b Date:
-          = photo.event.date
-        = link_to "PURCHASE", new_line_item_path(photo_id: photo.id), class: "button", remote: true
+          = @photo.event.date
+        = link_to "PURCHASE", new_line_item_path(photo_id: @photo.id), class: "button", remote: true
         #purchase-form
 

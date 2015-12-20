@@ -5,7 +5,7 @@
       - @cart.line_items.each do |item|
         %div{:id => "item_#{item.id}", :class => "row item"}
           .three.columns
-            = image_tag attachment_url(item.photo, :file)
+            = image_tag attachment_url(item.photo, :file, :limit, 270, 270) # The only time photo.file should be shown without thumbnailing or watermarking is on the purchase page
             %span.filename
               DH1726437
               = link_to "DELETE", line_item_path(item), method: :delete, remote: true

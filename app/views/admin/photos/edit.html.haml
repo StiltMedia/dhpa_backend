@@ -2,7 +2,7 @@
 .container.img-responsive
   .row
     .four.columns
-      = image_tag attachment_url(@photo, :file)
+      = image_tag attachment_url(@photo, :file, :limit, 270, 270) # The only time photo.file should be shown without thumbnailing or watermarking is on the purchase page
     = form_for [:admin, @event, @photo] do |f|
       .six.columns
         = f.label :image_id, "Image ID"
