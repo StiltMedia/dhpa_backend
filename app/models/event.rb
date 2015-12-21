@@ -8,5 +8,6 @@ class Event < ActiveRecord::Base
   accepts_attachments_for :photos, attachment: :file, append: true
   attachment :image_url
 
-  validates_presence_of :title
+  validates_presence_of :title, :image_url
+  validates_uniqueness_of :slug
 end

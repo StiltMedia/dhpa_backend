@@ -44,28 +44,4 @@
 
       .six.columns.align-right
         %a.edit-info{:href => "#"} Edit Information
-        %img{:src => "images/event1.jpg"}
-          .details
-            %p
-              %strong> IMAGE:
-              DH1726437
-            %p
-              %strong> SIZE:
-              479 x 359 px (6.65 x 4.99 in.) 72 dpi - RGB
-            %p
-              %strong License TYPE:
-              %a{:href => "#"} RIGHTS MANAGED
-          %hr
-            #resume
-              %p
-                %label SUBTOTAL:
-                %span.price $75.00
-              %p
-                %label TAX:
-                %span.price $0.00
-              %p
-                %label Shipping  Handling:
-                %span.price $0.00
-              %p
-                %label TOTAL:
-                %span.price $75.00
+        = render 'orders/preview'

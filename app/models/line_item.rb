@@ -13,8 +13,12 @@ class LineItem < ActiveRecord::Base
     delivery_option.option_type == "physical"
   end
 
-  def price
-    is_digital? ? photo.digital_price_in_dollars : calculate_physical_price
+  def custom_price_in_dollars
+    photo.digital_price_in_dollars # : calculate_physical_price
+  end
+
+  def custom_price
+    photo.digital_price # : calculate_physical_price
   end
 
   private

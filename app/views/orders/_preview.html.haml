@@ -1,0 +1,25 @@
+- @cart.line_items.each do |item|
+  = image_tag attachment_url(item.photo, :file, :fill_watermark_dhpa, 564, 323, item.photo.id) # The only time photo.file should be shown without thumbnailing or watermarking is on the purchase page
+  .details
+    %p
+      %strong= "IMAGE: #{item.photo.id}"
+    / %p
+    /   %strong> SIZE:
+    /   479 x 359 px (6.65 x 4.99 in.) 72 dpi - RGB
+    %p
+      %strong LICENSE:
+      = item.delivery_option.license
+  %hr
+    #resume
+      / %p
+      /   %label SUBTOTAL:
+      /   %span.price $75.00
+      / %p
+      /   %label TAX:
+      /   %span.price $0.00
+      / %p
+      /   %label Shipping  Handling:
+      /   %span.price $0.00
+%p
+  %label TOTAL:
+  %span.price= number_to_currency calculate_subtotal(@cart, dollars: true)

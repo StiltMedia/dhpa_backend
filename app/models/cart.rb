@@ -14,8 +14,5 @@ class Cart < ActiveRecord::Base
     end
     current_item
   end
-  
-  def sub_total
-    line_items.to_a.sum { |item| item.price}
-  end
+
 end

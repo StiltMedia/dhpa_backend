@@ -9,7 +9,7 @@
           Image ID
         %p
           = @photo.id
-        = f.label :digital_price_in_dollars, "Price"
+        = f.label :digital_price_in_dollars, "Custom Price (default is #{default_price}"
         = f.text_field :digital_price_in_dollars
 
         = f.label :vips, "Add specific people to this photo"

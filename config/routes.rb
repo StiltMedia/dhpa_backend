@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :events do
       resources :photos
     end
+    resources :settings
   end
 
   resources :events, only: [:index, :show]

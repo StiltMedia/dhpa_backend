@@ -7,11 +7,11 @@
           .three.columns
             = image_tag attachment_url(item.photo, :file, :limit, 270, 270) # The only time photo.file should be shown without thumbnailing or watermarking is on the purchase page
             %span.filename
-              DH1726437
+              = "Photo # #{item.photo.id}"
               = link_to "DELETE", line_item_path(item), method: :delete, remote: true
           .three.columns
             %p
-              %strong> People: 
+              %strong> People:
               = vip_list(item.photo.event)
             %p
               %strong Event:
@@ -43,18 +43,18 @@
             .change-options
               = link_to "CHANGE OPTIONS", edit_line_item_path(item), remote: true, class: "button"
             %h5 ITEMS TOTAL:
-            %span.price= number_to_currency item.price
+            %span.price= number_to_currency calculate_price(item, dollars: true)
     #resume
-      %p
-        %label SUBTOTAL:
-        %span.price= number_to_currency @sub_total
-      %p
-        %label TAX:
-        %span.price $0.00
-      %p
-        %label Shipping  Handling:
-        %span.price= number_to_currency Order::SHIPPING_PRICE
+      / %p
+      /   %label SUBTOTAL:
+      /   %span.price= number_to_currency calculate_subtotal(@cart)
+      / %p
+      /   %label TAX:
+      /   %span.price $0.00
+      / %p
+      /   %label Shipping &amp; Handling:
+      /   %span.price= number_to_currency Order::SHIPPING_PRICE
       %p
         %label TOTAL:
-        %span.price= number_to_currency @sub_total + Order::SHIPPING_PRICE
+        %span.price= number_to_currency calculate_subtotal(@cart, dollars: true) #+ Order::SHIPPING_PRICE
       = link_to "CHECK OUT", checkout_path, class: "blackbutton"

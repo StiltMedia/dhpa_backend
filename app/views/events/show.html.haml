@@ -30,13 +30,13 @@
           = link_to photo, remote: true, class: "popup-link" do
             = image_tag attachment_url(photo, :file, :limit, 270, 270) # The only time photo.file should be shown without thumbnailing or watermarking is on the purchase page
           %span.filename #{photo.image_id}
-          %ul
-            %li
-              %a.cart
-            / %li
-            /   %a.lamp
-            / %li
-            /   %a.download
+          / %ul
+          /   %li
+          /     %a.cart
+          /   %li
+          /     %a.lamp
+          /   %li
+          /     %a.download
           %h5
             = link_to "#{photo.event.title}", event_path(@event)
           %span.subtitle #{@event.sub_title}

@@ -14,7 +14,7 @@ class OrdersController < ApplicationController
     @order.add_line_items_from_cart(@cart)
     @order.add_additional_infos_from_cart(@cart)
 
-    success = PurchaseService.new(@order).purchase(@cart.sub_total, @cart.payment_info.stripe_customer_id)
+    success = PurchaseService.new(@order).purchase(calculate_subtotal(@cart, dollars: true), @cart.payment_info.stripe_customer_id)
     session[:cart_id] = nil
 
     if success

@@ -15,20 +15,30 @@
 
 * Frontend shall match provided HTML/CSS/JS files as closely as possible
   * Home
-    * *QUESTION* Will event images always be landscape? Portrait images don't look good on the homepage.
+    * *QUESTION* We're using a slideshow plugin for the LEARN MORE photo, is this right?
+    * *TODO* There's no photos/events/refine control on the home search form
+    * *QUESTION* Will event images always be landscape? Portrait images might not look good on the homepage.
+    * *TODO* Need social URLs for links
   * *TODO* About
   * *TODO* Book Now (contact form)
   * *TODO* Search
     * Partial exact match based on image tags and fields
     * No autocomplete, autocorrect, or partial match of queries needed
   * Inside Album
+    * *TODO* People/Event/Location/Date/Photographer filtering/sorting doesn't work
   * Picture Detail
   * *TODO* Shopping Cart
-  * *TODO* Checkout
+    * QUESTION* There are three different license types and also Nationality, is this right? (Web Editorial, Print, Web and Print); Nationality (National/International)
+    * *QUESTION* Is any sort of add-to-cart indication necessary? Add To Cart doesn't really show what's been done.
+  * Checkout
+    * Global pricing
+    * No shipping prices necessary
+    * *TODO* Make Stripe work, with correct pricing
   * *TODO* Admin Dashboard
   * *TODO* Registered User Dashboard
   * *TODO* Wishlist (lightbox)
     * For registered users only
+  * *QUESTION* The design has a "featured content" area, this isn't coded..?
   * Register/Log in
 * Admin:
   * Ability to create albums (events)

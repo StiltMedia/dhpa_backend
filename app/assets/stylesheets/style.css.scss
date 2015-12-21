@@ -71,14 +71,14 @@ header a.logo {
 }
 
 #menu li a:hover {
-    background: rgb(24, 26, 26) none repeat scroll 0 0;
+    background-color: rgb(24, 26, 26);
     color: rgb(255, 255, 255);
 }
 .home #menu li a {
   color: rgb(255, 255, 255);
 }
 .home #menu li a:hover {
-    background: rgb(255, 255, 255) none repeat scroll 0 0;
+    background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
 }
 #menu{
@@ -88,9 +88,10 @@ header a.logo {
   background-attachment: scroll;
   background-clip: border-box;
   background-color: rgba(0, 0, 0, 0);
-  background-image: asset_url("homemenuIcons.png");
+  background-image: asset_url("menuIcons.png");
   background-origin: padding-box;
-  background-position: bottom left;
+  background-position: 7px 7px;
+  padding: 5px 17px !important;
   background-repeat: no-repeat;
   opacity: 0.9;
   text-align: center;
@@ -101,15 +102,16 @@ header a.logo {
 }
 #menu li .user:hover{
   opacity: 1;
-  background-position: top left;
+  background-image: asset_url("homemenuIcons.png");
 }
 #menu li .cart {
   background-attachment: scroll;
   background-clip: border-box;
   background-color: rgba(0, 0, 0, 0);
-  background-image: asset_url("homemenuIcons.png");
+  background-image: asset_url("menuIcons.png");
   background-origin: padding-box;
-  background-position: bottom right;
+  background-position: -62px 6px;
+  padding: 5px 17px !important;
   background-repeat: no-repeat;
   opacity: 0.9;
   text-align: center;
@@ -120,7 +122,7 @@ header a.logo {
 }
 #menu li .cart:hover {
   opacity: 1;
-  background-position: top right;
+  background-image: asset_url("homemenuIcons.png");
 }
 
 
@@ -133,9 +135,7 @@ header a.logo {
     padding: 5px 17px !important;
 }
 .home #menu li .user:hover {
-    background-image: asset_url("homemenuIcons.png");
-    background-position: 7px -15px;
-    background-repeat: no-repeat;
+    background-image: asset_url("menuIcons.png");
 }
 .home #menu li .cart {
   background-image: asset_url("homemenuIcons.png");
@@ -143,9 +143,7 @@ header a.logo {
   padding: 5px 17px !important;
 }
 .home #menu li .cart:hover {
-    background-image: asset_url("homemenuIcons.png");
-    background-position: -62px -15px;
-    background-repeat: no-repeat;
+    background-image: asset_url("menuIcons.png");
 }
 .bx-wrapper .bx-viewport{
   left: 0 !important
@@ -1465,6 +1463,10 @@ button.button:hover {
   margin: 0;
   text-transform: uppercase;
   margin-bottom: 2px;
+}
+
+.row {
+  margin-bottom: 1em;
 }
 
 .row.services{

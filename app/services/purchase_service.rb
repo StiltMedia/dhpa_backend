@@ -5,11 +5,11 @@ class PurchaseService
     @order = order
   end
 
-  def purchase(total, customer_id)
+  def purchase(total_in_dollars, customer_id)
 
     begin
       charge = Stripe::Charge.create(
-        :amount => total.to_i * 100,
+        :amount => (total_in_dollars * 100).round,
         :customer => customer_id,
         :currency => "usd"
       )

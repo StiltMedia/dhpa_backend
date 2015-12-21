@@ -1,0 +1,12 @@
+= render "layouts/admin/nav"
+.container
+  %h5 Settings
+
+  = form_for [:admin, @setting] do |f|
+    .row
+      .six.columns
+        = f.label :default_price_in_dollars, "Default Price"
+        = f.text_field :default_price_in_dollars, class: "w-100", value: number_with_precision(f.object.default_price_in_dollars, :precision => 2)
+    .row
+      .twelve.columns
+        = f.submit 'submit', :class => "button w-100"
