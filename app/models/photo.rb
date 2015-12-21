@@ -15,7 +15,11 @@ class Photo < ActiveRecord::Base
   before_destroy :ensure_not_referenced_by_any_line_item
 
   def digital_price_in_dollars=(dollars)
-    self.digital_price = dollars.to_d * 100 if dollars.present?
+    if dollars == "" || dollars == nil
+      self.digital_price = nil
+    else
+      self.digital_price = dollars.to_d * 100
+    end
   end
 
   def digital_price_in_dollars
@@ -24,45 +28,45 @@ class Photo < ActiveRecord::Base
     end
   end
 
-  def physical_price_4x6_in_dollars=(dollars)
-    self.physical_price_4x6 = dollars.to_d * 100 if dollars.present?
-  end
+  # def physical_price_4x6_in_dollars=(dollars)
+  #   self.physical_price_4x6 = dollars.to_d * 100
+  # end
 
-  def physical_price_4x6_in_dollars
-    if physical_price_4x6
-      physical_price_4x6.to_d / 100
-    end
-  end
+  # def physical_price_4x6_in_dollars
+  #   if physical_price_4x6
+  #     physical_price_4x6.to_d / 100
+  #   end
+  # end
 
-  def physical_price_5x7_in_dollars=(dollars)
-    self.physical_price_5x7 = dollars.to_d * 100 if dollars.present?
-  end
+  # def physical_price_5x7_in_dollars=(dollars)
+  #   self.physical_price_5x7 = dollars.to_d * 100
+  # end
 
-  def physical_price_5x7_in_dollars
-    if physical_price_5x7
-      physical_price_5x7.to_d / 100
-    end
-  end
+  # def physical_price_5x7_in_dollars
+  #   if physical_price_5x7
+  #     physical_price_5x7.to_d / 100
+  #   end
+  # end
 
-  def physical_price_8x10_in_dollars=(dollars)
-    self.physical_price_8x10 = dollars.to_d * 100 if dollars.present?
-  end
+  # def physical_price_8x10_in_dollars=(dollars)
+  #   self.physical_price_8x10 = dollars.to_d * 100
+  # end
 
-  def physical_price_8x10_in_dollars
-    if physical_price_8x10
-      physical_price_8x10.to_d / 100
-    end
-  end
+  # def physical_price_8x10_in_dollars
+  #   if physical_price_8x10
+  #     physical_price_8x10.to_d / 100
+  #   end
+  # end
 
-  def physical_price_10x14_in_dollars=(dollars)
-    self.physical_price_10x14 = dollars.to_d * 100 if dollars.present?
-  end
+  # def physical_price_10x14_in_dollars=(dollars)
+  #   self.physical_price_10x14 = dollars.to_d * 100
+  # end
 
-  def physical_price_10x14_in_dollars
-    if physical_price_10x14
-      physical_price_10x14.to_d / 100
-    end
-  end
+  # def physical_price_10x14_in_dollars
+  #   if physical_price_10x14
+  #     physical_price_10x14.to_d / 100
+  #   end
+  # end
 
   private
 
