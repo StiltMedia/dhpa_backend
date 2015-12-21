@@ -2,24 +2,15 @@
 .container.img-responsive
   .row
     .four.columns
-      = image_tag attachment_url(@photo, :file, :limit, 270, 270) # The only time photo.file should be shown without thumbnailing or watermarking is on the purchase page
+      = image_tag attachment_url(@photo, :file, :fill_watermark_dhpa, 564, 323, @photo.id) # The only time photo.file should be shown without thumbnailing or watermarking is on the purchase page
     = form_for [:admin, @event, @photo] do |f|
       .six.columns
-        = f.label :image_id, "Image ID"
-        = f.text_field :image_id
-        = f.label :copyright
-        = f.text_field :copyright
-        = f.label :digital_price_in_dollars
+        %label
+          Image ID
+        %p
+          = @photo.id
+        = f.label :digital_price_in_dollars, "Price"
         = f.text_field :digital_price_in_dollars
-
-        = f.label :physical_price_4x6_in_dollars
-        = f.text_field :physical_price_4x6_in_dollars
-        = f.label :physical_price_5x7_in_dollars
-        = f.text_field :physical_price_5x7_in_dollars
-        = f.label :physical_price_8x10_in_dollars
-        = f.text_field :physical_price_8x10_in_dollars
-        = f.label :physical_price_10x14_in_dollars
-        = f.text_field :physical_price_10x14_in_dollars
 
         = f.label :vips, "Add specific people to this photo"
         = text_field_tag :vips, nil, class: "w-100", placeholder: "Please separate people using commas, ie. John Smith, Jada Smith, Pharrell Williams"

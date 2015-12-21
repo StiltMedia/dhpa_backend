@@ -3,4 +3,10 @@
     .twelve.columns.admin
       %ul
         %li
-          = link_to "Add Event", new_admin_event_path
+          = link_to admin_path, class: "button "+css_class_active_for(admin_path) do
+            %span.fa.fa-home
+            Admin
+        %li
+          = link_to new_admin_event_path, class: "button "+css_class_active_for(new_admin_event_path) do
+            %span.fa.fa-plus
+            Add Event

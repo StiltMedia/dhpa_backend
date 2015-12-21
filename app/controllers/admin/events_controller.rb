@@ -1,5 +1,5 @@
 class Admin::EventsController < AdminsController
-  before_action :set_event, only: [:show, :edit, :update]
+  before_action :set_event, only: [:show, :edit, :update, :delete]
 
   def index
   end

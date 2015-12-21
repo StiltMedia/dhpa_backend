@@ -337,7 +337,9 @@ body .bx-wrapper {
   margin-top: 2em;
   margin-bottom: 0px;
 }
-.button {
+.button,
+input.button,
+button.button {
   border: 3px solid rgb(0, 0, 0);
   border-radius: 0;
   color: rgb(0, 0, 0);
@@ -352,7 +354,9 @@ body .bx-wrapper {
   text-decoration: none;
   transition: all 0.2s ease;
 }
-.button:hover {
+.button:hover,
+input.button:hover,
+button.button:hover {
   background: rgb(24, 26, 26) none repeat scroll 0 0;
   color: rgb(256, 256, 256);
   border: 3px solid rgb(0, 0, 0);

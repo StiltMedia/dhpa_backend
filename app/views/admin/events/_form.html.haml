@@ -46,12 +46,18 @@
           - photos.each do |photo|
             .three.columns.img-size-edit
               %strong Image ID:
-              #{photo.image_id}
+              = photo.id
               = image_tag attachment_url(photo, :file, :limit, 270, 270) # The only time photo.file should be shown without thumbnailing or watermarking is on the purchase page
-              %p.u-pull-left
-                = link_to "Edit Image", edit_admin_event_photo_path(@event, photo)
-              %p.u-pull-right Delete Image
-              %p.u-cf
-                %strong People:
-                - photo.vips.each do |vip|
-                  #{vip.name}
+              %span.u-pull-left
+                = link_to edit_admin_event_photo_path(@event, photo) do
+                  .span.fa.fa-edit
+                  Edit
+              %span.u-pull-right
+                = link_to admin_event_photo_path(@event, photo), method: :delete, data: {confirm: "Delete image #{photo.id}?   WARNING: If you've made changes to the event, please save the event first."} do
+                  .span.fa.fa-remove
+                  Delete
+              - if photo.vips.any?
+                %span.u-cf
+                  %strong People:
+                  - photo.vips.each do |vip|
+                    #{vip.name}

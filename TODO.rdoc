@@ -36,10 +36,10 @@
     * Only accessible via a password (unique password per event)
   * Able to bulk-upload hundreds of images at once (thousands per week)
     * *TODO* Image uploads should be stored in AWS, not on disk.
-  * *TODO* Thumbnails and watermarks should be automatically generated upon upload
-    * *TODO* Watermark should be similar to BFA.com: a semitransparent gray square with image ID and the website logo overlaid over about a quarter of the image.
+  * Thumbnails and watermarks are automatically generated upon upload
+    * Watermark is similar to BFA.com: a semitransparent gray square with image ID and the website name overlaid over about a quarter of the image.
     * Only one "full resolution" size is needed: on the designs there is an option for image size (S/M/L) but that is not needed. There will only be 1 size.
-    * *TODO* No watermark will be applied to full-resolution image or thumbnail (three total image types: original full-res; watermark; thumbnail)
+    * No watermark is applied to full-resolution image or thumbnail (three total image types: original full-res; watermark; thumbnail)
   * *TODO* Tags from EXIF should be automatically parsed and saved in the database for each image:
     * Location
     * Subject

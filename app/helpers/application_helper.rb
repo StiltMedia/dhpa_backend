@@ -16,4 +16,8 @@ module ApplicationHelper
     event.date.strftime("%a, %b %d %Y ")
   end
 
+  def css_class_active_for link_path
+    link_path == request.env['PATH_INFO'] ? "active" : "inactive"
+  end
+
 end
