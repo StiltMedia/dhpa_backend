@@ -1,5 +1,9 @@
 module ApplicationHelper
 
+  def default_price
+    Setting.first.default_price
+  end
+
   def options_for_license
     ["Web Editorial", "Print", "Web and Print"]
   end
