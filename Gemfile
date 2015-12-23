@@ -17,6 +17,8 @@ gem 'friendly_id', '~> 5.1.0' # Note: You MUST use 5.0.0 or greater for Rails 4.
 gem 'jquery-rails'
 gem 'turbolinks'
 
+gem 'mail_form'
+
 gem 'stripe', '~> 1.31.0'
 
 gem "refile", require: "refile/rails"

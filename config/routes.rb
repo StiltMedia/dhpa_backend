@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   get 'admin/' => 'admin/home#index'
   get 'about' => 'pages#about', as: "about"
   get 'hire-dhpa' => 'pages#hire_dhpa', as: "hire_dhpa"
-  get 'contact-us' => 'contact#index', as: "contact"
+  #get 'contact-us' => 'contact#index', as: "contact"
+
+  match '/contact-us',    to: 'contact#new', via: 'get'
+  resources 'contact-us', only: [:new, :create]
+
   namespace :admin do
     resources :events do
       resources :photos
