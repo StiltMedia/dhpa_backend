@@ -37,7 +37,7 @@ class Admin::EventsController < AdminsController
 
   private
     def event_params
-      params.require(:event).permit(:image_url, :title, :description, :sub_title, :location, :photographer, :date, photos_files: [])
+      params.require(:event).permit(:image_url, :title, :description, :sub_title, :location, :photographer, :is_featured, :date, photos_files: [])
     end
 
     def set_event

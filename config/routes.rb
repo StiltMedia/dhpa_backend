@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   root 'home#index'
   get 'admin/' => 'admin/home#index'
-  get 'about-dhpa' => 'pages#about', as: "about"
+  get 'about' => 'pages#about', as: "about"
+  get 'hire-dhpa' => 'pages#hire_dhpa', as: "hire_dhpa"
   get 'contact-us' => 'contact#index', as: "contact"
   namespace :admin do
     resources :events do

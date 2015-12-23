@@ -49,14 +49,11 @@
   .container
     %h5 FEATURED CONTENT
     %ul.featured-list
-      %li
-        %a{:href => "#"} H&amp;M X ALEXANDER WANG
-
-      %li
-        %a{:href => "#"} H&amp;M X ALEXANDER WANG
-
-      %li
-        %a{:href => "#"} H&amp;M X ALEXANDER WANG
+      - @featured_events.each do |event|
+        %li
+          = link_to event do
+            %span.caption= event.title
+          = image_tag attachment_url(event, :image_url, :fill, 275, 175)
 
 %section.instagramfeed
   .container

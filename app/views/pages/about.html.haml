@@ -22,11 +22,7 @@
   .container
     %ul.bxslider.testimonial-slider
       %li
-        %img{:src => "images/logos1.png"}/
-      %li
-        %img{:src => "images/logos1.png"}/
-      %li
-        %img{:src => "images/logos1.png"}/
+        %img{:src => asset_url("logos1.png")}/
 %section.slider-box
   .container
     %ul.bxslider.testimonial-slider
@@ -47,9 +43,17 @@
           %span (Director of Demo,)
     :javascript
       $(document).ready(function(){
+
           $('.bxslider').bxSlider({
-            mode: 'fade'
+            mode: 'fade',
+            infiniteLoop: 'true',
+            responsive: 'false',
+            controls: 'true',
+            pager: 'true',
+            auto: 'true',
+            pause: 8000
           });
+
       });
 %section.content-box
   .container.center
