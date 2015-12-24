@@ -14,7 +14,7 @@ See TODO.rdoc
 
 Copy env.dist to .env and edit as desired, for development/testing.
 
-* Production only
+* Production/staging only
   * ENV['SECRET_KEY_BASE']
 * All Environments
   * ENV['RAILS_SERVE_STATIC_FILES']

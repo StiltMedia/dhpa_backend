@@ -3,7 +3,7 @@ require "refile/watermark"
 
 Refile.secret_key = Rails.application.secrets.secret_key_base
 
-if Rails.env.production?
+if Rails.env.production? || Rails.env.staging?
 
   aws = {
     access_key_id: ENV["AWS_ACCESS_KEY"],
