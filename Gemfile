@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.2.3'
 
-gem 'sqlite3'
+gem 'pg'
 
 gem 'sass-rails', '~> 5.0'
 gem 'devise'
@@ -48,5 +48,8 @@ group :development, :test do
   # Easier to debug
   gem "better_errors"
   gem "binding_of_caller"
+
+  # Test db
+  gem 'sqlite3'
 end
 

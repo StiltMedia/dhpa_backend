@@ -13,7 +13,7 @@ User.create email: "user1@example.com", password: "password"
 
 event1 = Event.create title: "Lowline 2015", location: "Angel Orensanz Foundation, NYC", photographer: "Benjamin Lozovsky", date: "2015-10-21", sub_title: "Anti-Gala", slug: "lowline-2015", image_url: File.new('app/assets/images/event1.jpg')
 
-ActionController::Base.helpers.create_vips(event1)
+# ActionController::Base.helpers.create_vips(event1)
 
 Photo.create event: event1, file: File.new('app/assets/images/event1.jpg')
 Photo.create event: event1, file: File.new('app/assets/images/event2.jpg')
