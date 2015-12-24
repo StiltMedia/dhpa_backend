@@ -18,8 +18,8 @@ Copy env.dist to .env and edit as desired, for development/testing.
   * ENV['SECRET_KEY_BASE']
 * All Environments
   * ENV['RAILS_SERVE_STATIC_FILES']
-  * ENV['instagram_id']
-  * ENV['instagram_token']
+  * ENV['INSTAGRAM_ID']
+  * ENV['INSTAGRAM_TOKEN']
   * ENV['AWS_ACCESS_KEY']
   * ENV['AWS_SECRET_ACCESS_KEY']
   * ENV['STRIPE_PUBLISHABLE_KEY']
