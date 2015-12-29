@@ -21,9 +21,13 @@ gem 'mail_form'
 
 gem 'stripe', '~> 1.31.0'
 
+# Refile for attachments and image upload/thumbnailing
 gem "refile", require: "refile/rails"
 gem "refile-mini_magick", '~> 0.2.0'
 gem "refile-s3", '~> 0.2.0'
+
+# MiniExiftool for extracting EXIF info (includes Exiftool application)
+gem 'mini_exiftool_vendored'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

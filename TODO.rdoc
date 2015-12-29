@@ -46,11 +46,13 @@
   * *TODO* Ability to mark albums as public or private
     * Only accessible via a password (unique password per event)
   * Able to bulk-upload hundreds of images at once (thousands per week)
-    * *TODO* Image uploads should be stored in AWS, not on disk.
+    * Image uploads are stored in AWS S3.
   * Thumbnails and watermarks are automatically generated upon upload
     * Watermark is similar to BFA.com: a semitransparent gray square with image ID and the website name overlaid over about a quarter of the image.
-    * Only one "full resolution" size is needed: on the designs there is an option for image size (S/M/L) but that is not needed. There will only be 1 size.
-    * No watermark is applied to full-resolution image or thumbnail (three total image types: original full-res; watermark; thumbnail)
+    * *TODO* Two "full resolution" sizes are needed, one largest and more-expensive "commercial" size, and a smaller cheaper "personal use" size. (Four total image types: original full-res (commercial use); smaller res (personal use); watermark; thumbnail)
+      * *TODO* Pricing for commercial and personal sizes should be editable in admin settings.
+      * *TODO* Customer should be able to purchase either commercial or personal use sizes and receive only that size on checkout.
+    * No watermark is applied to full-resolution images or thumbnail
   * *TODO* Tags from EXIF should be automatically parsed and saved in the database for each image:
     * Location
     * Subject
@@ -59,7 +61,7 @@
   * Photographer should be able to edit these "EXIF" tags manually as well, however editing will be on a per-image or per-event basis. No batch-image-editing of tags will be programmed into the website at this time.
   * *TODO* Other tags should be auto-generated:
     * Image ID (plain database ID, starting at 1)
-    * Copyright (always just "DHPA")
+    * *TODO* Copyright (always just "DHPA")
   * *TODO* Finally, "Other Keywords" should be available at the event and image level.
   * *TODO* Search should make use of all event and image tags.
   * *TODO* Admin should be able to edit the price for images in one place; all images will be the same price.
@@ -82,13 +84,18 @@
     * No physical products will be sold, only digital downloads.
 * No CMS feature will be programmed at this time -- text and style changes will require a Rails programmer.
 
-= TODO
+= TODO List (should reference scoped items only)
 
-* "People" is inputted on a per-event basis but displayed on a per-photo basis and is null.
-* Cart issues
+1. EXIF parsing ("people" is inputted on a per-event basis but displayed on a per-photo basis and is null.)
+  * https://github.com/janfri/mini_exiftool/blob/master/lib/mini_exiftool.rb
+1. Commercial vs personal image sizes & prices
+1. Cart issues
   * Add to Cart button from event page doesn't work (only Purchase after viewing)
   * No cart link except on main page
   * The only way to set prices right now is to edit each photo individually, and if a price isn't set checkout will crash
   * Preview image on payment page is broken
-* Client wants separate images generated for thumbnail, watermark, and full resolution.
-* Most pages are basically blank, most links don't work
+1. Contact form should work
+  * https://rubyonrailshelp.wordpress.com/2014/01/08/rails-4-simple-form-and-mail-form-to-make-contact-form/
+1. Search should work
+1. Picture detail should match design
+1. Most pages are basically blank, most links don't work

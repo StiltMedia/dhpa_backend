@@ -6,6 +6,7 @@ See TODO.rdoc
 
 * Ruby 2.2.4 (see .versions.conf and rvm)
 * Gems from gemfile (see bundler)
+* Perl (for mini_exiftool_vendored)
 
 * Ubuntu:
   * libgmp3-dev
@@ -41,3 +42,7 @@ No tests created yet. Please create tests, tests are good.
 == Documentation
 
 Run <tt>rake doc:app</tt> to generate HTML documentation from classes.
+
+== Running
+
+Run <tt>rails s</tt> for development, or use whatever rails server you like in production.
