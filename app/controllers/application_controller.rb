@@ -73,45 +73,59 @@ class ApplicationController < ActionController::Base
 
     def create_vips(event_or_photo)
 
-      if event_or_photo.class == "Event"
+      if event_or_photo.class.to_s == "Event"
         # Parse EXIF for all photos
         event_or_photo.photos.each do |photo|
           parse_exif(photo)
         end
-      elsif event_or_photo.class == "Photo"
+      elsif event_or_photo.class.to_s == "Photo"
         parse_exif(event_or_photo)
       end
 
       # Add VIPs manually specified in params
-      @vips = params[:vips].split(",")
-      if @vips.present?
-        @vips.each do |vip|
-          event_or_photo.vips.create(name: "#{vip.strip}") # No trailing whitespace
-        end
-      end
+      vips = params[:vips].split(",")
+      add_vips(vips, event_or_photo)
     end
 
 
     def parse_exif(photo)
       exif = MiniExiftool.new photo.file.download.path
-      #Rails.logger.debug "EXIF DATA: "+photo.to_hash.to_json
 
-      # Description / Caption-Abstract / ImageDescription
-      #Rails.logger.debug "EXIF_DESCR: "+photo.description
+      if exif.present? && exif.description.present?
+        #Rails.logger.debug "EXIF DATA: "+photo.to_hash.to_json
 
-      # Copyright / Artist / By-line / CopyrightNotice / Creator / Rights
-      #Rails.logger.debug "EXIF_COPY: "+photo.copyright
+        # Description / Caption-Abstract / ImageDescription
+        #Rails.logger.debug "EXIF_DESCR: "+photo.description
 
-      # Extract copyright from EXIF
-      photo.copyright = exif.copyright
+        # Copyright / Artist / By-line / CopyrightNotice / Creator / Rights
+        #Rails.logger.debug "EXIF_COPY: "+photo.copyright
 
-      # Add VIPs from EXIF Description
-      vips = exif.description.split(",")
-      Rails.logger.debug "VIPS: "+vips.to_s
+        # Extract copyright from EXIF
+        photo.copyright = exif.copyright
+        photo.save
+
+        # Add VIPs from EXIF Description
+        vips = exif.description.split(",")
+        Rails.logger.debug "VIPS: "+vips.to_s
+        add_vips(vips, photo)
+      end
+    end
+
+    def add_vips(vips, event_or_photo)
       if vips.present?
         vips.each do |vip|
-          result = photo.vips.create(name: "#{vip.strip}") # No trailing whitespace
-          Rails.logger.debug "VIP_RESULT: "+result.to_s
+          existing_vip = Vip.find_by_name("#{vip.strip}")
+          if existing_vip.nil?
+            unless vip.strip == ""
+              # If there's no VIP yet, just make it
+              result = event_or_photo.vips.create(name: "#{vip.strip}") # No trailing whitespace
+            end
+          else
+            # Otherwise, add the VIP to this event_or_photo only if we need to
+            unless event_or_photo.vips.include?(existing_vip)
+              result = event_or_photo.vips << existing_vip
+            end
+          end
         end
       end
     end

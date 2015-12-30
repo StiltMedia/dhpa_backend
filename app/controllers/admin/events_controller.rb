@@ -16,6 +16,7 @@ class Admin::EventsController < AdminsController
     if @event.save
       create_vips(@event)
       redirect_to edit_admin_event_path(@event)
+      # Thread.new { GC.start }
     else
       render :new
       flash[:error] = "Something went wrong."
@@ -29,6 +30,7 @@ class Admin::EventsController < AdminsController
     if @event.update(event_params)
       create_vips(@event)
       redirect_to edit_admin_event_path(@event)
+      # Thread.new { GC.start }
     else
       render :edit
       flash[:error] = "Something went wrong"

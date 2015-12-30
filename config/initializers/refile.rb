@@ -14,4 +14,9 @@ if Rails.env.production? || Rails.env.staging?
   Refile.cache = Refile::S3.new(prefix: "cache", **aws)
   Refile.store = Refile::S3.new(prefix: "store", **aws)
 
+else # Dev, Test
+
+  # Refile.cache = Refile::Backend::FileSystem.new(Rails.root.join('tmp','uploads','cache').to_s)
+  # Refile.store = Refile::Backend::FileSystem.new(Rails.root.join('tmp','uploads','store').to_s)
+
 end

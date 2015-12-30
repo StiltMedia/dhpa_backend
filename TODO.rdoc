@@ -53,23 +53,22 @@
       * *TODO* Pricing for commercial and personal sizes should be editable in admin settings.
       * *TODO* Customer should be able to purchase either commercial or personal use sizes and receive only that size on checkout.
     * No watermark is applied to full-resolution images or thumbnail
-  * *TODO* Tags from EXIF should be automatically parsed and saved in the database for each image:
-    * Location
-    * Subject
-    * Photographer
+  * Tags from EXIF should be automatically parsed and saved in the database for each image:
     * People
+    * Copyright
+    * *QUESTION* None of the below tags were provided in the examples:
+      * Location
+      * Subject
+      * Photographer
   * Photographer should be able to edit these "EXIF" tags manually as well, however editing will be on a per-image or per-event basis. No batch-image-editing of tags will be programmed into the website at this time.
-  * *TODO* Other tags should be auto-generated:
+  * Other tags should be auto-generated:
     * Image ID (plain database ID, starting at 1)
-    * *TODO* Copyright (always just "DHPA")
   * *TODO* Finally, "Other Keywords" should be available at the event and image level.
   * *TODO* Search should make use of all event and image tags.
-  * *TODO* Admin should be able to edit the price for images in one place; all images will be the same price.
+  * Admin should be able to edit the price for images in one place; all images will be the same price.
 * Unregistered User:
   * Ability to view all public albums
   * *TODO* Ability to freely search for public images
-  * *TODO* Will NOT be able to “right click > save” any album photos
-  * *TODO* Will NOT be able to “drag and drop” any album photos
 * Registered User:
   * *TODO* Able to save purchased images in their user library
   * *TODO* Ability to create a “wish list” of images
@@ -80,14 +79,14 @@
   * *VERIFY* Able to purchase and download digital full-resolution copies of images
   * Not able to view or download full-resolution images unless they have purchased them
     * Image URLs cannot be guessed: each file has a random ID.
-    * *TODO* Disable right-click and dragging of images
+    * *TODO* Will NOT be able to “right click > save” any unpurchased photos
+    * *TODO* Will NOT be able to “drag and drop” any unpurchased photos
     * No physical products will be sold, only digital downloads.
 * No CMS feature will be programmed at this time -- text and style changes will require a Rails programmer.
 
 = TODO List (should reference scoped items only)
 
-1. EXIF parsing ("people" is inputted on a per-event basis but displayed on a per-photo basis and is null.)
-  * https://github.com/janfri/mini_exiftool/blob/master/lib/mini_exiftool.rb
+1. Verify image upload functionality on test server
 1. Commercial vs personal image sizes & prices
 1. Cart issues
   * Add to Cart button from event page doesn't work (only Purchase after viewing)

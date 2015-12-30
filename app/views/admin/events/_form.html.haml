@@ -59,5 +59,4 @@
               - if photo.vips.any?
                 %span.u-cf
                   %strong People:
-                  - photo.vips.each do |vip|
-                    #{vip.name}
+                  = vip_list(photo)
