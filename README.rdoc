@@ -35,7 +35,7 @@ Copy env.dist to .env and edit as desired, for development/testing.
   * See db/seeds.rb for default usernames and <tt>rake db:seed</tt> to insert these defaults into the db.
 * Use AWS S3 for image uploads
   * Create an IAM user and credentials, with normal "S3 Full Access" permissions.
-  * Create test, dev, staging, and production buckets according to the AWS_REFILE_BUCKET environment variable. Beware using production buckets outside of the production webserver.
+  * In the us-west-1 region (Northern California), create test, dev, staging, and production buckets according to the AWS_REFILE_BUCKET environment variable. Beware using production buckets outside of the production webserver.
 * *TODO:* CDN for faster image serving
 
 == Testing

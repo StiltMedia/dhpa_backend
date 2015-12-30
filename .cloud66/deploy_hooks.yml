@@ -5,7 +5,6 @@ staging:
       target: rails
       execute: true
       run_on: single_server
-      apply_during: build_only
 production:
   after_symlink: # Or use after_rails depending on your application
     - source: /.cloud66/dbseed.sh
@@ -13,4 +12,4 @@ production:
       target: rails
       execute: true
       run_on: single_server
-      apply_during: build_only
+      apply_during: build_only # Definitely don't want to db-seed on production except for the first build
