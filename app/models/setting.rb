@@ -1,11 +1,19 @@
 class Setting < ActiveRecord::Base
 
-  def default_price_in_dollars=(dollars)
-    self.default_price = dollars.to_d * 100 if dollars.present?
+  def personal_price_in_dollars=(dollars)
+    self.personal_price = dollars.to_d * 100 if dollars.present?
   end
 
-  def default_price_in_dollars
-    default_price.to_d / 100
+  def personal_price_in_dollars
+    personal_price.to_d / 100
+  end
+
+  def commercial_price_in_dollars=(dollars)
+    self.commercial_price = dollars.to_d * 100 if dollars.present?
+  end
+
+  def commercial_price_in_dollars
+    commercial_price.to_d / 100
   end
 
 end

@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Setting.create default_price: 2000 #$20.00
+Setting.create commercial_price: 5000, personal_price: 2000 #$50 and $20
 
 User.create email: "admin@example.com", password: "password", is_admin: true
 User.create email: "user1@example.com", password: "password"

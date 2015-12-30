@@ -2,18 +2,22 @@
 %section.darkbar
   .container
     .row
-      .twelve.columns.align-right
+      .twelve.columns
         %ul.menu
           %li
-            %a{:href => "#"} People
-          %li
-            %a{:href => "#"} Event
-          %liok
-            %a{:href => "#"} Location
-          %li
-            %a{:href => "#"} Date
-          %li
-            %a{:href => "#"} Photographer
+            %a.toggle{:href => "#", "data-target" => ".people-menu"} People
+            %ul.submenu.people-menu{style: "display: none"}
+              - @event.vips.each do |vip|
+                %li=vip.name
+          %span.u-pull-right
+            %li
+              %a{:href => "#"} Event
+            %li
+              %a{:href => "#"} Location
+            %li
+              %a{:href => "#"} Date
+            %li
+              %a{:href => "#"} Photographer
 %section.gallery-box
   .container
     .event-header

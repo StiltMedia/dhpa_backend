@@ -11,7 +11,7 @@
           = @photo.id
         = f.label :copyright
         = f.text_field :copyright, class: "w-100"
-        = f.label :digital_price_in_dollars, "Custom Price (default is #{number_to_currency default_price(dollars: true)})"
+        = f.label :digital_price_in_dollars, "Custom Price (default is #{number_to_currency commercial_price(dollars: true)} for commercial and #{number_to_currency personal_price(dollars: true)} for personal. )"
         = f.number_field :digital_price_in_dollars, step: 0.01, value: number_with_precision(f.object.digital_price_in_dollars, :precision => 2)
 
         = f.label :vips, "Add specific people to this photo"

@@ -31,8 +31,8 @@
         = f.text_field :photographer, class: "w-100"
         = f.label :date, "Date of Event"
         = f.date_field :date, class: "date-select"
-        = f.label :vips, "People at event"
-        = text_field_tag :vips, nil, class: "w-100", placeholder: "Please separate people using commas, ie. John Smith, Jada Smith, Pharrell Williams"
+        / = f.label :vips, "People at event"
+        / = text_field_tag :vips, nil, class: "w-100", placeholder: "Please separate people using commas, ie. John Smith, Jada Smith, Pharrell Williams"
         - if @event.vips.present?
           = label_tag "Current people listed at event"
           %p

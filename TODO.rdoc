@@ -37,6 +37,7 @@
     * Global pricing
     * No shipping prices necessary
     * *TODO* Make Stripe work, with correct pricing
+    * *TODO* Before checkout there will be a popup disclaimer (client's attorney is working on it)
   * *TODO* Admin Dashboard
   * *TODO* Registered User Dashboard
   * *TODO* Wishlist (lightbox)

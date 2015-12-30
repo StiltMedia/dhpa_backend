@@ -599,6 +599,9 @@ button.button:hover {
   background: rgb(24, 26, 26) none repeat scroll 0 0;
   display: inline-block;
   width: 100%;
+  height: 54px;
+  color: rgb(255, 255, 255);
+  font-family: Open Sans;
 }
 
 .darkbar .menu {
@@ -622,9 +625,8 @@ button.button:hover {
   width: 12px;
 }
 .darkbar .menu li a {
-  color: rgb(255, 255, 255);
   display: inline-block;
-  font-family: Open Sans;
+  color: rgb(255, 255, 255);
   font-size: 1rem;
   font-weight: normal;
   padding: 17px 23px;
@@ -633,8 +635,33 @@ button.button:hover {
 .darkbar .menu li a:hover{
   background: #303030
 }
-.darkbar .menu li:hover a::after {
+.darkbar .menu li a.active::after {
   background: rgba(0, 0, 0, 0) asset_url("upmenu.png") no-repeat scroll 0 0;
+}
+
+.darkbar .submenu {
+  margin: 1px;
+  background: #333;
+  padding: 8px 23px;
+  position: relative;
+  z-index: 9999;
+}
+
+.darkbar .submenu li:first-child {
+  float: none;
+}
+
+.darkbar .submenu li {
+  display: block;
+  text-align: left;
+}
+
+.darkbar .submenu li a {
+  padding: 8px 0;
+}
+
+.darkbar .submenu li a:hover {
+  background: #ccc
 }
 
 

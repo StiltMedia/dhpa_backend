@@ -5,8 +5,10 @@
   = form_for [:admin, @setting] do |f|
     .row
       .six.columns
-        = f.label :default_price_in_dollars, "Default Price"
-        = f.number_field :default_price_in_dollars, class: "w-100", step: 0.01, value: number_with_precision(f.object.default_price_in_dollars, :precision => 2)
+        = f.label :commercial_price_in_dollars, "Default Commercial Price"
+        = f.number_field :commercial_price_in_dollars, class: "w-100", step: 0.01, value: number_with_precision(f.object.commercial_price_in_dollars, :precision => 2)
+        = f.label :personal_price_in_dollars, "Default Personal Price"
+        = f.number_field :personal_price_in_dollars, class: "w-100", step: 0.01, value: number_with_precision(f.object.personal_price_in_dollars, :precision => 2)
     .row
       .twelve.columns
         = f.submit 'submit', :class => "button w-100"

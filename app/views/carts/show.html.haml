@@ -11,8 +11,8 @@
               = link_to "DELETE", line_item_path(item), method: :delete, remote: true
           .three.columns
             %p
-              %strong> People:
-              = vip_list(item.photo.event)
+              %strong People:
+              = vip_list(item.photo)
             %p
               %strong Event:
               = item.photo.event.title

@@ -33,7 +33,7 @@ class Admin::SettingsController < AdminsController
 
   private
     def setting_params
-      params.require(:setting).permit(:default_price_in_dollars)
+      params.require(:setting).permit(:commercial_price_in_dollars, :personal_price_in_dollars)
     end
 
     def set_setting

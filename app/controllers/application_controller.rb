@@ -75,6 +75,7 @@ class ApplicationController < ActionController::Base
       # Add VIPs manually specified in params (not from EXIF)
       vips = params[:vips].split(",")
       add_vips(vips, event_or_photo)
+      event_or_photo.save # Save because event was just saved
     end
 
     def add_vips(vips, event_or_photo)
