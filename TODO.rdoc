@@ -29,7 +29,8 @@
     * *TODO* People/Event/Location/Date/Photographer filtering/sorting doesn't work
   * Picture Detail
     * *TODO* Adjust display of picture detail to match the design from "04 Open Images" -- shouldn't be a popup. Note: no need for S/M/L/XL sizes, just put the image size information underneath the explanatory text (Copyright, Date, Image Size)
-    * *TODO* Completely remove the digital/physical, license, and nationality options from the detail page -- make those properties blank across the GUI as well (i.e. during checkout)
+    * There should be no digital/physical or nationality options from the detail page -- make those properties blank across the GUI as well (i.e. during checkout)
+    * There should be a commercial vs personal license option.
   * *TODO* Shopping Cart
     * *QUESTION* Is any sort of add-to-cart indication necessary? Add To Cart doesn't really show what's been done.
   * Checkout
@@ -86,7 +87,6 @@
 
 = TODO List (should reference scoped items only)
 
-1. Verify image upload functionality on test server
 1. Commercial vs personal image sizes & prices
 1. Cart issues
   * Add to Cart button from event page doesn't work (only Purchase after viewing)

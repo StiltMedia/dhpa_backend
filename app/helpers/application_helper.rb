@@ -27,7 +27,7 @@ module ApplicationHelper
   end
 
   def options_for_license
-    ["Web Editorial", "Print", "Web and Print"]
+    ["Commercial Use", "Personal Use"]
   end
 
   def options_for_nationality

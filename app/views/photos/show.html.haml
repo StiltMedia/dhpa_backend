@@ -27,6 +27,5 @@
         %p
           %b Date:
           = @photo.event.date
-        = link_to "PURCHASE", new_line_item_path(photo_id: @photo.id), class: "button", remote: true
-        #purchase-form
+        = render "line_items/new"
 

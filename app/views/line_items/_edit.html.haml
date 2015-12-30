@@ -1,34 +1,34 @@
 #item-options-tab
-  %ul
-    %li.tab
-      %a{id: "digital", :href => "#"} DIGITAL DOWNLOAD
-    %li.tab
-      %a{id: "physical", :href => "#"} PHYSICAL PRINT
+  / %ul
+  /   %li.tab
+  /     %a{id: "digital", :href => "#"} DIGITAL DOWNLOAD
+  /   %li.tab
+  /     %a{id: "physical", :href => "#"} PHYSICAL PRINT
 
   = form_for line_item do |f|
     = f.hidden_field :photo_id, value: line_item.photo_id
     = f.fields_for :delivery_option, line_item.delivery_option do |delivery_option|
       #digital-form-elements
-        
+
         = delivery_option.hidden_field :option_type, value: "digital"
 
         = delivery_option.label :license
         = delivery_option.select :license, options_for_select(options_for_license)
 
-        = delivery_option.label :nationality
-        = delivery_option.select :nationality, options_for_select(options_for_nationality)
+      /   = delivery_option.label :nationality
+      /   = delivery_option.select :nationality, options_for_select(options_for_nationality)
 
-      #physical-form-elements{style: "display: none;"}
+      / #physical-form-elements{style: "display: none;"}
 
-        = delivery_option.hidden_field :option_type, value: "print", disabled: true
+      /   = delivery_option.hidden_field :option_type, value: "print", disabled: true
 
-        = delivery_option.label :quantity
-        = delivery_option.number_field :quantity, value: 1
+      /   = delivery_option.label :quantity
+      /   = delivery_option.number_field :quantity, value: 1
 
-        = delivery_option.label :border
-        = delivery_option.select :border, options_for_select(["yes", "no"])
+      /   = delivery_option.label :border
+      /   = delivery_option.select :border, options_for_select(["yes", "no"])
 
-        = delivery_option.label :size
-        = delivery_option.select :size, options_for_select(Photo::SIZES)
+      /   = delivery_option.label :size
+      /   = delivery_option.select :size, options_for_select(Photo::SIZES)
 
     = f.submit "Update Cart"

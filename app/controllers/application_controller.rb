@@ -109,10 +109,17 @@ class ApplicationController < ActionController::Base
     end
 
     def parse_exif(photo)
+      if photo.present? && photo.file.present? && photo.file.download.present? && photo.file.download.path.present?
+        magick = MiniMagick::Image.open photo.file.download.path
 
-      exif = MiniExiftool.new photo.file.download.path
+        if magick.present?
+          if magick.width.present? && magick.height.present?
+            # Extract dimensions from EXIF
+            photo.size = "#{magick.width}x#{magick.height}"
+          end
+        end
 
-      if exif.present? && exif.description.present?
+        exif = MiniExiftool.new photo.file.download.path
         #Rails.logger.debug "EXIF DATA: "+photo.to_hash.to_json
 
         # Description / Caption-Abstract / ImageDescription
@@ -121,13 +128,19 @@ class ApplicationController < ActionController::Base
         # Copyright / Artist / By-line / CopyrightNotice / Creator / Rights
         #Rails.logger.debug "EXIF_COPY: "+photo.copyright
 
-        # Extract copyright from EXIF
-        photo.copyright = exif.copyright
+        if exif.present?
 
-        # Add VIPs from EXIF Description
-        vips = exif.description.split(",")
-        Rails.logger.debug "VIPS: "+vips.to_s
-        add_vips(vips, photo)
+          # Extract copyright from EXIF
+          photo.copyright = exif.copyright
+
+          if exif.description.present?
+
+            # Add VIPs from EXIF Description
+            vips = exif.description.split(",")
+            Rails.logger.debug "VIPS: "+vips.to_s
+            add_vips(vips, photo)
+          end
+        end
       end
     end
 end
