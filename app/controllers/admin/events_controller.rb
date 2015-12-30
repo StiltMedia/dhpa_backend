@@ -13,6 +13,7 @@ class Admin::EventsController < AdminsController
 
   def create
     @event = Event.new(event_params)
+    handle_exif(@event)
     if @event.save
       create_vips(@event)
       redirect_to edit_admin_event_path(@event)
@@ -27,7 +28,9 @@ class Admin::EventsController < AdminsController
   end
 
   def update
-    if @event.update(event_params)
+    @event.assign_attributes(event_params)
+    handle_exif(@event)
+    if @event.save
       create_vips(@event)
       redirect_to edit_admin_event_path(@event)
       # Thread.new { GC.start }

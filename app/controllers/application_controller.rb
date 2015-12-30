@@ -77,7 +77,6 @@ class ApplicationController < ActionController::Base
       add_vips(vips, event_or_photo)
     end
 
-    #TODO: this is duplicated in photo.rb, DRY
     def add_vips(vips, event_or_photo)
       if vips.present?
         vips.each do |vip|
@@ -85,7 +84,7 @@ class ApplicationController < ActionController::Base
           if existing_vip.nil?
             unless vip.strip == ""
               # If there's no VIP yet, just make it
-              result = event_or_photo.vips.create(name: "#{vip.strip}") # No trailing whitespace
+              result = event_or_photo.vips.build(name: "#{vip.strip}") # No trailing whitespace
             end
           else
             # Otherwise, add the VIP to this event_or_photo only if we need to
@@ -97,4 +96,38 @@ class ApplicationController < ActionController::Base
       end
     end
 
+    def handle_exif(event_or_photo)
+
+      if event_or_photo.class.to_s == "Event"
+        # Parse EXIF for all photos
+        event_or_photo.photos.each do |photo|
+          parse_exif(photo)
+        end
+      elsif event_or_photo.class.to_s == "Photo"
+        parse_exif(event_or_photo)
+      end
+    end
+
+    def parse_exif(photo)
+
+      exif = MiniExiftool.new photo.file.download.path
+
+      if exif.present? && exif.description.present?
+        #Rails.logger.debug "EXIF DATA: "+photo.to_hash.to_json
+
+        # Description / Caption-Abstract / ImageDescription
+        #Rails.logger.debug "EXIF_DESCR: "+photo.description
+
+        # Copyright / Artist / By-line / CopyrightNotice / Creator / Rights
+        #Rails.logger.debug "EXIF_COPY: "+photo.copyright
+
+        # Extract copyright from EXIF
+        photo.copyright = exif.copyright
+
+        # Add VIPs from EXIF Description
+        vips = exif.description.split(",")
+        Rails.logger.debug "VIPS: "+vips.to_s
+        add_vips(vips, photo)
+      end
+    end
 end
