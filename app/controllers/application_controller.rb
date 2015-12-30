@@ -72,45 +72,12 @@ class ApplicationController < ActionController::Base
     # end
 
     def create_vips(event_or_photo)
-
-      if event_or_photo.class.to_s == "Event"
-        # Parse EXIF for all photos
-        event_or_photo.photos.each do |photo|
-          parse_exif(photo)
-        end
-      elsif event_or_photo.class.to_s == "Photo"
-        parse_exif(event_or_photo)
-      end
-
-      # Add VIPs manually specified in params
+      # Add VIPs manually specified in params (not from EXIF)
       vips = params[:vips].split(",")
       add_vips(vips, event_or_photo)
     end
 
-
-    def parse_exif(photo)
-      exif = MiniExiftool.new photo.file.download.path
-
-      if exif.present? && exif.description.present?
-        #Rails.logger.debug "EXIF DATA: "+photo.to_hash.to_json
-
-        # Description / Caption-Abstract / ImageDescription
-        #Rails.logger.debug "EXIF_DESCR: "+photo.description
-
-        # Copyright / Artist / By-line / CopyrightNotice / Creator / Rights
-        #Rails.logger.debug "EXIF_COPY: "+photo.copyright
-
-        # Extract copyright from EXIF
-        photo.copyright = exif.copyright
-        photo.save
-
-        # Add VIPs from EXIF Description
-        vips = exif.description.split(",")
-        Rails.logger.debug "VIPS: "+vips.to_s
-        add_vips(vips, photo)
-      end
-    end
-
+    #TODO: this is duplicated in photo.rb, DRY
     def add_vips(vips, event_or_photo)
       if vips.present?
         vips.each do |vip|

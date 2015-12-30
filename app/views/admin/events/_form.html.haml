@@ -7,11 +7,11 @@
           = image_tag attachment_url(@event, :image_url)
         .four.columns
           = f.label :image_url, "Update Event Main Image"
-          = f.attachment_field :image_url, direct: true, presigned: true
+          = f.attachment_field :image_url
       - else
         .twelve-columns
           = f.label :image_url, "Event Main Image"
-          = f.attachment_field :image_url, direct: true, presigned: true
+          = f.attachment_field :image_url
     .four.columns
     .row
       .six.columns
@@ -20,7 +20,7 @@
         = f.label :sub_title
         = f.text_field :sub_title, class: "w-100"
         = f.label :photos_files
-        = f.attachment_field :photos_files, direct: true, multiple: true, presigned: true
+        = f.attachment_field :photos_files, multiple: true
         = label_tag :is_featured do
           = f.check_box :is_featured, {}, "true", "false"
           Is this a featured event?

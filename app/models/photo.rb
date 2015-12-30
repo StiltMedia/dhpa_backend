@@ -12,6 +12,7 @@ class Photo < ActiveRecord::Base
   extend FriendlyId
     friendly_id :name, use: :slugged
 
+  before_save :parse_exif
   before_destroy :ensure_not_referenced_by_any_line_item
 
   def digital_price_in_dollars=(dollars)
@@ -69,6 +70,50 @@ class Photo < ActiveRecord::Base
   # end
 
   private
+
+
+    def parse_exif
+      exif = MiniExiftool.new self.file.download.path
+
+      if exif.present? && exif.description.present?
+        #Rails.logger.debug "EXIF DATA: "+self.to_hash.to_json
+
+        # Description / Caption-Abstract / ImageDescription
+        #Rails.logger.debug "EXIF_DESCR: "+self.description
+
+        # Copyright / Artist / By-line / CopyrightNotice / Creator / Rights
+        #Rails.logger.debug "EXIF_COPY: "+self.copyright
+
+        # Extract copyright from EXIF
+        self.copyright = exif.copyright
+        # self.save
+
+        # Add VIPs from EXIF Description
+        vips = exif.description.split(",")
+        Rails.logger.debug "VIPS: "+vips.to_s
+        add_vips(vips, self)
+      end
+    end
+
+    #TODO: this is duplicated in application_controller.rb, DRY
+    def add_vips(vips, event_or_photo)
+      if vips.present?
+        vips.each do |vip|
+          existing_vip = Vip.find_by_name("#{vip.strip}")
+          if existing_vip.nil?
+            unless vip.strip == ""
+              # If there's no VIP yet, just make it
+              result = event_or_photo.vips.create(name: "#{vip.strip}") # No trailing whitespace
+            end
+          else
+            # Otherwise, add the VIP to this event_or_photo only if we need to
+            unless event_or_photo.vips.include?(existing_vip)
+              result = event_or_photo.vips << existing_vip
+            end
+          end
+        end
+      end
+    end
 
     def ensure_not_referenced_by_any_line_item
       if line_items.empty?
