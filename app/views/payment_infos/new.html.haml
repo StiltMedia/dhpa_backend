@@ -32,7 +32,7 @@
                             = f.label :country, "* COUNTRY"
                             = f.text_field :country
                             %p
-                              %span.payment-errors
+                              %span.payment-errors.error
                               %label * CARD NUMBER
                               %input{:type => "text", size: "20", "data-stripe": "number"}/
                               %p.third

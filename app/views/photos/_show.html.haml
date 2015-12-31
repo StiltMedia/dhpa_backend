@@ -8,27 +8,27 @@
       .five.columns
         %p
           %b IMAGE ID:
-          = @photo.image_id
+          = @photo.id
         %p
-          %b People:
+          %b PEOPLE:
           = vip_list(@photo)
         %p
-          %b Event:
+          %b EVENT:
           = @photo.event.title
         %p
-          %b Location:
+          %b LOCATION:
           = @photo.event.location
         %p
           %b PHOTOGRAPHER:
           = @photo.event.photographer
         %p
-          %b Copyright:
+          %b COPYRIGHT:
           = @photo.copyright
         %p
-          %b Date:
+          %b DATE:
           = @photo.event.date
         %p
-          %b Size:
+          %b SIZE:
           = @photo.size
         = render "line_items/new"
 
