@@ -1,29 +1,36 @@
 %section.content-box.purchased
   .container
     %h2.page-title PURCHASED
-    .row
-      - @order.line_items.each do |line_item|
+    - @order.line_items.each do |item|
+      .row
         .three.columns
-          = image_tag attachment_url(line_item.photo, :file) # The only time photo.file should be shown without thumbnailing or watermarking is on the purchase page
-          %span.filename DH1726437
+          - if item.delivery_option.license == "Commercial Use"
+            = image_tag attachment_url(item.photo, :file) # Commercial Use = full rez
+          - else
+            = image_tag attachment_url(item.photo, :file, :limit, personal_image_size, personal_image_size) # Private Use = smaller rez
+          %span.filename
+            ="Photo # #{item.photo.id}"
         .three.columns
           %p
-            %strong> People:
-            justin timberlake, tori kelly
+            %strong People:
+            = vip_list(item.photo)
           %p
             %strong Event:
-            THE FASHION GROUP INTERNATIONAL: 31ST ANNUAL NIGHT OF STARS
+            = item.photo.event.title
           %h5 Date:
-          %p 2015-10-23
+          %p= item.photo.event.date
         .three.columns.offset-by-one
           %p
             %strong LICENSE TYPE:
-            %a{:href => "#"} RIGHTS MANAGED
-          %h5 How can I use it?
-          %p
-            Available for all permitted uses under our
-            %a{:href => "#"} License Terms
+            = item.delivery_option.license
+          / %h5 How can I use it?
+          / %p
+          /   Available for all permitted uses under our
+          /   %a{:href => "#"} License Terms
         .two.columns
-          - if line_item.is_digital?
-            = link_to "DOWNLOAD", attachment_url(line_item.photo, :file), class: "button" # The only time photo.file should be shown without thumbnailing or watermarking is on the purchase page
+          - if item.is_digital?
+            - if item.delivery_option.license == "Commercial Use"
+              = link_to "DOWNLOAD", attachment_url(item.photo, :file), class: "button" # Commercial Use = full rez
+            - else
+              = link_to "DOWNLOAD", attachment_url(item.photo, :file, :limit, personal_image_size, personal_image_size), class: "button" # Private Use = smaller rez
 

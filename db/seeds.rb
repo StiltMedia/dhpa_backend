@@ -1,12 +1,7 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Setting.create commercial_price: 5000, personal_price: 2000 #$50 and $20
+Setting.create commercial_price: 5000, personal_price: 2000, personal_image_size: 500 # $50, $20, and 500px
 
 User.create email: "admin@example.com", password: "password", is_admin: true
 User.create email: "user1@example.com", password: "password"
@@ -26,6 +21,8 @@ Photo.create event: event1, file: File.new('app/assets/images/event8.jpg')
 
 event2 = Event.create title: "High Life 2016", location: "Sam's Hideaway, Los Angeles", photographer: "John Smith", date: "2015-11-13", sub_title: "The Redux", image_url: File.new('app/assets/images/event2.jpg')
 
+Photo.create event: event2, file: File.new('doc/design/exif_examples/IMG_2480.jpg') # has exif
+Photo.create event: event2, file: File.new('doc/design/exif_examples/IMG_2482.jpg') # has exif
 Photo.create event: event2, file: File.new('app/assets/images/event10.jpg')
 Photo.create event: event2, file: File.new('app/assets/images/event11.jpg')
 Photo.create event: event2, file: File.new('app/assets/images/event12.jpg')

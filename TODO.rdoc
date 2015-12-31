@@ -36,9 +36,9 @@
   * Checkout
     * Global pricing
     * No shipping prices necessary
-    * *TODO* Make Stripe work, with correct pricing
+    * Stripe should work and have correct pricing
     * *TODO* Before checkout there will be a popup disclaimer (client's attorney is working on it)
-  * *TODO* Admin Dashboard
+  * Admin Dashboard
   * *TODO* Registered User Dashboard
   * *TODO* Wishlist (lightbox)
     * For registered users only
@@ -51,9 +51,9 @@
     * Image uploads are stored in AWS S3.
   * Thumbnails and watermarks are automatically generated upon upload
     * Watermark is similar to BFA.com: a semitransparent gray square with image ID and the website name overlaid over about a quarter of the image.
-    * *TODO* Two "full resolution" sizes are needed, one largest and more-expensive "commercial" size, and a smaller cheaper "personal use" size. (Four total image types: original full-res (commercial use); smaller res (personal use); watermark; thumbnail)
-      * *TODO* Pricing for commercial and personal sizes should be editable in admin settings.
-      * *TODO* Customer should be able to purchase either commercial or personal use sizes and receive only that size on checkout.
+    * There are two "full resolution" sizes, one largest and more-expensive "commercial" size, and a smaller cheaper "personal use" size. (Four total image types: original full-res (commercial use); smaller res (personal use); watermark; thumbnail)
+      * Pricing for commercial and personal sizes is editable in admin settings, as well as the personal image size.
+      * Customer can purchase either commercial or personal use sizes and receive only that size on checkout.
     * No watermark is applied to full-resolution images or thumbnail
   * Tags from EXIF should be automatically parsed and saved in the database for each image:
     * People
@@ -71,6 +71,7 @@
 * Unregistered User:
   * Ability to view all public albums
   * *TODO* Ability to freely search for public images
+  * *QUESTION* Doesn't have the ability to view purchases afterwards?
 * Registered User:
   * *TODO* Able to save purchased images in their user library
   * *TODO* Ability to create a “wish list” of images
@@ -88,12 +89,8 @@
 
 = TODO List (should reference scoped items only)
 
-1. Commercial vs personal image sizes & prices
 1. Cart issues
   * Add to Cart button from event page doesn't work (only Purchase after viewing)
-  * No cart link except on main page
-  * The only way to set prices right now is to edit each photo individually, and if a price isn't set checkout will crash
-  * Preview image on payment page is broken
 1. Contact form should work
   * https://rubyonrailshelp.wordpress.com/2014/01/08/rails-4-simple-form-and-mail-form-to-make-contact-form/
 1. Search should work

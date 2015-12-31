@@ -49,3 +49,8 @@ Run <tt>rake doc:app</tt> to generate HTML documentation from classes.
 == Running
 
 Run <tt>rails s</tt> for development, or use whatever rails server you like in production.
+
+== Contributors
+
+- Gustavo Pares https://twitter.com/staycreatived (http://staycreativedesign.com/)
+- Will Bradley (will@zyphon.com)

@@ -9,6 +9,8 @@
         = f.number_field :commercial_price_in_dollars, class: "w-100", step: 0.01, value: number_with_precision(f.object.commercial_price_in_dollars, :precision => 2)
         = f.label :personal_price_in_dollars, "Default Personal Price"
         = f.number_field :personal_price_in_dollars, class: "w-100", step: 0.01, value: number_with_precision(f.object.personal_price_in_dollars, :precision => 2)
+        = f.label :personal_image_size, "Personal Image Size (maximum dimension in pixels)"
+        = f.number_field :personal_image_size, class: "w-100", step: 1
     .row
       .twelve.columns
         = f.submit 'submit', :class => "button w-100"

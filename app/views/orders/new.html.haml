@@ -1,47 +1,50 @@
-#checkout-step2.confirmation
-  .row
-    .six.columns.align-left
-      %form
-        %h2.page-title PAYMENT CONFIRMATION
-        %p
-        %p
-          %label * FIRST NAME
-          %span= @cart.address.first_name
-        %p
-          %label * LAST NAME
-          %span= @cart.address.last_name
-        %p
-          %label * ADDRESS
-          %span= @cart.address.street
-        %p.third
-          %label * CITY
-          %span= @cart.address.city
-        %p.third
-          %label * STATE
-          %span= @cart.address.state
-        %p.third.last
-          %label * ZIPCODE
-          %span= @cart.address.zipcode
-        %p
-          %label * COUNTRY
-          %span= @cart.address.country
-        %p
-          %label * CARD NUMBER
-          %span= @cart.payment_info.last4
-        %p.third
-          %label * MONTH
-          %span= @cart.payment_info.exp_month
-        %p.third.last
-          %label * YEAR
-          %span= @cart.payment_info.exp_year
-        %p
-        %h2.page-title CONTACT INFO
-        %p
-        %p
-          %label * EMAIL
-          %span= @cart.order_contact_info.email
-        = link_to "SUBMIT PAYMENT", confirm_path, method: :post
-
-      .six.columns.align-right
-        %a.edit-info{:href => "#"} Edit Information
-        = render 'orders/preview'
+%section.content-box
+  .container
+    #checkout-step2
+      .row
+        .six.columns.align-left
+          %form
+            %h2.page-title PAYMENT CONFIRMATION
+            %p
+            %p
+              %label FIRST NAME
+              %span= @cart.address.first_name
+            %p
+              %label LAST NAME
+              %span= @cart.address.last_name
+            %p
+              %label ADDRESS
+              %span= @cart.address.street
+            %p.third
+              %label CITY
+              %span= @cart.address.city
+            %p.third
+              %label STATE
+              %span= @cart.address.state
+            %p.third.last
+              %label ZIPCODE
+              %span= @cart.address.zipcode
+            %p
+              %label COUNTRY
+              %span= @cart.address.country
+            %p
+              %label CARD NUMBER
+              %span= @cart.payment_info.last4
+            %p.third
+              %label MONTH
+              %span= @cart.payment_info.exp_month
+            %p.third.last
+              %label YEAR
+              %span= @cart.payment_info.exp_year
+            %p
+            %h2.page-title CONTACT INFO
+            %p
+            %p
+              %label EMAIL
+              %span= @cart.order_contact_info.email
+            %p
+              %h2.page-title TOTAL
+              %span.price= number_to_currency calculate_subtotal(@cart, dollars: true)
+            = link_to "SUBMIT PAYMENT", confirm_path, method: :post, class: "button"
+        .six.columns.align-right
+          = render 'orders/preview'

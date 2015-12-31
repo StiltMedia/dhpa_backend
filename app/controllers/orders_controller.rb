@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
   include CurrentCart
   include OrderHelper
+  include ApplicationHelper
 
   before_action :set_cart, only: [:new, :create]
 
@@ -15,7 +16,7 @@ class OrdersController < ApplicationController
     @order.add_additional_infos_from_cart(@cart)
 
     success = PurchaseService.new(@order).purchase(calculate_subtotal(@cart, dollars: true), @cart.payment_info.stripe_customer_id)
-    session[:cart_id] = nil
+    session[:cart_id] = nil # Clear out cart for new order
 
     if success
       redirect_to purchased_path(order_id: @order.id)

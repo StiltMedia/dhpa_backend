@@ -26,6 +26,10 @@ module ApplicationHelper
     end
   end
 
+  def personal_image_size
+    Setting.first.personal_image_size
+  end
+
   def calculate_price(item, dollars=false)
     if dollars
       item.custom_price_in_dollars || return_personal_or_commercial_price(item, dollars)

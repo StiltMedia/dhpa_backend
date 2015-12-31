@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  match "/403" => "errors#error403", via: [ :get, :post, :patch, :delete ]
+  match "/404" => "errors#error404", via: [ :get, :post, :patch, :delete ]
+  match "/500" => "errors#error500", via: [ :get, :post, :patch, :delete ]
+
   devise_for :users
   root 'home#index'
   get 'admin/' => 'admin/home#index'

@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
@@ -32,6 +33,10 @@ class ApplicationController < ActionController::Base
   end
 
   after_filter :store_location
+
+  rescue_from Errors::Forbidden do |exception|
+    render :file => "#{Rails.root}/public/403.html", :status => 404, :layout => false
+  end
 
   def store_location
     # store last url - this is needed for post-login redirect to whatever the user last visited.
