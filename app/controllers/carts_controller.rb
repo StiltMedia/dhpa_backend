@@ -1,7 +1,5 @@
 class CartsController < ApplicationController
-  include CurrentCart
-
-  before_action :set_cart
+  # Cart is already set in ApplicationController
 
   def show
   end

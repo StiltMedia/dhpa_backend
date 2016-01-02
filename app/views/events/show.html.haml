@@ -33,7 +33,7 @@
         %li
           = link_to photo, remote: true, class: "popup-link" do
             = image_tag attachment_url(photo, :file, :limit, 270, 270) # The only time photo.file should be shown without thumbnailing or watermarking is on the purchase page
-          %span.filename #{photo.image_id}
+          %span.filename #{photo.id}
           / %ul
           /   %li
           /     %a.cart

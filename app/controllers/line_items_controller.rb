@@ -1,7 +1,7 @@
 class LineItemsController < ApplicationController
-  include CurrentCart
+  include ApplicationHelper
+  include ActionView::Helpers::NumberHelper
 
-  before_action :set_cart, only: [:create, :update]
   before_action :set_line_item, only: [:edit, :update, :destroy]
 
   def new
@@ -11,8 +11,11 @@ class LineItemsController < ApplicationController
   def create
     @line_item = LineItem.new(line_item_params.merge(cart_id: @cart.id))
     if @line_item.save
+      flash[:notice] = "Added to cart. Price: #{number_to_currency calculate_price(@line_item, true)}"
       redirect_to :back
     else
+      flash[:error] = "Error: Could not add to cart."
+      redirect_to :back
     end
   end
 

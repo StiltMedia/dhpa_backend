@@ -13,7 +13,7 @@
         = delivery_option.hidden_field :option_type, value: "digital"
 
         = delivery_option.label :license
-        = delivery_option.select :license, options_for_select(options_for_license)
+        = delivery_option.select :license, options_for_select(options_for_license, selected: delivery_option.object.license)
 
       /   = delivery_option.label :nationality
       /   = delivery_option.select :nationality, options_for_select(options_for_nationality)

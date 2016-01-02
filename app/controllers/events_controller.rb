@@ -1,6 +1,4 @@
 class EventsController < ApplicationController
-  include CurrentCart
-  before_action :set_cart
   before_action :set_event, only: [:show]
 
   def index

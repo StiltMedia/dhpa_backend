@@ -14,11 +14,23 @@ class LineItem < ActiveRecord::Base
   end
 
   def custom_price_in_dollars
-    photo.digital_price_in_dollars
+    if delivery_option.license == "Commercial Use"
+      photo.commercial_price_in_dollars
+    elsif delivery_option.license == "Personal Use"
+      photo.personal_price_in_dollars
+    else
+      return nil
+    end
   end
 
   def custom_price
-    photo.digital_price
+    if delivery_option.license == "Commercial Use"
+      photo.commercial_price
+    elsif delivery_option.license == "Personal Use"
+      photo.personal_price
+    else
+      return nil
+    end
   end
 
 end

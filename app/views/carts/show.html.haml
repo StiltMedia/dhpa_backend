@@ -6,19 +6,16 @@
         %div{:id => "item_#{item.id}", :class => "row item"}
           .three.columns
             = image_tag attachment_url(item.photo, :file, :limit, 270, 270) # The only time photo.file should be shown without thumbnailing or watermarking is on the purchase page
-            %span.filename
-              = "Photo # #{item.photo.id}"
-              = link_to "DELETE", line_item_path(item), method: :delete, remote: true
           .three.columns
             %p
-              %strong People:
-              = vip_list(item.photo)
+              %strong Photo ID:
+              = item.photo.id
             %p
               %strong Event:
               = item.photo.event.title
             %h5 Date:
             %p= item.photo.event.date
-          .three.columns.offset-by-one
+          .three.columns
             - if item.is_digital?
               %p
                 %strong LICENSE TYPE:
@@ -35,12 +32,18 @@
               %p
                 %strong Border
                 = item.delivery_option.border
+            %p
+              %strong People:
+              = vip_list(item.photo)
 
           .two.columns
             .change-options
               = link_to "CHANGE OPTIONS", edit_line_item_path(item), remote: true, class: "button"
-            %h5 ITEMS TOTAL:
+            %h5 ITEM PRICE:
             %span.price= number_to_currency calculate_price(item, dollars: true)
+          .one.columns
+            = link_to line_item_path(item), method: :delete, remote: true, class: "delete large" do
+              &#x2716;
     #resume
       / %p
       /   %label SUBTOTAL:
@@ -53,5 +56,5 @@
       /   %span.price= number_to_currency Order::SHIPPING_PRICE
       %p
         %label TOTAL:
-        %span.price= number_to_currency calculate_subtotal(@cart, dollars: true) #+ Order::SHIPPING_PRICE
+        %span#price.price= number_to_currency calculate_subtotal(@cart, dollars: true) #+ Order::SHIPPING_PRICE
       = link_to "CHECK OUT", checkout_path, class: "blackbutton"

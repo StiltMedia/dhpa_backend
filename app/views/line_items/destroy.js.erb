@@ -1,1 +1,3 @@
 $("#item_<%= @line_item.id %>").remove();
+$("#cartcount").text("<%= @cart.line_items.count %>");
+$("#price").text("<%= number_to_currency calculate_subtotal(@cart, dollars: true) %>");

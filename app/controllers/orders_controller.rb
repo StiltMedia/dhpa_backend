@@ -1,9 +1,7 @@
 class OrdersController < ApplicationController
-  include CurrentCart
   include OrderHelper
   include ApplicationHelper
 
-  before_action :set_cart, only: [:new, :create]
 
   def new
     @order = Order.new

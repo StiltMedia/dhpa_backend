@@ -23,6 +23,10 @@ body{
   float: right;
 }
 
+.large {
+  font-size: 1.75em;
+}
+
 .center{
   text-align: center;
 }
@@ -119,13 +123,21 @@ header a.logo {
   height: 28px;
   display: inline-block;
   box-sizing: border-box;
+  position: relative;
 }
 #menu li .cart:hover {
   opacity: 1;
   background-image: asset_url("homemenuIcons.png");
 }
 
-
+#menu li #cartcount {
+  position: absolute;
+  bottom: -8px;
+  right: -10px;
+  background: #1EAEDB;
+  border-radius: 1em;
+  padding: 0 0.35em;
+}
 
 
 
@@ -975,7 +987,6 @@ button.button:hover {
   display: inline-block;
   width: 100%;
   height: auto;
-  margin-bottom: 15px
 }
 .purchased .filename{
   display: inline-block;
@@ -1026,9 +1037,8 @@ button.button:hover {
   color: #000000;
 }
 .purchased .button{
-  margin-top: 0;
+  margin: 0 0 0.5em 0;
   padding: 0.5rem 2rem;
-  margin-bottom: 35px;
   border: 3px solid rgb(0, 0, 0);
 }
 .purchased  .price{
@@ -1193,8 +1203,8 @@ button.button:hover {
   width: 80%;
 }
 
-.error {
-  color: #A92247;
+.error, .delete {
+  color: #B63055;
   font-weight: bold;
 }
 
@@ -1497,6 +1507,10 @@ button.button:hover {
 
 .row {
   margin-bottom: 1em;
+}
+
+.row.item {
+	margin-bottom: 2.5em;
 }
 
 .row.services{

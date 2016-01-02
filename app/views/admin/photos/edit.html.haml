@@ -11,9 +11,10 @@
           = @photo.id
         = f.label :copyright
         = f.text_field :copyright, class: "w-100"
-        = f.label :digital_price_in_dollars, "Custom Price (default is #{number_to_currency commercial_price(dollars: true)} for commercial and #{number_to_currency personal_price(dollars: true)} for personal. )"
-        = f.number_field :digital_price_in_dollars, step: 0.01, value: number_with_precision(f.object.digital_price_in_dollars, :precision => 2)
-
+        = f.label :commercial_price_in_dollars, "Custom Commercial Price (default is #{number_to_currency default_commercial_price(dollars: true)})"
+        = f.number_field :commercial_price_in_dollars, step: 0.01, value: number_with_precision(f.object.commercial_price_in_dollars, :precision => 2)
+        = f.label :personal_price_in_dollars, "Custom Personal Price (default is #{number_to_currency default_personal_price(dollars: true)})"
+        = f.number_field :personal_price_in_dollars, step: 0.01, value: number_with_precision(f.object.personal_price_in_dollars, :precision => 2)
         = f.label :vips, "Add specific people to this photo"
         = text_field_tag :vips, nil, class: "w-100", placeholder: "Please separate people using commas, ie. John Smith, Jada Smith, Pharrell Williams"
 

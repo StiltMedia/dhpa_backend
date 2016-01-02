@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160102204755) do
+ActiveRecord::Schema.define(version: 20160102210331) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -129,17 +129,13 @@ ActiveRecord::Schema.define(version: 20160102204755) do
     t.string   "file_id"
     t.string   "copyright"
     t.integer  "event_id"
-    t.string   "image_id"
     t.string   "size"
     t.string   "slug"
     t.string   "name"
-    t.integer  "digital_price"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "physical_price_4x6"
-    t.integer  "physical_price_5x7"
-    t.integer  "physical_price_8x10"
-    t.integer  "physical_price_10x14"
+    t.integer  "personal_price"
+    t.integer  "commercial_price"
   end
 
   create_table "settings", force: :cascade do |t|

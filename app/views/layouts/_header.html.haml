@@ -14,7 +14,9 @@
             %li
               = link_to "HIRE DHPA", hire_dhpa_path
             %li
-              = link_to "", cart_path, class: "cart", title: "CART"
+              = link_to cart_path, class: "cart", title: "CART" do
+                %span#cartcount
+                  = @cart.line_items.count
             %li
               - if current_user.present?
                 = link_to "LOGOUT", destroy_user_session_path, method: "delete"

@@ -1,6 +1,4 @@
 class PaymentInfosController < ApplicationController
-  include CurrentCart
-  before_action :set_cart, only: [:new, :create]
 
   def new
     @payment_info = PaymentInfoForm.new(current_or_guest_user, @cart)
