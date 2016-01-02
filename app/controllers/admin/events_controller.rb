@@ -1,11 +1,5 @@
 class Admin::EventsController < AdminsController
-  before_action :set_event, only: [:show, :edit, :update, :delete]
-
-  def index
-  end
-
-  def show
-  end
+  before_action :set_event, only: [:edit, :update, :delete]
 
   def new
     @event = Event.new
@@ -15,12 +9,13 @@ class Admin::EventsController < AdminsController
     @event = Event.new(event_params)
     handle_exif(@event)
     if @event.save
+      flash[:success] = "Event created successfully."
       create_vips(@event)
       redirect_to edit_admin_event_path(@event)
       # Thread.new { GC.start }
     else
+      flash[:error] = "Error creating event: #{@event.errors.full_messages.join('; ')}."
       render :new
-      flash[:error] = "Something went wrong."
     end
   end
 
@@ -31,12 +26,13 @@ class Admin::EventsController < AdminsController
     @event.assign_attributes(event_params)
     handle_exif(@event)
     if @event.save
+      flash[:success] = "Event updated successfully."
       create_vips(@event)
       redirect_to edit_admin_event_path(@event)
       # Thread.new { GC.start }
     else
+      flash[:error] = "Error updating event: #{@event.errors.full_messages.join('; ')}."
       render :edit
-      flash[:error] = "Something went wrong"
     end
   end
 

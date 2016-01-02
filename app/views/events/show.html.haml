@@ -29,7 +29,7 @@
       %span.date
         = date_of_event(@event)
     %ul.event-gallery-list
-      - @event.photos.each do |photo|
+      - @event.photos.sort.each do |photo|
         %li
           = link_to photo, remote: true, class: "popup-link" do
             = image_tag attachment_url(photo, :file, :limit, 270, 270) # The only time photo.file should be shown without thumbnailing or watermarking is on the purchase page

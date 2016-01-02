@@ -31,8 +31,7 @@
     * *TODO* Adjust display of picture detail to match the design from "04 Open Images" -- shouldn't be a popup. Note: no need for S/M/L/XL sizes, just put the image size information underneath the explanatory text (Copyright, Date, Image Size)
     * There should be no digital/physical or nationality options from the detail page -- make those properties blank across the GUI as well (i.e. during checkout)
     * There should be a commercial vs personal license option.
-  * *TODO* Shopping Cart
-    * *QUESTION* Is any sort of add-to-cart indication necessary? Add To Cart doesn't really show what's been done.
+  * Shopping Cart
   * Checkout
     * Global pricing
     * No shipping prices necessary
@@ -67,7 +66,7 @@
     * Image ID (plain database ID, starting at 1)
   * *TODO* Finally, "Other Keywords" should be available at the event and image level.
   * *TODO* Search should make use of all event and image tags.
-  * *TODO* Admin should be able to edit the commercial/personal default prices for images in one place. Admin can override the default commercial/personal pricing on a per-image basis as well.
+  * Admin can edit the commercial/personal default prices for images in one place, and also override the default commercial/personal pricing on a per-image basis.
 * Unregistered User:
   * Ability to view all public albums
   * *TODO* Ability to freely search for public images
@@ -89,7 +88,6 @@
 
 = TODO List (should reference scoped items only)
 
-1. Custom pricing should be commercial/personal as well, not just one custom price
 1. Ability to mark albums as private
 1. General "keywords" for image search
 1. Search should work

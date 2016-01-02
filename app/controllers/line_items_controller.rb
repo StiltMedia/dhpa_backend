@@ -11,7 +11,7 @@ class LineItemsController < ApplicationController
   def create
     @line_item = LineItem.new(line_item_params.merge(cart_id: @cart.id))
     if @line_item.save
-      flash[:notice] = "Added to cart. Price: #{number_to_currency calculate_price(@line_item, true)}"
+      flash[:success] = "Added to cart. Price: #{number_to_currency calculate_price(@line_item, true)}"
       redirect_to :back
     else
       flash[:error] = "Error: Could not add to cart."

@@ -133,7 +133,7 @@ header a.logo {
 #menu li #cartcount {
   position: absolute;
   bottom: -8px;
-  right: -10px;
+  right: -4px;
   background: #1EAEDB;
   border-radius: 1em;
   padding: 0 0.35em;
@@ -1203,11 +1203,31 @@ button.button:hover {
   width: 80%;
 }
 
+.field_with_errors {
+  color: #B63055;
+}
+
+.field_with_errors input {
+  color: #000;
+  border-color: #B63055;
+}
+
 .error, .delete {
   color: #B63055;
   font-weight: bold;
 }
 
+.flash-box.error {
+  background: #B63055;
+}
+
+.flash-box.warning {
+  background: #DB7D1E;
+}
+
+.flash-box.success {
+  background: #10C972;
+}
 
 .content-box form {
   display: block;

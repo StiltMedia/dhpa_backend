@@ -4,8 +4,8 @@ class AdminsController < ApplicationController
   def check_if_admin
     if current_user.present? && current_user.is_admin?
     else
+      flash[:error] = "You do not have access to this area."
       redirect_to new_user_session_path
-      flash[:notice] = "You do not have access to this area."
     end
   end
 

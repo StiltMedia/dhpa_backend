@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources 'contact', only: [:new, :create]
 
   namespace :admin do
-    resources :events do
+    resources :events, only: [:new, :create, :edit, :update] do
       resources :photos
     end
     resources :settings

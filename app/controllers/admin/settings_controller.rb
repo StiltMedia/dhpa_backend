@@ -12,10 +12,11 @@ class Admin::SettingsController < AdminsController
 
   def create
     if @setting.save
-      redirect_to admin_settings_path()
+      flash[:success] = "Settings created successfully."
+      redirect_to admin_settings_path
     else
-      render :new
-      flash[:error] = "Something went wrong."
+      flash[:error] = "Error creating settings: #{@setting.errors.full_messages.join('; ')}."
+      render :index
     end
   end
 
@@ -24,10 +25,11 @@ class Admin::SettingsController < AdminsController
 
   def update
     if @setting.update(setting_params)
-      redirect_to admin_settings_path()
+      flash[:success] = "Settings updated successfully."
+      redirect_to admin_settings_path
     else
-      render :edit
-      flash[:error] = "Something went wrong"
+      flash[:error] = "Error updating settings: #{@setting.errors.full_messages.join('; ')}."
+      render :index
     end
   end
 

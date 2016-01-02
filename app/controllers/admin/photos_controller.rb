@@ -7,21 +7,23 @@ class Admin::PhotosController < AdminsController
   def update
     @photo = Photo.friendly.find(params[:id])
     if @photo.update(photo_params)
+      flash[:success] = "Photo Updated"
       create_vips(@photo)
       redirect_to edit_admin_event_path(@event)
-      flash[:notice] = "Photo Updated"
     else
-
+      flash[:error] = "Something went wrong"
+      render :edit
     end
   end
 
   def destroy
     @photo = Photo.friendly.find(params[:id])
     if @photo.delete
+      flash[:success] = "Photo Deleted"
       redirect_to edit_admin_event_path(@event)
     else
-      render :edit
       flash[:error] = "Something went wrong"
+      render :edit
     end
   end
 
