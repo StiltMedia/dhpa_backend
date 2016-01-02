@@ -67,7 +67,7 @@
     * Image ID (plain database ID, starting at 1)
   * *TODO* Finally, "Other Keywords" should be available at the event and image level.
   * *TODO* Search should make use of all event and image tags.
-  * Admin should be able to edit the price for images in one place; all images will be the same price.
+  * *TODO* Admin should be able to edit the commercial/personal default prices for images in one place. Admin can override the default commercial/personal pricing on a per-image basis as well.
 * Unregistered User:
   * Ability to view all public albums
   * *TODO* Ability to freely search for public images
@@ -89,10 +89,20 @@
 
 = TODO List (should reference scoped items only)
 
-1. Cart issues
-  * Add to Cart button from event page doesn't work (only Purchase after viewing)
-1. Contact form should work
-  * https://rubyonrailshelp.wordpress.com/2014/01/08/rails-4-simple-form-and-mail-form-to-make-contact-form/
+1. Custom pricing should be commercial/personal as well, not just one custom price
+1. Ability to mark albums as private
+1. General "keywords" for image search
 1. Search should work
+1. Disable right-click and drag-drop
+1. Admin should be able to mark albums as private (by assignment to other users, or by a password)
+1. Verify that registered users can see their purchases
+1. Registered user wishlists
+1. Make the purchase buttons from the event page match the design
+1. Popup disclaimer before checkout
+1. Contact form should work
+  1. https://rubyonrailshelp.wordpress.com/2014/01/08/rails-4-simple-form-and-mail-form-to-make-contact-form/
 1. Picture detail should match design
 1. Most pages are basically blank, most links don't work
+1. Homepage needs a "View More" button/page underneath Latest Events
+1. Should have "super-featured" checkbox which shows images in the main page slideshow
+1. Need social URLs
