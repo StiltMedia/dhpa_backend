@@ -34,7 +34,7 @@ class LineItemsController < ApplicationController
   private
 
     def line_item_params
-      params.require(:line_item).permit(:photo_id, delivery_option_attributes: [:option_type, :license, :nationality, :quantity, :border, :size])
+      params.require(:line_item).permit(:photo_id, delivery_option_attributes: [:option_type, :license, :nationality, :quantity, :border])
     end
 
     def set_line_item

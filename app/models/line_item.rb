@@ -14,27 +14,12 @@ class LineItem < ActiveRecord::Base
   end
 
   def custom_price_in_dollars
-    photo.digital_price_in_dollars # : calculate_physical_price
+    photo.digital_price_in_dollars
   end
 
   def custom_price
-    photo.digital_price # : calculate_physical_price
+    photo.digital_price
   end
-
-  private
-
-    def calculate_physical_price
-      case delivery_option.size
-      when "4x6"
-        return photo.physical_price_4x6_in_dollars * delivery_option.quantity if photo.physical_price_4x6_in_dollars
-      when "5x7"
-        return photo.physical_price_5x7_in_dollars * delivery_option.quantity if photo.physical_price_5x7_in_dollars
-      when "8x10"
-        return photo.physical_price_8x10_in_dollars * delivery_option.quantity if photo.physical_price_8x10_in_dollars
-      when "10x14"
-        return photo.physical_price_10x14_in_dollars * delivery_option.quantity if photo.physical_price_10x14_in_dollars
-      end
-    end
 
 end
 
