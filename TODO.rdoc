@@ -94,13 +94,13 @@
 1. General "keywords" for image search
 1. Search should work
 1. Disable right-click and drag-drop
-1. Admin should be able to mark albums as private (by assignment to other users, or by a password)
+1. Admin should be able to mark albums as private (via a password)
 1. Verify that registered users can see their purchases
 1. Registered user wishlists
 1. Make the purchase buttons from the event page match the design
 1. Popup disclaimer before checkout
 1. Contact form should work
-  1. https://rubyonrailshelp.wordpress.com/2014/01/08/rails-4-simple-form-and-mail-form-to-make-contact-form/
+   * https://rubyonrailshelp.wordpress.com/2014/01/08/rails-4-simple-form-and-mail-form-to-make-contact-form/
 1. Picture detail should match design
 1. Most pages are basically blank, most links don't work
 1. Homepage needs a "View More" button/page underneath Latest Events
