@@ -1,3 +1,3 @@
 class DeliveryOption < ActiveRecord::Base
-  has_one :line_item
+  belongs_to :line_item
 end

@@ -8,8 +8,8 @@ end
 
 Setting.create commercial_price: 5000, personal_price: 2000, personal_image_size: 500 # $50, $20, and 500px
 
-User.create email: "admin@example.com", password: "password", is_admin: true
-User.create email: "user1@example.com", password: "password"
+admin1 = User.create email: "admin@example.com", password: "password", is_admin: true
+user1 = User.create email: "user1@example.com", password: "password"
 
 vip_a = Vip.create name: 'John Smith'
 vip_b = Vip.create name: 'Jane Doe'
@@ -31,7 +31,7 @@ assets_path = "app/assets/images/samples/"
 
 event1 = Event.create title: "Lowline 2015", location: "Angel Orensanz Foundation, NYC", photographer: "Benjamin Lozovsky", date: "2015-10-21", sub_title: "Anti-Gala", slug: "lowline-2015", image_url: File.new(assets_path+'event1.jpg'), is_featured: true, tag_list: "celebrity, gala, Angel Orensanz"
 
-Photo.create event: event1, file: File.new(assets_path+'event1.jpg'), copyright: copy, size: image_size(assets_path+'event1.jpg'), vips: [vip_a, vip_b], commercial_price: 9999, personal_price: 8888, tag_list: "Lorem, ipsum, dolor, sit, amet"
+photo1 = Photo.create event: event1, file: File.new(assets_path+'event1.jpg'), copyright: copy, size: image_size(assets_path+'event1.jpg'), vips: [vip_a, vip_b], commercial_price: 9999, personal_price: 8888, tag_list: "Lorem, ipsum, dolor, sit, amet"
 Photo.create event: event1, file: File.new(assets_path+'event2.jpg'), copyright: copy, size: image_size(assets_path+'event2.jpg'), vips: [vip_c, vip_d], tag_list: "laboris, nisi, ut aliquip"
 Photo.create event: event1, file: File.new(assets_path+'event3.jpg'), copyright: copy, size: image_size(assets_path+'event3.jpg'), vips: [vip_e, vip_f], tag_list: "consectetur, adipiscing, elit"
 Photo.create event: event1, file: File.new(assets_path+'event4.jpg'), copyright: copy, size: image_size(assets_path+'event4.jpg'), vips: [vip_g, vip_h], tag_list: "sed, do, eiusmod, tempor, incididunt"
@@ -58,3 +58,11 @@ Photo.create event: event3, file: File.new(assets_path+'featured3.jpg'), copyrig
 Photo.create event: event3, file: File.new(assets_path+'lightbox1.jpg'), copyright: copy, size: image_size(assets_path+'event11.jpg'), vips: [vip_a, vip_n], tag_list: "Lorem, ipsum, dolor, sit, amet"
 Photo.create event: event3, file: File.new(assets_path+'lightbox2.jpg'), copyright: copy, size: image_size(assets_path+'event12.jpg'), vips: [vip_b, vip_g], tag_list: "commodo, consequat"
 Photo.create event: event3, file: File.new(assets_path+'portrait.jpg'), copyright: copy, size: image_size(assets_path+'portrait.jpg'), vips: [vip_c, vip_h], tag_list: "Ut, enim, ad minim, veniam"
+
+payment_info = PaymentInfo.create user: user1, brand: "Visa", exp_month: 12, exp_year: 17, last4: "4242"
+order_shipping_info = OrderShippingInfo.create first_name: "John", last_name: "Smith", street: "123 Main St", city: "Phoenix", state: "AZ", zipcode: "85013", country: "USA"
+order_contact_info = OrderContactInfo.create email: "test@zyphon.com"
+order1 = Order.create user: user1, payment_info: payment_info, order_shipping_info: order_shipping_info, order_contact_info: order_contact_info
+
+lineitem1 = LineItem.create photo: photo1, order: order1
+DeliveryOption.create line_item: lineitem1, option_type: "digital", license: "Personal Use"

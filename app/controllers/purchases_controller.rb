@@ -2,7 +2,11 @@ class PurchasesController < ApplicationController
   before_action :set_order, only: [:show]
 
   def index
-    @orders = current_user.orders
+    if current_user.present?
+      @orders = current_user.orders
+    else
+      raise Errors::Forbidden
+    end
   end
 
   def show
