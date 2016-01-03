@@ -41,6 +41,9 @@
         - @latest_events.each do |event|
           %li
             = link_to event do
+              - if event.is_private?
+                .image-overlay-wrapper
+                  .image-overlay= "PRIVATE"
               = image_tag attachment_url(event, :image_url, :fill, 275, 175)
               %span.caption= event.title
 
@@ -51,6 +54,9 @@
     %ul.featured-list
       - @featured_events.each do |event|
         %li
+          - if event.is_private?
+            .image-overlay-wrapper
+              .image-overlay= "PRIVATE"
           = link_to event do
             %span.caption= event.title
           = image_tag attachment_url(event, :image_url, :fill, 275, 175)

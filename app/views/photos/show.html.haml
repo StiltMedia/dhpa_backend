@@ -1,5 +1,5 @@
 %section
-  %a.btn-close ×
+  %br
   .container
     .row
       .seven.columns
@@ -14,7 +14,8 @@
           = vip_list(@photo)
         %p
           %b EVENT:
-          = @photo.event.title
+          = link_to "#{@photo.event.title}", event_path(@photo.event)
+          = "(PRIVATE)" if @photo.event.is_private?
         %p
           %b LOCATION:
           = @photo.event.location
@@ -27,5 +28,8 @@
         %p
           %b DATE:
           = @photo.event.date
+        %p
+          %b SIZE:
+          = @photo.size
         = render "line_items/new"
 

@@ -4,5 +4,5 @@
 
   - @events.each do |event|
     %li
-      = link_to edit_admin_event_path(event) do
+      = link_to admin_event_path(event) do
         = event.date.to_s+" - "+event.title+" - "+event.location

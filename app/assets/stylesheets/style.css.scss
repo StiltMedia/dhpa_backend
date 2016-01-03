@@ -30,6 +30,11 @@ body{
 .center{
   text-align: center;
 }
+
+.fade-in {
+  display: none;
+}
+
 #header{
   border-bottom: 2px solid #e1e1e1;
 }
@@ -318,7 +323,7 @@ body .bx-wrapper {
   height: auto;
   position: relative;
 }
-.event-list li a span {
+.event-list li a .caption {
   background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0;
   border: 0 none;
   bottom: 0;
@@ -334,8 +339,34 @@ body .bx-wrapper {
   width: 94%;
   z-index: 25;
 }
-.event-list li a:hover span{
+.event-list li a:hover .caption{
   opacity: 1
+}
+.image-overlay-wrapper {
+  width: 85px;
+  height: 88px;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.image-overlay {
+  text-shadow: rgba(255,255,255,0.5) 0px 1px 0px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform:    rotate(45deg);
+  -ms-transform:     rotate(45deg);
+  -o-transform:      rotate(45deg);
+  transform:         rotate(45deg);
+  position: relative;
+  padding: 7px 0;
+  right: 5px;
+  top: 10px;
+  width: 120px;
+  background: rgba(182, 48, 85, 0.5) none repeat scroll 0 0;
+  color: rgb(255, 255, 255);
+  font-size: 1.188rem;
+  font-weight: 600;
+  text-align: center;
 }
 .event-list li a img {
     height: 100%;
@@ -431,8 +462,7 @@ button.button:hover {
 
 .featured-list li img {
     height: auto;
-    max-width: 100%;
-    width: auto;
+    width: 100%;
 }
 
 .instagramfeed {
@@ -1209,7 +1239,7 @@ button.button:hover {
 
 .field_with_errors input {
   color: #000;
-  border-color: #B63055;
+  border: 1px solid #B63055;
 }
 
 .error, .delete {

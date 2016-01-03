@@ -14,7 +14,7 @@
           = vip_list(@photo)
         %p
           %b EVENT:
-          = @photo.event.title
+          = link_to "#{@photo.event.title}", event_path(@photo.event)
         %p
           %b LOCATION:
           = @photo.event.location

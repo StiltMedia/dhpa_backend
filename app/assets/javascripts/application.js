@@ -18,3 +18,7 @@
 //= require slick
 //= require refile
 //= require_tree .
+
+$(document).on("page:update", function() {
+  $( ".fade-in" ).fadeIn( "slow" );
+});

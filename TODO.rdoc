@@ -88,7 +88,6 @@
 
 = TODO List (should reference scoped items only)
 
-1. Ability to mark albums as private
 1. General "keywords" for image search
 1. Search should work
 1. Disable right-click and drag-drop

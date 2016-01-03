@@ -6,7 +6,11 @@ class EventsController < ApplicationController
   end
 
   def show
-    @photos = @event.photos.all
+    if @event.is_private? && session[:session_password] != @event.password
+      render :password_prompt
+    else
+      @photos = @event.photos.order(id: :asc)
+    end
   end
 
   private

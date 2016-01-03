@@ -21,7 +21,7 @@
 %section.gallery-box
   .container
     .event-header
-      %span.image-number #{@event.photos.count} Images
+      %span.image-number #{@photos.count} Images
       %h3 #{@event.title}
       %span.subtitle #{@event.sub_title}
       %span.photographer Photographer: #{@event.photographer}
@@ -29,23 +29,7 @@
       %span.date
         = date_of_event(@event)
     %ul.event-gallery-list
-      - @event.photos.sort.each do |photo|
-        %li
-          = link_to photo, remote: true, class: "popup-link" do
-            = image_tag attachment_url(photo, :file, :limit, 270, 270) # The only time photo.file should be shown without thumbnailing or watermarking is on the purchase page
-          %span.filename #{photo.id}
-          / %ul
-          /   %li
-          /     %a.cart
-          /   %li
-          /     %a.lamp
-          /   %li
-          /     %a.download
-          %h5
-            = link_to "#{photo.event.title}", event_path(@event)
-          %span.subtitle #{@event.sub_title}
-          %span.tags
-            = vip_list(photo)
+      = render @photos
 :javascript
   $(document).ready(function(){
       $('#tab-container').easytabs();

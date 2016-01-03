@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources 'contact', only: [:new, :create]
 
   namespace :admin do
-    resources :events, only: [:new, :create, :edit, :update] do
+    resources :events, only: [:new, :create, :show, :update] do
       resources :photos
     end
     resources :settings
@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   get 'confirm', to: 'orders#new'
   post 'confirm', to: 'orders#create'
   get 'cart', to: 'carts#show'
+  post 'create_session_password', to: 'session#create_session_password'
   get 'create_guest_user', to: 'orders#create_guest_user'
   get 'purchased/:order_id', to: 'purchases#show', as: "purchased"
 end

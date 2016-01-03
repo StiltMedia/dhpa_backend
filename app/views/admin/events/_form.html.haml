@@ -21,9 +21,11 @@
         = f.text_field :sub_title, class: "w-100"
         = f.label :photos_files
         = f.attachment_field :photos_files, multiple: true
-        = label_tag :is_featured do
+        = f.label :is_featured do
           = f.check_box :is_featured, {}, "true", "false"
           Is this a featured event?
+        = f.label :password, "Password (makes event private)"
+        = f.text_field :password
       .six.columns
         = f.label :location
         = f.text_field :location, class: "w-100"
@@ -41,7 +43,7 @@
       .twelve.columns
         = f.submit 'submit', :class => "button w-100"
 
-      - @event.photos.each_slice(4) do |photos|
+      - @event.photos.order(id: :asc).each_slice(4) do |photos|
         .row
           - photos.each do |photo|
             .three.columns.img-size-edit

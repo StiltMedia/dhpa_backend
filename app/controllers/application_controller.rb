@@ -2,11 +2,17 @@ class ApplicationController < ActionController::Base
   include CurrentCart
   before_action :set_cart
 
+  after_filter :store_location
+
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
   helper_method :current_or_guest_user
+
+  rescue_from Errors::Forbidden do |exception|
+    render :file => "#{Rails.root}/public/403.html", :status => 404, :layout => false
+  end
 
   # if user is logged in, return current_user, else return guest_user
   def current_or_guest_user
@@ -27,17 +33,11 @@ class ApplicationController < ActionController::Base
   # creating one as needed
   def guest_user(with_retry = false)
     # Cache the value the first time it's gotten.
-    @cached_guest_user ||= User.find(session[:guest_user_id] ) #||= create_guest_user.id
+    @cached_guest_user ||= User.find(session[:guest_user_id] )
 
   rescue ActiveRecord::RecordNotFound # if session[:guest_user_id] invalid
      session[:guest_user_id] = nil
      guest_user if with_retry
-  end
-
-  after_filter :store_location
-
-  rescue_from Errors::Forbidden do |exception|
-    render :file => "#{Rails.root}/public/403.html", :status => 404, :layout => false
   end
 
   def store_location
@@ -63,20 +63,7 @@ class ApplicationController < ActionController::Base
     # called (once) when the user logs in, insert any code your application needs
     # to hand off from guest_user to current_user.
     def logging_in
-      # For example:
-      # guest_comments = guest_user.comments.all
-      # guest_comments.each do |comment|
-        # comment.user_id = current_user.id
-        # comment.save!
-      # end
     end
-
-    # def create_guest_user
-    #   u = User.create(:last_name => "guest", :email => "guest_#{Time.now.to_i}#{rand(100)}@example.com")
-    #   u.save!(:validate => false)
-    #   session[:guest_user_id] = u.id
-    #   u
-    # end
 
     def create_vips(event_or_photo)
       # Add VIPs manually specified in params (not from EXIF)
@@ -107,7 +94,6 @@ class ApplicationController < ActionController::Base
     end
 
     def handle_exif(event_or_photo)
-
       if event_or_photo.class.to_s == "Event"
         # Parse EXIF for all photos
         event_or_photo.photos.each do |photo|
@@ -119,7 +105,13 @@ class ApplicationController < ActionController::Base
     end
 
     def parse_exif(photo)
-      if photo.present? && photo.file.present? && photo.file.download.present? && photo.file.download.path.present?
+      if (
+        photo.present? &&
+        (photo.changed? || photo.new_record?) &&
+        photo.file.present? &&
+        photo.file.download.present? &&
+        photo.file.download.path.present?
+      )
         magick = MiniMagick::Image.open photo.file.download.path
 
         if magick.present?
