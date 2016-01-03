@@ -1,8 +1,13 @@
 = render "layouts/admin/nav"
 .container
   %h5 Events
-
   - @events.each do |event|
     %li
       = link_to admin_event_path(event) do
         = event.date.to_s+" - "+event.title+" - "+event.location
+  %h5 Orders
+  - @orders.each do |order|
+    %li
+      = link_to purchase_path(order) do
+        = "#{order.created_at.strftime("%a, %b %d %Y ")} - #{order.user.email} - #{number_to_currency calculate_subtotal(order, dollars: true)}"
+  %br

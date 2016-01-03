@@ -7,4 +7,8 @@ class User < ActiveRecord::Base
   has_many :payment_infos, dependent: :destroy
   has_many :addresses
   has_many :orders
+
+  def is_admin?
+    self.is_admin == true
+  end
 end

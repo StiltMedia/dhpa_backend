@@ -12,7 +12,8 @@ class PurchasesController < ApplicationController
 
     def set_order
       @order = Order.find(params[:id])
-      if current_user != @order.user && guest_user != @order.user
+      # order user not current or guest user; not admin
+      if current_user != @order.user && guest_user != @order.user && (current_user.nil? || !current_user.is_admin?)
         raise Errors::Forbidden
       end
     end
