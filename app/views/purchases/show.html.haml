@@ -8,12 +8,10 @@
             = image_tag attachment_url(item.photo, :file, format: "jpg") # Commercial Use = full rez
           - else
             = image_tag attachment_url(item.photo, :file, :limit, personal_image_size, personal_image_size, format: "jpg") # Private Use = smaller rez
-          %span.filename
-            ="Photo # #{item.photo.id}"
         .three.columns
           %p
-            %strong People:
-            = vip_list(item.photo)
+            %strong Image ID:
+            = item.photo.id
           %p
             %strong Event:
             = item.photo.event.title
@@ -23,10 +21,12 @@
           %p
             %strong LICENSE TYPE:
             = item.delivery_option.license
-          / %h5 How can I use it?
-          / %p
-          /   Available for all permitted uses under our
-          /   %a{:href => "#"} License Terms
+          %p
+            %b SIZE:
+            = display_size(item)
+          %p
+            %strong People:
+            = vip_list(item.photo)
         .two.columns
           - if item.is_digital?
             - if item.delivery_option.license == "Commercial Use"

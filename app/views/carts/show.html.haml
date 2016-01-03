@@ -16,22 +16,12 @@
             %h5 Date:
             %p= item.photo.event.date
           .three.columns
-            - if item.is_digital?
-              %p
-                %strong LICENSE TYPE:
-                = item.delivery_option.license
-              / %p
-              /   %strong
-              /     National or International:
-              /     = item.delivery_option.nationality
-
-            - else
-              %p
-                %strong Quantity
-                = item.delivery_option.quantity
-              %p
-                %strong Border
-                = item.delivery_option.border
+            %p
+              %strong LICENSE TYPE:
+              = item.delivery_option.license
+            %p
+              %b SIZE:
+              = display_size(item)
             %p
               %strong People:
               = vip_list(item.photo)

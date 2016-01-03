@@ -30,6 +30,15 @@ module ApplicationHelper
     Setting.first.personal_image_size
   end
 
+  def display_size(item)
+    personal_size = calculate_personal_size(item.photo.size)
+    if personal_size != item.is_personal?
+      personal_size
+    else
+      photo.size
+    end
+  end
+
   def display_size_list(photo)
     personal_size = calculate_personal_size(photo.size)
     if personal_size != photo.size

@@ -13,6 +13,14 @@ class LineItem < ActiveRecord::Base
     delivery_option.option_type == "physical"
   end
 
+  def is_commercial?
+    delivery_option.license == "Commercial Use"
+  end
+
+  def is_personal?
+    delivery_option.license == "Personal Use"
+  end
+
   def custom_price_in_dollars
     if delivery_option.license == "Commercial Use"
       photo.commercial_price_in_dollars
