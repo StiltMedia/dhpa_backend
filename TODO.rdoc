@@ -64,7 +64,7 @@
   * Photographer should be able to edit these "EXIF" tags manually as well, however editing will be on a per-image or per-event basis. No batch-image-editing of tags will be programmed into the website at this time.
   * Other tags should be auto-generated:
     * Image ID (plain database ID, starting at 1)
-  * *TODO* Finally, "Other Keywords" should be available at the event and image level.
+  * "Other Keywords" should be available at the event and image level.
   * *TODO* Search should make use of all event and image tags.
   * Admin can edit the commercial/personal default prices for images in one place, and also override the default commercial/personal pricing on a per-image basis.
 * Unregistered User:
@@ -88,7 +88,6 @@
 
 = TODO List (should reference scoped items only)
 
-1. General "keywords" for image search
 1. Search should work
 1. Disable right-click and drag-drop
 1. Admin should be able to mark albums as private (via a password)

@@ -1,35 +1,4 @@
 %section
   %br
-  .container
-    .row
-      .seven.columns
-        .image-content
-          = image_tag attachment_url(@photo, :file, :fill_watermark_dhpa, 564, 323, @photo.id) # The only time photo.file should be shown without thumbnailing or watermarking is on the purchase page
-      .five.columns
-        %p
-          %b IMAGE ID:
-          = @photo.id
-        %p
-          %b PEOPLE:
-          = vip_list(@photo)
-        %p
-          %b EVENT:
-          = link_to "#{@photo.event.title}", event_path(@photo.event)
-          = "(PRIVATE)" if @photo.event.is_private?
-        %p
-          %b LOCATION:
-          = @photo.event.location
-        %p
-          %b PHOTOGRAPHER:
-          = @photo.event.photographer
-        %p
-          %b COPYRIGHT:
-          = @photo.copyright
-        %p
-          %b DATE:
-          = @photo.event.date
-        %p
-          %b SIZE:
-          = @photo.size
-        = render "line_items/new"
+    = render 'show'
 

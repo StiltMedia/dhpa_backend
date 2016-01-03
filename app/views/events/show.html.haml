@@ -20,14 +20,19 @@
               %a{:href => "#"} Photographer
 %section.gallery-box
   .container
-    .event-header
-      %span.image-number #{@photos.count} Images
-      %h3 #{@event.title}
-      %span.subtitle #{@event.sub_title}
-      %span.photographer Photographer: #{@event.photographer}
-      %span.location #{@event.location}
-      %span.date
-        = date_of_event(@event)
+    .row.event-header
+      .six.columns
+        %h3 #{@event.title}
+        %span.subtitle #{@event.sub_title}
+        %span.photographer Photographer: #{@event.photographer}
+        %span.location #{@event.location}
+        %span.date
+          = date_of_event(@event)
+      .six.columns.align-right
+        %div.large #{@photos.count} Images
+        %div
+          %strong Keywords:
+          = @event.tag_list
     %ul.event-gallery-list
       = render @photos
 :javascript

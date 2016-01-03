@@ -13,6 +13,7 @@ gem 'instagram'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'friendly_id', '~> 5.1.0' # Note: You MUST use 5.0.0 or greater for Rails 4.0+
+gem 'acts-as-taggable-on', '~> 3.4'
 
 gem 'jquery-rails'
 gem 'turbolinks'

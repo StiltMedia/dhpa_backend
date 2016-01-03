@@ -8,6 +8,8 @@ class Photo < ActiveRecord::Base
   has_many :vip_at_photos
   has_many :vips, through: :vip_at_photos
 
+  acts_as_taggable_on :tags
+
   extend FriendlyId
     friendly_id :name, use: :slugged
 
