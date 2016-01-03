@@ -1,10 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show]
 
-  def index
-    @events = Event.all
-  end
-
   def show
     if @event.is_private? && session[:session_password] != @event.password
       render :password_prompt

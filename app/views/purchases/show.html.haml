@@ -5,9 +5,9 @@
       .row
         .three.columns
           - if item.delivery_option.license == "Commercial Use"
-            = image_tag attachment_url(item.photo, :file) # Commercial Use = full rez
+            = image_tag attachment_url(item.photo, :file, format: "jpg") # Commercial Use = full rez
           - else
-            = image_tag attachment_url(item.photo, :file, :limit, personal_image_size, personal_image_size) # Private Use = smaller rez
+            = image_tag attachment_url(item.photo, :file, :limit, personal_image_size, personal_image_size, format: "jpg") # Private Use = smaller rez
           %span.filename
             ="Photo # #{item.photo.id}"
         .three.columns
@@ -30,7 +30,16 @@
         .two.columns
           - if item.is_digital?
             - if item.delivery_option.license == "Commercial Use"
-              = link_to "DOWNLOAD", attachment_url(item.photo, :file), class: "button" # Commercial Use = full rez
+              = link_to "DOWNLOAD", attachment_url(item.photo, :file, format: "jpg"), class: "button", download: "dhpa_photo_#{item.photo.id}.jpg" # Commercial Use = full rez
             - else
-              = link_to "DOWNLOAD", attachment_url(item.photo, :file, :limit, personal_image_size, personal_image_size), class: "button" # Private Use = smaller rez
-
+              = link_to "DOWNLOAD", attachment_url(item.photo, :file, :limit, personal_image_size, personal_image_size, format: "jpg"), class: "button", download: "dhpa_photo_#{item.photo.id}.jpg" # Private Use = smaller rez
+  .container
+    .row
+      %label.two.columns.offset-by-eight ORDER DATE:
+      .two.columns= @order.created_at.strftime("%a, %b %d %Y ")
+    .row
+      %label.two.columns.offset-by-eight CREDIT CARD:
+      .two.columns= "#{@order.payment_info.brand} ending in #{@order.payment_info.last4}"
+    .row
+      %label.two.columns.offset-by-eight ORDER TOTAL:
+      .two.columns#price.price= number_to_currency calculate_subtotal(@order, dollars: true) #+ Order::SHIPPING_PRICE

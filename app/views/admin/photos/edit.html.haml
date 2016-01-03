@@ -2,13 +2,15 @@
 .container.img-responsive
   .row
     .four.columns
-      = image_tag attachment_url(@photo, :file, :fill_watermark_dhpa, 564, 323, @photo.id) # The only time photo.file should be shown without thumbnailing or watermarking is on the purchase page
+      = image_tag attachment_url(@photo, :file, :limit, 500, 500), oncontextmenu: "return false" # The only time photo.file should be shown without thumbnailing or watermarking is on the purchase page
     = form_for [:admin, @event, @photo] do |f|
       .six.columns
-        %label
-          Image ID
         %p
+          %b Image ID:
           = @photo.id
+        %p
+          %b ORIGINAL SIZE:
+          = @photo.size
         = f.label :copyright
         = f.text_field :copyright, class: "w-100"
         = f.label :commercial_price_in_dollars, "Custom Commercial Price"

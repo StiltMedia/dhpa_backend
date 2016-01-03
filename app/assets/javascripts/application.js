@@ -20,5 +20,9 @@
 //= require_tree .
 
 $(document).on("page:update", function() {
-  $( ".fade-in" ).fadeIn( "slow" );
+    $('img').on('dragstart', function(event) {
+        event.preventDefault();
+    });
+
+    $( ".fade-in" ).fadeIn( "slow" );
 });

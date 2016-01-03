@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     resources :settings
   end
 
-  resources :events, only: [:index, :show]
+  resources :events, only: [:show]
   resources :line_items, only: [:new, :create, :edit, :update, :destroy]
   resources :photos, only: [:show]
   resources :payment_infos, only: [:create]
@@ -30,5 +30,6 @@ Rails.application.routes.draw do
   get 'cart', to: 'carts#show'
   post 'create_session_password', to: 'session#create_session_password'
   get 'create_guest_user', to: 'orders#create_guest_user'
-  get 'purchased/:order_id', to: 'purchases#show', as: "purchased"
+
+  resources :purchases, only: [:index, :show]
 end

@@ -1,5 +1,5 @@
 - @cart.line_items.each do |item|
-  = image_tag attachment_url(item.photo, :file, :fill_watermark_dhpa, 564, 323, item.photo.id) # The only time photo.file should be shown without thumbnailing or watermarking is on the purchase page
+  = image_tag attachment_url(item.photo, :file, :limit_watermark_dhpa, 500, 500, item.photo.id), oncontextmenu: "return false" # The only time photo.file should be shown without thumbnailing or watermarking is on the purchase page
   .details
     %p
       %strong= "IMAGE: #{item.photo.id}"

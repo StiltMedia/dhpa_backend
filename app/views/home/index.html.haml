@@ -44,7 +44,7 @@
               - if event.is_private?
                 .image-overlay-wrapper
                   .image-overlay= "PRIVATE"
-              = image_tag attachment_url(event, :image_url, :fill, 275, 175)
+              = image_tag attachment_url(event, :image_url, :fill, 275, 175), oncontextmenu: "return false"
               %span.caption= event.title
 
 
@@ -59,7 +59,7 @@
               .image-overlay= "PRIVATE"
           = link_to event do
             %span.caption= event.title
-          = image_tag attachment_url(event, :image_url, :fill, 275, 175)
+          = image_tag attachment_url(event, :image_url, :fill, 275, 175), oncontextmenu: "return false"
 
 %section.instagramfeed
   .container

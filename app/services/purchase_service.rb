@@ -16,6 +16,8 @@ class PurchaseService
 
       @order.stripe_charge_id = charge.id
       @order.save
+      @status = :success
+      return self
 
     # rescue Stripe::CardError => e
     #   # Since it's a decline, Stripe::CardError will be caught
@@ -30,9 +32,8 @@ class PurchaseService
     #   # puts "Message is: #{err[:message]}"
 
     #   @status = :failed
-    #   @error_message = cerr[:message]
+    #   @error_message = err[:message]
     #   self
-
     # rescue Stripe::RateLimitError => e
     #   # Too many requests made to the API too quickly
     # rescue Stripe::InvalidRequestError => e
@@ -46,8 +47,20 @@ class PurchaseService
     #   # Display a very generic error to the user, and maybe send
     #   # yourself an email
     rescue => e
-
       # Something else happened, completely unrelated to Stripe
+      body = e.json_body
+      err  = body[:error]
+
+      # puts "Status is: #{e.http_status}"
+      # puts "Type is: #{err[:type]}"
+      # puts "Code is: #{err[:code]}"
+      # # param is '' in this case
+      # puts "Param is: #{err[:param]}"
+      # puts "Message is: #{err[:message]}"
+
+      @status = :failed
+      @error_message = err[:message]
+      return self
     end
 
   end

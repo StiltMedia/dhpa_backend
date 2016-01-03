@@ -13,44 +13,44 @@
               %p
                 = f.label :first_name, "* FIRST NAME"
                 = f.text_field :first_name
-                %p
-                  = f.label :last_name, "* Last NAME"
-                  = f.text_field :last_name
-                  %p
-                    = f.label :street, "* ADDRESS"
-                    = f.text_field :street
-                    %p.third
-                      = f.label :city, "* CITY"
-                      = f.text_field :city
-                      %p.third
-                        = f.label :state, "* STATE"
-                        = f.text_field :state
-                        %p.third.last
-                          = f.label :zipcode, "* ZIPCODE"
-                          = f.text_field :zipcode
-                          %p
-                            = f.label :country, "* COUNTRY"
-                            = f.text_field :country
-                            %p
-                              %span.payment-errors.error
-                              %label * CARD NUMBER
-                              %input{:type => "text", size: "20", "data-stripe": "number"}/
-                              %p.third
-                                %label * MONTH
-                                %input{:type => "text", size: "2", "data-stripe": "exp-month"}/
-                                %p.third
-                                  %label * YEAR
-                                  %input{:type => "text", size: "4", "data-stripe": "exp-year"}/
-                                  %p.third.last
-                                    %label * CVC
-                                    %input{:type => "text", size: "20", "data-stripe": "cvc"}/
-                                    %p
-                                    %h2.page-title CONTACT INFO
-                                    %p
-                                    %p
-                                      = f.label :email, "* EMAIL"
-                                      = f.email_field :email
-                                      = f.submit "NEXT STEP: CONFIRM PURCHASE"
+              %p
+                = f.label :last_name, "* Last NAME"
+                = f.text_field :last_name
+              %p
+                = f.label :street, "* ADDRESS"
+                = f.text_field :street
+              %p.third
+                = f.label :city, "* CITY"
+                = f.text_field :city
+              %p.third
+                = f.label :state, "* STATE"
+                = f.text_field :state
+              %p.third.last
+                = f.label :zipcode, "* ZIPCODE"
+                = f.text_field :zipcode
+              %p
+                = f.label :country, "* COUNTRY"
+                = f.text_field :country
+              %p
+                %span.payment-errors.error
+                %label * CARD NUMBER
+                %input{:type => "text", size: "20", "data-stripe": "number"}/
+              %p.third
+                %label * MONTH
+                %input{:type => "text", size: "2", "data-stripe": "exp-month", value: @payment_info.exp_month}/
+              %p.third
+                %label * YEAR
+                %input{:type => "text", size: "4", "data-stripe": "exp-year", value: @payment_info.exp_year}/
+              %p.third.last
+                %label * CVC
+                %input{:type => "text", size: "20", "data-stripe": "cvc"}/
+              %p
+              %h2.page-title CONTACT INFO
+              %p
+              %p
+                = f.label :email, "* EMAIL"
+                = f.email_field :email
+                = f.submit "NEXT STEP: CONFIRM PURCHASE"
           .six.columns.align-right
             = render 'orders/preview'
 

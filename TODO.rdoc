@@ -72,26 +72,23 @@
   * *TODO* Ability to freely search for public images
   * *QUESTION* Doesn't have the ability to view purchases afterwards?
 * Registered User:
-  * *TODO* Able to save purchased images in their user library
+  * Purchased images are viewable afterwards
   * *TODO* Ability to create a “wish list” of images
 * All users:
   * *TODO* Only able to view private albums via password
   * *TODO* Able to send an email via the Contact Us form
     * Email sent to an address the client specifies (hardcoded, not editable)
-  * *VERIFY* Able to purchase and download digital full-resolution copies of images
+  * Able to purchase and download digital full-resolution copies of images
   * Not able to view or download full-resolution images unless they have purchased them
     * Image URLs cannot be guessed: each file has a random ID.
-    * *TODO* Will NOT be able to “right click > save” any unpurchased photos
-    * *TODO* Will NOT be able to “drag and drop” any unpurchased photos
+    * Will NOT be able to “right click > save” any unpurchased photos
+    * Will NOT be able to “drag and drop” any unpurchased photos
     * No physical products will be sold, only digital downloads.
 * No CMS feature will be programmed at this time -- text and style changes will require a Rails programmer.
 
 = TODO List (should reference scoped items only)
 
 1. Search should work
-1. Disable right-click and drag-drop
-1. Admin should be able to mark albums as private (via a password)
-1. Verify that registered users can see their purchases
 1. Registered user wishlists
 1. Make the purchase buttons from the event page match the design
 1. Popup disclaimer before checkout

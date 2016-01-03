@@ -1,0 +1,10 @@
+/= render "layouts/admin/nav"
+%br
+.container
+  %h5 Purchases
+
+  - @orders.each do |order|
+    %li
+      = link_to purchase_path(order) do
+        = "#{order.created_at.strftime("%a, %b %d %Y ")} - #{pluralize(order.line_items.count,'photo')} - #{number_to_currency calculate_subtotal(order, dollars: true)}"
+  %br

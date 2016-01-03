@@ -5,13 +5,14 @@ class PaymentInfosController < ApplicationController
   end
 
   def create
-    @payment_info_form = PaymentInfoForm.new(current_or_guest_user, @cart)
+    @payment_info = PaymentInfoForm.new(current_or_guest_user, @cart)
 
-    if @payment_info_form.submit(payment_info_form_params, params[:stripe_token])
+    if @payment_info.submit(payment_info_form_params, params[:stripe_token])
+      flash.clear
       redirect_to confirm_path
     else
+      flash[:error] = "Error creating payment: #{@payment_info.errors.full_messages.join('; ')}."
       render :new
-      flash[:error] = "Error"
     end
   end
 

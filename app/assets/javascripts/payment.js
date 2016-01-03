@@ -3,11 +3,14 @@ $(document).on("page:change", function() {
     $('#payment-form').submit(function(e) {
         e.preventDefault();
         var $form = $(this);
+        $form.find('input[type=submit]')
+            .prop('disabled', true)
+            .data('oldvalue', $('#payment-form input[type=submit]').val());
+            .val("Please Wait...");
 
         var stripeKey = $form.data("stripe-key")
         Stripe.setPublishableKey(stripeKey);
 
-        $form.find('input[type=submit]').prop('disabled', true);
         Stripe.createToken($form, stripeResponseHandler);
     });
 
@@ -20,7 +23,9 @@ var stripeResponseHandler = function(status, response) {
   if (response.error) {
     // Show the errors on the form
     $form.find('.payment-errors').text(response.error.message);
-    $form.find('input[type=submit]').prop('disabled', false);
+    $form.find('input[type=submit]')
+        .prop('disabled', false);
+        .val($('#payment-form input[type=submit]').data('oldvalue'));
   } else {
     // token contains id, last4, and card type
     var token = response.id,

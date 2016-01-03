@@ -84,31 +84,32 @@ module Refile
     # The watermark will always be on the middle-right.
     #
     # @param [MiniMagick::image] img           the background image which will be modified
-    # @param [#to_s] width                     the width to fill out
-    # @param [#to_s] height                    the height to fill out
-    # @param [string] watermark_image_filename the image to use as watermark (file must be in the app/assets/images folder)
-    # @param [string] gravity                  which part of the image to focus on
+    # @param [#to_s] width                     the width to limit to
+    # @param [#to_s] height                    the height to limit to
+    # @param [string] text                     the text to use as the watermark
     # @return [void]
     # @see http://www.imagemagick.org/script/command-line-options.php#gravity
-    def fill_watermark_dhpa(img, width, height, text, gravity = "Center")
-      Refile::MiniMagick.new(:fill).fill(img, width, height, gravity)
+    def limit_watermark_dhpa(img, width, height, text)
+      Refile::MiniMagick.new(:limit).limit(img, width, height)
 
       text1 = "dhpa.com/photos/"
       text2 = text
       text3 = "DHPA"
 
-      boxheight = (height.to_i*0.8).round(2) - (height.to_i*0.4).round(2)
-      boxwidth = (width.to_i) - (width.to_i*0.6).round(2)
-      fontsize_sm = (boxwidth / 12) # 1pt = 1px at default pixel density (72 ppi)
-      fontsize_lg = (boxwidth / 6)
+      boxheight = (img.height.to_i*0.8).round(2) - (img.height.to_i*0.4).round(2)
+      boxwidth = (img.width.to_i) - (img.width.to_i*0.6).round(2)
+      fontsize_sm = (boxwidth / 11) # 1pt = 1px at default pixel density (72 ppi)
+      fontsize_lg = (boxwidth / 5)
 
       img.combine_options do |c|
-        c.draw "fill #808080 fill-opacity 0.4 roundrectangle #{(width.to_i*0.6).round(2)},#{(height.to_i*0.4).round(2)} #{(width.to_i+10)},#{(height.to_i*0.8).round(2)} 10,10"
+        # roundrectangle coordinate order is: x-start,y-start,x-end,y-end roundx,roundy
+        c.draw "fill #808080 fill-opacity 0.4 roundrectangle #{(img.width.to_i*0.6).round(2)},#{(img.height.to_i*0.4).round(2)} #{(img.width.to_i+10)},#{(img.height.to_i*0.8).round(2)} 10,10"
         c.pointsize fontsize_sm
-        c.draw "fill #ffffff fill-opacity 1 text #{(width.to_i*0.6+10).round(2)},#{(height.to_i*0.8-(boxheight/8)-fontsize_lg-fontsize_sm).round(2)} \"#{text1}\""
-        c.draw "fill #ffffff fill-opacity 1 text #{(width.to_i*0.6+10).round(2)},#{(height.to_i*0.8-(boxheight/8)-fontsize_lg).round(2)} \"#{text2}\""
+        # text coordinate order is: x-start,y-start
+        c.draw "fill #ffffff fill-opacity 1 text #{(img.width.to_i*0.6+10).round(2)},#{(img.height.to_i*0.8-(boxheight/8)-fontsize_lg-fontsize_sm).round(2)} \"#{text1}\""
+        c.draw "fill #ffffff fill-opacity 1 text #{(img.width.to_i*0.6+10).round(2)},#{(img.height.to_i*0.8-(boxheight/8)-fontsize_lg).round(2)} \"#{text2}\""
         c.pointsize fontsize_lg
-        c.draw "fill #000000 fill-opacity 1 text #{(width.to_i*0.6+10).round(2)},#{(height.to_i*0.8-(boxheight/8)).round(2)} \"#{text3}\""
+        c.draw "fill #000000 fill-opacity 1 text #{(img.width.to_i*0.6+10).round(2)},#{(img.height.to_i*0.8-10).round(2)} \"#{text3}\""
       end
     end
 
@@ -132,6 +133,6 @@ module Refile
 end
 
 # Register Watermark as a valid Refile processor
-[:fill_watermark_image, :fill_watermark_text,  :fill_watermark_dhpa].each do |name|
+[:fill_watermark_image, :fill_watermark_text,  :limit_watermark_dhpa].each do |name|
   Refile.processor(name, Refile::Watermark.new(name))
 end

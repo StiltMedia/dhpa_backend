@@ -13,12 +13,13 @@ class OrdersController < ApplicationController
     @order.add_line_items_from_cart(@cart)
     @order.add_additional_infos_from_cart(@cart)
 
-    success = PurchaseService.new(@order).purchase(calculate_subtotal(@cart, dollars: true), @cart.payment_info.stripe_customer_id)
-    session[:cart_id] = nil # Clear out cart for new order
+    purchase = PurchaseService.new(@order).purchase(calculate_subtotal(@cart, dollars: true), @cart.payment_info.stripe_customer_id)
 
-    if success
-      redirect_to purchased_path(order_id: @order.id)
+    if purchase.successful?
+      session[:cart_id] = nil # Clear out cart for new order
+      redirect_to purchase_path(@order)
     else
+      flash[:error] = "Error creating order: #{purchase.error_message}."
       render :new
     end
 

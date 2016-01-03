@@ -19,6 +19,7 @@
                   = @cart.line_items.count
             %li
               - if current_user.present?
+                = link_to "PURCHASES", purchases_path
                 = link_to "LOGOUT", destroy_user_session_path, method: "delete"
               - else
                 = link_to("", new_user_session_path, class: "user", title: "SIGN IN / SIGN UP")

@@ -30,6 +30,33 @@ module ApplicationHelper
     Setting.first.personal_image_size
   end
 
+  def display_size_list(photo)
+    personal_size = calculate_personal_size(photo.size)
+    if personal_size != photo.size
+      "#{photo.size} commercial, #{personal_size} personal"
+    else
+      "#{photo.size} commercial & personal"
+    end
+  end
+
+  def calculate_personal_size(size)
+    split = size.split("x")
+    if split.length == 2
+      parsed = split.map(&:to_f)
+      max_size = personal_image_size.to_f
+      if parsed.first > max_size || parsed.last > max_size
+        # Size is the smaller dimension scaled down by the ratio of the max size to the larger dimension, and the max size
+        if parsed.first > parsed.last
+          "#{max_size.round}x#{(max_size/parsed.first*parsed.last).round}"
+        else
+          "#{(max_size/parsed.last*parsed.first).round}x#{max_size.round}"
+        end
+      else
+        size # Nothing to do, image not larger
+      end
+    end
+  end
+
   def calculate_price(item, dollars=false)
     if dollars
       item.custom_price_in_dollars || default_personal_or_commercial_price(item, dollars)
@@ -38,13 +65,13 @@ module ApplicationHelper
     end
   end
 
-  def calculate_subtotal(cart, dollars=false)
+  def calculate_subtotal(cart_or_order, dollars=false)
     if dollars
-      cart.line_items.to_a.sum do |item|
+      cart_or_order.line_items.to_a.sum do |item|
         item.custom_price_in_dollars || default_personal_or_commercial_price(item, dollars)
       end
     else
-      cart.line_items.to_a.sum do |item|
+      cart_or_order.line_items.to_a.sum do |item|
         item.custom_price || default_personal_or_commercial_price(item, dollars)
       end
     end

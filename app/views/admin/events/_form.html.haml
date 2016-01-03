@@ -4,7 +4,7 @@
       - if @event.image_url_id.present?
         .three.columns
           = f.label :image_url, "Event Main Image"
-          = image_tag attachment_url(@event, :image_url)
+          = image_tag attachment_url(@event, :image_url, :limit, 500, 500), oncontextmenu: "return false"
         .four.columns
           = f.label :image_url, "Update Event Main Image"
           = f.attachment_field :image_url
@@ -51,7 +51,7 @@
             .three.columns.img-size-edit
               %strong Image ID:
               = photo.id
-              = image_tag attachment_url(photo, :file, :limit, 270, 270) # The only time photo.file should be shown without thumbnailing or watermarking is on the purchase page
+              = image_tag attachment_url(photo, :file, :limit, 270, 270), oncontextmenu: "return false" # The only time photo.file should be shown without thumbnailing or watermarking is on the purchase page
               %span.u-pull-left
                 = link_to edit_admin_event_photo_path(@event, photo) do
                   .span.fa.fa-edit

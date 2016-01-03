@@ -1,6 +1,11 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 
+def image_size(path)
+  magick = MiniMagick::Image.open path
+  "#{magick.width}x#{magick.height}"
+end
+
 Setting.create commercial_price: 5000, personal_price: 2000, personal_image_size: 500 # $50, $20, and 500px
 
 User.create email: "admin@example.com", password: "password", is_admin: true
@@ -21,23 +26,35 @@ vip_l = Vip.create name: 'Esther Delgado'
 vip_m = Vip.create name: 'Yury Rossi'
 vip_n = Vip.create name: 'Claudia Orrett'
 
-event1 = Event.create title: "Lowline 2015", location: "Angel Orensanz Foundation, NYC", photographer: "Benjamin Lozovsky", date: "2015-10-21", sub_title: "Anti-Gala", slug: "lowline-2015", image_url: File.new('app/assets/images/event1.jpg')
+copy = "David Heischrek / DHPA.com"
+assets_path = "app/assets/images/samples/"
 
-Photo.create event: event1, file: File.new('app/assets/images/event1.jpg'), copyright: "David Heischrek / DHPA.com", size: "300x200", vips: [vip_a, vip_b]
-Photo.create event: event1, file: File.new('app/assets/images/event2.jpg'), copyright: "David Heischrek / DHPA.com", size: "300x200", vips: [vip_c, vip_d]
-Photo.create event: event1, file: File.new('app/assets/images/event3.jpg'), copyright: "David Heischrek / DHPA.com", size: "300x200", vips: [vip_e, vip_f]
-Photo.create event: event1, file: File.new('app/assets/images/event4.jpg'), copyright: "David Heischrek / DHPA.com", size: "300x200", vips: [vip_g, vip_h]
-Photo.create event: event1, file: File.new('app/assets/images/event5.jpg'), copyright: "David Heischrek / DHPA.com", size: "300x200", vips: [vip_a, vip_e]
-Photo.create event: event1, file: File.new('app/assets/images/event6.jpg'), copyright: "David Heischrek / DHPA.com", size: "300x200", vips: [vip_b, vip_f]
-Photo.create event: event1, file: File.new('app/assets/images/event7.jpg'), copyright: "David Heischrek / DHPA.com", size: "300x200", vips: [vip_c, vip_g]
-Photo.create event: event1, file: File.new('app/assets/images/event8.jpg'), copyright: "David Heischrek / DHPA.com", size: "300x200", vips: [vip_d, vip_h]
+event1 = Event.create title: "Lowline 2015", location: "Angel Orensanz Foundation, NYC", photographer: "Benjamin Lozovsky", date: "2015-10-21", sub_title: "Anti-Gala", slug: "lowline-2015", image_url: File.new(assets_path+'event1.jpg'), is_featured: true, tag_list: "celebrity, gala, Angel Orensanz"
 
-event2 = Event.create title: "High Life 2016", location: "Sam's Hideaway, Los Angeles", photographer: "John Smith", date: "2015-11-13", sub_title: "The Redux", image_url: File.new('app/assets/images/event2.jpg')
+Photo.create event: event1, file: File.new(assets_path+'event1.jpg'), copyright: copy, size: image_size(assets_path+'event1.jpg'), vips: [vip_a, vip_b], commercial_price: 9999, personal_price: 8888, tag_list: "Lorem, ipsum, dolor, sit, amet"
+Photo.create event: event1, file: File.new(assets_path+'event2.jpg'), copyright: copy, size: image_size(assets_path+'event2.jpg'), vips: [vip_c, vip_d], tag_list: "laboris, nisi, ut aliquip"
+Photo.create event: event1, file: File.new(assets_path+'event3.jpg'), copyright: copy, size: image_size(assets_path+'event3.jpg'), vips: [vip_e, vip_f], tag_list: "consectetur, adipiscing, elit"
+Photo.create event: event1, file: File.new(assets_path+'event4.jpg'), copyright: copy, size: image_size(assets_path+'event4.jpg'), vips: [vip_g, vip_h], tag_list: "sed, do, eiusmod, tempor, incididunt"
+Photo.create event: event1, file: File.new(assets_path+'event5.jpg'), copyright: copy, size: image_size(assets_path+'event5.jpg'), vips: [vip_a, vip_e], tag_list: "ut, labore, et dolore, magna, aliqua"
+Photo.create event: event1, file: File.new(assets_path+'event6.jpg'), copyright: copy, size: image_size(assets_path+'event6.jpg'), vips: [vip_b, vip_f], tag_list: "Ut, enim, ad minim, veniam"
+Photo.create event: event1, file: File.new(assets_path+'event7.jpg'), copyright: copy, size: image_size(assets_path+'event7.jpg'), vips: [vip_c, vip_g], tag_list: "quis, nostrud, exercitation, ullamco"
+Photo.create event: event1, file: File.new(assets_path+'event8.jpg'), copyright: copy, size: image_size(assets_path+'event8.jpg'), vips: [vip_d, vip_h], tag_list: "Lorem, ipsum, dolor, sit, amet"
 
-Photo.create event: event2, file: File.new('doc/design/exif_examples/IMG_2480.jpg'), copyright: "David Heischrek / DHPA.com", size: "1200x800", vips: [vip_l,vip_m,vip_n] #has exif
-Photo.create event: event2, file: File.new('doc/design/exif_examples/IMG_2482.jpg'), copyright: "David Heischrek / DHPA.com", size: "1200x800", vips: [vip_i,vip_j,vip_k] #has exif
-Photo.create event: event2, file: File.new('app/assets/images/event10.jpg'), copyright: "David Heischrek / DHPA.com", size: "300x200", vips: [vip_a, vip_e]
-Photo.create event: event2, file: File.new('app/assets/images/event11.jpg'), copyright: "David Heischrek / DHPA.com", size: "300x200", vips: [vip_b, vip_f]
-Photo.create event: event2, file: File.new('app/assets/images/event12.jpg'), copyright: "David Heischrek / DHPA.com", size: "300x200", vips: [vip_c, vip_g]
-Photo.create event: event2, file: File.new('app/assets/images/event13.jpg'), copyright: "David Heischrek / DHPA.com", size: "300x200", vips: [vip_d, vip_h]
-Photo.create event: event2, file: File.new('app/assets/images/event14.jpg'), copyright: "David Heischrek / DHPA.com", size: "300x200", vips: [vip_g, vip_h]
+event2 = Event.create title: "High Life 2016", location: "Sam's Hideaway, Los Angeles", photographer: "John Smith", date: "2015-11-13", sub_title: "The Redux", image_url: File.new(assets_path+'event2.jpg'), is_featured: true, tag_list: "California, caution tape, celebrity"
+
+Photo.create event: event2, file: File.new('doc/design/exif_examples/IMG_2480.jpg'), copyright: copy, size: "1200x800", vips: [vip_l,vip_m,vip_n], commercial_price: 7777, personal_price: 6666, tag_list: "commodo, consequat"
+Photo.create event: event2, file: File.new('doc/design/exif_examples/IMG_2482.jpg'), copyright: copy, size: "1200x800", vips: [vip_i,vip_j,vip_k], tag_list: "sunt in culpa, qui officia, deserunt"
+Photo.create event: event2, file: File.new(assets_path+'event10.jpg'), copyright: copy, size: image_size(assets_path+'event10.jpg'), vips: [vip_a, vip_e], tag_list: "in voluptate, velit, esse cillum"
+Photo.create event: event2, file: File.new(assets_path+'event11.jpg'), copyright: copy, size: image_size(assets_path+'event11.jpg'), vips: [vip_b, vip_f], tag_list: "dolore eu, fugiat nulla, pariatur"
+Photo.create event: event2, file: File.new(assets_path+'event12.jpg'), copyright: copy, size: image_size(assets_path+'event12.jpg'), vips: [vip_c, vip_g], tag_list: "Excepteur, sint occaecat"
+Photo.create event: event2, file: File.new(assets_path+'event13.jpg'), copyright: copy, size: image_size(assets_path+'event13.jpg'), vips: [vip_d, vip_h], tag_list: "cupidatat non, proident"
+Photo.create event: event2, file: File.new(assets_path+'event14.jpg'), copyright: copy, size: image_size(assets_path+'event14.jpg'), vips: [vip_g, vip_h], tag_list: "Lorem, ipsum, dolor, sit, amet"
+
+event3 = Event.create title: "Christmas At The Apollo", location: "Apollo Theater, Birmingham", photographer: "David Heischrek", date: "2015-12-25", sub_title: "feat. Chris Rock", image_url: File.new(assets_path+'event5.jpg'), is_featured: true, password: "password", tag_list: "christmas, Chris Rock, comedian, Alabama"
+
+Photo.create event: event3, file: File.new(assets_path+'featured1.jpg'), copyright: copy, size: image_size(assets_path+'event5.jpg'), vips: [vip_c, vip_h], commercial_price: 5555, personal_price: 4444, tag_list: "sunt in culpa, qui officia, deserunt"
+Photo.create event: event3, file: File.new(assets_path+'featured2.jpg'), copyright: copy, size: image_size(assets_path+'event6.jpg'), vips: [vip_d, vip_l], tag_list: "mollit anim id, est laborum"
+Photo.create event: event3, file: File.new(assets_path+'featured3.jpg'), copyright: copy, size: image_size(assets_path+'event7.jpg'), vips: [vip_g, vip_m], tag_list: "Lorem, ipsum, dolor, sit, amet"
+Photo.create event: event3, file: File.new(assets_path+'lightbox1.jpg'), copyright: copy, size: image_size(assets_path+'event11.jpg'), vips: [vip_a, vip_n], tag_list: "Lorem, ipsum, dolor, sit, amet"
+Photo.create event: event3, file: File.new(assets_path+'lightbox2.jpg'), copyright: copy, size: image_size(assets_path+'event12.jpg'), vips: [vip_b, vip_g], tag_list: "commodo, consequat"
+Photo.create event: event3, file: File.new(assets_path+'portrait.jpg'), copyright: copy, size: image_size(assets_path+'portrait.jpg'), vips: [vip_c, vip_h], tag_list: "Ut, enim, ad minim, veniam"

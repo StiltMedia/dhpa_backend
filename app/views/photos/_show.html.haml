@@ -2,7 +2,7 @@
   .row
     .seven.columns
       .image-content
-        = image_tag attachment_url(@photo, :file, :fill_watermark_dhpa, 564, 323, @photo.id) # The only time photo.file should be shown without thumbnailing or watermarking is on the purchase page
+        = image_tag attachment_url(@photo, :file, :limit_watermark_dhpa, 500, 500, @photo.id), oncontextmenu: "return false" # The only time photo.file should be shown without thumbnailing or watermarking is on the purchase page
     .five.columns
       %p
         %b IMAGE ID:
@@ -25,7 +25,7 @@
         = @photo.event.date
       %p
         %b SIZE:
-        = @photo.size
+        = display_size_list(@photo)
       %p
         %b PEOPLE:
         = vip_list(@photo)
