@@ -31,5 +31,8 @@ Rails.application.routes.draw do
   post 'create_session_password', to: 'session#create_session_password'
   get 'create_guest_user', to: 'orders#create_guest_user'
 
+  match '/search', to: 'search#search', via: "get", as: "search"
+  match '/search/vip/:id', to: 'search#vip', via: "get", as: "search_vip"
+
   resources :purchases, only: [:index, :show]
 end

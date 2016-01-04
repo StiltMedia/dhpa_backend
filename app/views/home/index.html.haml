@@ -38,14 +38,7 @@
     .events-content
       %h5 LATEST EVENTS
       %ul.event-list.three-columns
-        - @latest_events.each do |event|
-          %li
-            = link_to event do
-              - if event.is_private?
-                .image-overlay-wrapper
-                  .image-overlay= "PRIVATE"
-              = image_tag attachment_url(event, :image_url, :fill, 275, 175), oncontextmenu: "return false"
-              %span.caption= event.title
+        = render @latest_events
 
 
 %section.bg-dark.homefeatured

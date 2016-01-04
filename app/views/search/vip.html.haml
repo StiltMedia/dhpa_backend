@@ -1,0 +1,17 @@
+%section.bg-grey
+  .container
+    .row
+      .four.columns
+        %strong
+          = link_to search_path(q: params[:prev_q]), class: "button" do
+            &lt; Back to Search
+.container
+  %h5
+    Photos Featuring
+    = @vip.name
+  %section.events
+    .container
+      .events-content
+        %h6 PHOTOS
+        %ul.event-list
+          = render partial: "photos/photo_search", collection: @vip.photos

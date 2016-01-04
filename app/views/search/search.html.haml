@@ -1,0 +1,26 @@
+= render "layouts/mid_searchbar"
+.container
+  %h5 SEARCH RESULTS
+- if @vips.length > 0
+  %section.events
+    .container
+      .events-content
+        %h6 PEOPLE
+        %ul
+          - @vips.each do |vip|
+            %li= link_to vip.name, search_vip_path(vip, prev_q: params[:q])
+- if @events.length > 0
+  %section.events
+    .container
+      .events-content
+        %h6 EVENTS
+        %ul.event-list
+          = render @events
+- if @photos.length > 0
+  %section.events
+    .container
+      .events-content
+        %h6 PHOTOS
+        %ul.event-list
+          - @photos.each do |photo|
+            = render partial: "photos/photo_search", object: photo
