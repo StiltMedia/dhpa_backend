@@ -322,6 +322,17 @@ body .bx-wrapper {
   height: auto;
   position: relative;
 }
+.event-list li.text-only {
+  font-size: 1em;
+  position: relative;
+  height: 95px;
+  width: 150px;
+  text-align: left;
+}
+.event-list li.text-only a {
+  bottom: 0;
+  position: absolute;
+}
 .event-list li a .caption {
   background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0;
   border: 0 none;

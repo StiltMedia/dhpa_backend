@@ -89,7 +89,6 @@
 = TODO List (should reference scoped items only)
 
 * Free (for rudimentary functionality only)
-  1. Search should work
   1. Registered user wishlists
   1. Make the purchase buttons from the event page match the design
   1. Create a Users view for the admin, and add contact info to orders

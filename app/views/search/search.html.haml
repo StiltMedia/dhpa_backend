@@ -1,14 +1,6 @@
 = render "layouts/mid_searchbar"
 .container
   %h5 SEARCH RESULTS
-- if @vips.length > 0
-  %section.events
-    .container
-      .events-content
-        %h6 PEOPLE
-        %ul
-          - @vips.each do |vip|
-            %li= link_to vip.name, search_vip_path(vip, prev_q: params[:q])
 - if @events.length > 0
   %section.events
     .container
@@ -24,3 +16,18 @@
         %ul.event-list
           - @photos.each do |photo|
             = render partial: "photos/photo_search", object: photo
+- if @vips.length > 0
+  %section.events
+    .container
+      .events-content
+        %h6 PEOPLE
+        - photo_limit = 3
+        - @vips.each do |vip|
+          %row
+            %strong= link_to vip.name.upcase, search_vip_path(vip, prev_q: params[:q])
+            %ul.event-list
+              - vip_photos = vip.photos.joins(:event).where("events.password IS NULL").order(created_at: :desc)
+              - vip_photos.take(photo_limit).each do |photo|
+                = render partial: "photos/photo_vip", object: photo
+              - if vip_photos.count > photo_limit
+                %li.text-only= link_to "#{vip_photos.count - photo_limit} MORE...", search_vip_path(vip, prev_q: params[:q])
