@@ -1,4 +1,6 @@
-$("#lightbox").html("<%= j render 'show_modal', lightbox: @lightbox, response: @response, message: @message %>");
+$("#lightbox-wrapper").html("<%= j render 'show_modal', lightbox: @lightbox, response: @response, message: @message %>");
 $('html, body').animate({
-    scrollTop: $("#lightbox").offset().top
+    scrollTop: $("#lightbox-wrapper").offset().top
 }, 1000);
+$("#lightbox").show();
+$(".toggle-lightbox").text("Hide Lightbox");

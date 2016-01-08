@@ -1,6 +1,7 @@
 = render "layouts/mid_searchbar"
-- if current_user.present?
-  = render "lightboxes/show_modal"
+- if current_user.present? && current_user.lightboxes.count > 0
+  #lightbox-wrapper
+    = render "lightboxes/show_modal"
 %section.darkbar
   .container
     .row

@@ -7,8 +7,9 @@
       .top-images
         %ul.event-list
           - if @lightbox.nil? then @lightbox = current_user.lightboxes.last end
-          - @lightbox.photos.each do |photo|
-            = render partial: "photos/photo_search", object: photo
+          - if @lightbox.present?
+            - @lightbox.photos.each do |photo|
+              = render partial: "photos/photo_search", object: photo
       / %ul.menu
       /   %li.nameof
       /     %a NAME
