@@ -95,6 +95,12 @@
   1. Create a Users view for the admin, and add contact info to orders
 
 * Hourly
+  1. admin - Ability to delete an event
+  1. admin - event date - would be better if it was a calendar (no biggie)
+  1. admin - instead of having an admin button please make an "events" button and an "orders" button (to separate the two)
+  1. admin - make sure footer is always at the bottom of the page when page is short - http://www.screencast.com/t/0k7lEG69KkX
+  1. footer - please link “STILT MEDIA” to www.stiltmedia.com (please use target="_blank")
+  1. events - Just remove this... make it a thin black line for now. No sense it having it right now - http://www.screencast.com/t/vGfyylmC4ae
   1. Popup disclaimer before checkout
   1. Contact form should work
      * https://rubyonrailshelp.wordpress.com/2014/01/08/rails-4-simple-form-and-mail-form-to-make-contact-form/
