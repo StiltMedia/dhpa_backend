@@ -8,8 +8,7 @@ See TODO.rdoc
 * Gems from gemfile (see bundler)
 * Perl (for mini_exiftool_vendored)
 
-* Ubuntu:
-  * libgmp3-dev
+* libgmp3-dev (.deb)
 
 == Environment Variables
 
@@ -31,8 +30,9 @@ Copy env.dist to .env and edit as desired, for development/testing.
 
 * Ensure there is S3 and Postgres backups/snapshots/recovery before running any of these commands on production.
 * Use postgres for development, testing, staging, and production. Create the database names according to database.yml
-  * Use the normal <tt>rake db:create; rake db:migrate</tt> for database initialization.
-  * See db/seeds.rb for default usernames and <tt>rake db:seed</tt> to insert these defaults into the db.
+  * To clear the database and run the create/migrate/seed commands, run <tt>rake db:setup</tt> or each of the below steps manually:
+    * Use the normal <tt>rake db:create; rake db:migrate</tt> for database initialization.
+    * See db/seeds.rb for default usernames and <tt>rake db:seed</tt> to insert these defaults into the db.
 * Use AWS S3 for image uploads
   * Create an IAM user and credentials, with normal "S3 Full Access" permissions.
   * In the us-west-1 region (Northern California), create test, dev, staging, and production buckets according to the AWS_REFILE_BUCKET environment variable. Beware using production buckets outside of the production webserver.

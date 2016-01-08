@@ -1,0 +1,9 @@
+%section.lightboxes-box
+  .container
+    %h2.page-title.center
+      MY LIGHTBOXES
+      = "(#{@lightboxes.count})"
+    %ul.lightboxes-list
+      = render @lightboxes
+      %li.add-lightbox
+        = link_to "ADD LIGHTBOX", new_lightbox_path

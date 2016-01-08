@@ -1,0 +1,4 @@
+%li
+  = link_to lightbox_path(lightbox), class: :imagebox do
+    = image_tag attachment_url(lightbox.photos.first, :file, :fill, 275, 175), oncontextmenu: "return false"
+  %h5= "Lightbox"

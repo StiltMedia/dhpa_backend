@@ -2,11 +2,11 @@
   = link_to photo, remote: true, class: "popup-link" do
     = image_tag attachment_url(photo, :file, :limit, 270, 270), oncontextmenu: "return false" # The only time photo.file should be shown without thumbnailing or watermarking is on the purchase page
   %span.filename #{photo.id}
-  / %ul
-  /   %li
-  /     %a.cart
-  /   %li
-  /     %a.lamp
+  %ul
+    %li
+      = link_to "", add_to_lightbox_path(id: nil, photo: photo), class: :lamp, method: :post, remote: true
+    / %li
+    /   %a.cart
   /   %li
   /     %a.download
   %h5

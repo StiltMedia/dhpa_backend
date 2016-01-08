@@ -5,6 +5,8 @@ class Photo < ActiveRecord::Base
   has_many :line_items
   belongs_to :event
 
+  has_many :lightbox_photos
+  has_many :lightboxes, through: :lightbox_photos
   has_many :vip_at_photos
   has_many :vips, through: :vip_at_photos
 

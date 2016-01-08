@@ -1,0 +1,10 @@
+%section.albumbar.carousel
+  .container
+    %h5 LIGHTBOX
+    .top-images
+      %ul.event-list
+        - @lightbox.photos.each do |photo|
+          = render partial: "photos/photo_search", object: photo
+    / %ul.menu
+    /   %li.nameof
+    /     %a NAME

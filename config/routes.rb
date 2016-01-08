@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   end
 
   resources :events, only: [:show]
+  resources :lightboxes
+  post '/lightboxes/(:id)/add', to: 'lightboxes#add', as: "add_to_lightbox"
   resources :line_items, only: [:new, :create, :edit, :update, :destroy]
   resources :photos, only: [:show]
   resources :payment_infos, only: [:create]

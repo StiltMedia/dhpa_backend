@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160104024518) do
+ActiveRecord::Schema.define(version: 20160108203652) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,6 +79,24 @@ ActiveRecord::Schema.define(version: 20160104024518) do
   add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
+
+  create_table "lightbox_photos", force: :cascade do |t|
+    t.integer  "lightbox_id"
+    t.integer  "photo_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "lightbox_photos", ["lightbox_id"], name: "index_lightbox_photos_on_lightbox_id", using: :btree
+  add_index "lightbox_photos", ["photo_id"], name: "index_lightbox_photos_on_photo_id", using: :btree
+
+  create_table "lightboxes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "lightboxes", ["user_id"], name: "index_lightboxes_on_user_id", using: :btree
 
   create_table "line_items", force: :cascade do |t|
     t.integer  "cart_id"
@@ -203,4 +221,7 @@ ActiveRecord::Schema.define(version: 20160104024518) do
     t.string "name"
   end
 
+  add_foreign_key "lightbox_photos", "lightboxes"
+  add_foreign_key "lightbox_photos", "photos"
+  add_foreign_key "lightboxes", "users"
 end

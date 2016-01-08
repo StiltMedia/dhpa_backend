@@ -1,0 +1,4 @@
+$("#lightbox").html("<%= j render 'show_modal', lightbox: @lightbox, response: @response, message: @message %>");
+$('html, body').animate({
+    scrollTop: $("#lightbox").offset().top
+}, 1000);

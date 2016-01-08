@@ -1,4 +1,6 @@
 = render "layouts/mid_searchbar"
+- if current_user.present?
+  = render "lightboxes/show_modal"
 %section.darkbar
   .container
     .row
