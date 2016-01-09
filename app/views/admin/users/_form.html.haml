@@ -1,0 +1,17 @@
+.container.img-responsive
+  = form_for [:admin, @user] do |f|
+    .row
+      .six.columns
+        = f.label :first_name
+        = f.text_field :first_name, class: "w-100"
+        = f.label :last_name
+        = f.text_field :last_name, class: "w-100"
+        = f.label :email
+        = f.email_field :email, class: "w-100"
+        = f.label :is_admin, "Is Admin?"
+        = f.check_box :is_admin
+        = f.label :password
+        = f.password_field :password, class: "w-100"
+    .row
+      .twelve.columns
+        = f.submit 'submit', :class => "button w-100"

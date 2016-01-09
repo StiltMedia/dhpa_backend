@@ -1,0 +1,11 @@
+= render "layouts/admin/nav"
+.container
+  %h5 Users
+  - @users.each do |user|
+    %li
+      = link_to edit_admin_user_path(user) do
+        = user.first_name
+        = user.last_name
+        \-
+        = user.email
+  %br

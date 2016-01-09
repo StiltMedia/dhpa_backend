@@ -88,9 +88,6 @@
 
 = TODO List (should reference scoped items only)
 
-* Free (for rudimentary functionality only)
-  1. Create a Users view for the admin
-
 * Hourly
   1. admin - Ability to delete an event
   1. admin - event date - would be better if it was a calendar (no biggie)

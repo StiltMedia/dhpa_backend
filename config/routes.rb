@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   match "/404" => "errors#error404", via: [ :get, :post, :patch, :delete ]
   match "/500" => "errors#error500", via: [ :get, :post, :patch, :delete ]
 
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => "user/registrations" }
   root 'home#index'
   get 'admin/' => 'admin/home#index'
   get 'about' => 'pages#about', as: "about"
@@ -16,6 +16,8 @@ Rails.application.routes.draw do
     resources :events, only: [:new, :create, :show, :update] do
       resources :photos
     end
+    resources :orders, only: [:index]
+    resources :users
     resources :settings
   end
 
