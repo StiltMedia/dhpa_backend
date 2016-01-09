@@ -162,6 +162,11 @@ header a.logo {
 .home #menu li .cart:hover {
     background-image: asset_url("menuIcons.png");
 }
+
+#content-wrapper {
+  min-height: 720px;
+}
+
 .bx-wrapper .bx-viewport{
   left: 0 !important
 }

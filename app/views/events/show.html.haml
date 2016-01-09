@@ -1,23 +1,23 @@
 = render "layouts/mid_searchbar"
-%section.darkbar
-  .container
-    .row
-      .twelve.columns
-        %ul.menu
-          %li
-            %a.toggle{:href => "#", "data-target" => ".people-menu"} People
-            %ul.submenu.people-menu{style: "display: none"}
-              - @event.vips.each do |vip|
-                %li=vip.name
-          %span.u-pull-right
-            %li
-              %a{:href => "#"} Event
-            %li
-              %a{:href => "#"} Location
-            %li
-              %a{:href => "#"} Date
-            %li
-              %a{:href => "#"} Photographer
+/ %section.darkbar
+/   .container
+/     .row
+/       .twelve.columns
+/         %ul.menu
+/           %li
+/             %a.toggle{:href => "#", "data-target" => ".people-menu"} People
+/             %ul.submenu.people-menu{style: "display: none"}
+/               - @event.vips.each do |vip|
+/                 %li=vip.name
+/           %span.u-pull-right
+/             %li
+/               %a{:href => "#"} Event
+/             %li
+/               %a{:href => "#"} Location
+/             %li
+/               %a{:href => "#"} Date
+/             %li
+/               %a{:href => "#"} Photographer
 - if current_user.present? && current_user.lightboxes.count > 0
   #lightbox-wrapper
     = render "lightboxes/show_modal"
