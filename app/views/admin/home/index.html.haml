@@ -5,3 +5,4 @@
     %li
       = link_to admin_event_path(event) do
         = event.date.to_s+" - "+event.title+" - "+event.location
+      = link_to "X", admin_event_path(event), method: "delete"

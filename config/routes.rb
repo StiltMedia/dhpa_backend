@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => { :registrations => "user/registrations" }
   root 'home#index'
-  get 'admin/' => 'admin/home#index'
+  get 'admin/' => 'admin/home#index', as: "admin"
   get 'about' => 'pages#about', as: "about"
   get 'hire-dhpa' => 'pages#hire_dhpa', as: "hire_dhpa"
 
@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources 'contact', only: [:new, :create]
 
   namespace :admin do
-    resources :events, only: [:new, :create, :show, :update] do
+    resources :events, only: [:new, :create, :show, :update, :destroy] do
       resources :photos
     end
     resources :orders, only: [:index]

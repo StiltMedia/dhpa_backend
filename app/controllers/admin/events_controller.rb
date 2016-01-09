@@ -1,5 +1,5 @@
 class Admin::EventsController < AdminsController
-  before_action :set_event, only: [:show, :update, :delete]
+  before_action :set_event, only: [:show, :update, :destroy]
 
   def show # Show is actually the edit form
   end
@@ -33,6 +33,16 @@ class Admin::EventsController < AdminsController
     else
       flash[:error] = "Error updating event: #{@event.errors.full_messages.join('; ')}."
       render :show
+    end
+  end
+
+  def destroy
+    if @event.destroy
+      flash[:success] = "Event deleted."
+      redirect_to admin_path
+    else
+      flash[:error] = "Error deleting event: #{@event.errors.full_messages.join('; ')}."
+      redirect_to admin_path
     end
   end
 
