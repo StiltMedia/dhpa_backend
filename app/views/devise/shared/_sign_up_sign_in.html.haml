@@ -21,12 +21,11 @@
           %span.mandatory
       #signup
         = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-
           %p
-            = f.label "FIRST NAME"
+            = f.label "* FIRST NAME"
             = f.text_field :first_name, autofocus: true
           %p
-            = f.label "LAST NAME"
+            = f.label "* LAST NAME"
             = f.text_field :last_name, autofocus: true
           %p
             = f.label "* EMAIL"

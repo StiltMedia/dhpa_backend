@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
   has_many :addresses
   has_many :orders
 
+  validates_presence_of :first_name, :last_name, :email
+
   def is_admin?
     self.is_admin == true
   end

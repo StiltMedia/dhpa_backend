@@ -39,7 +39,7 @@
     * *TODO* Before checkout there will be a popup disclaimer (client's attorney is working on it)
   * Admin Dashboard
   * *TODO* Registered User Dashboard
-  * *TODO* Wishlist (lightbox)
+  * Wishlist (lightbox)
     * For registered users only
   * Register/Log in
 * Admin:
@@ -73,7 +73,7 @@
   * *QUESTION* Doesn't have the ability to view purchases afterwards?
 * Registered User:
   * Purchased images are viewable afterwards
-  * *TODO* Ability to create a “wish list” of images
+  * Ability to create a “wish list” of images
 * All users:
   * *TODO* Only able to view private albums via password
   * *TODO* Able to send an email via the Contact Us form
@@ -89,9 +89,7 @@
 = TODO List (should reference scoped items only)
 
 * Free (for rudimentary functionality only)
-  1. Registered user wishlists
-  1. Make the purchase buttons from the event page match the design
-  1. Create a Users view for the admin, and add contact info to orders
+  1. Create a Users view for the admin
 
 * Hourly
   1. admin - Ability to delete an event
@@ -108,3 +106,4 @@
   1. Homepage needs a "View More" button/page underneath Latest Events
   1. Should have "super-featured" checkbox which shows images in the main page slideshow
   1. Need social URLs
+  1. Make the purchase buttons from the event page match the design

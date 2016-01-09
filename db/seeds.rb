@@ -8,8 +8,8 @@ end
 
 Setting.create commercial_price: 5000, personal_price: 2000, personal_image_size: 500 # $50, $20, and 500px
 
-admin1 = User.create email: "admin@example.com", password: "password", is_admin: true
-user1 = User.create email: "user1@example.com", password: "password"
+admin1 = User.create first_name: "Default", last_name: "Admin", email: "admin@example.com", password: "password", is_admin: true
+user1 = User.create first_name: "Default", last_name: "User1", email: "user1@example.com", password: "password"
 
 vip_a = Vip.create name: 'John Smith'
 vip_b = Vip.create name: 'Jane Doe'

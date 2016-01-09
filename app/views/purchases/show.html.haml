@@ -1,6 +1,6 @@
 %section.content-box.purchased
   .container
-    %h2.page-title PURCHASED
+    %h2.page-title PURCHASE
     - @order.line_items.each do |item|
       .row
         .three.columns
@@ -34,6 +34,29 @@
             - else
               = link_to "DOWNLOAD", attachment_url(item.photo, :file, :limit, personal_image_size, personal_image_size, format: "jpg"), class: "button", download: "dhpa_photo_#{item.photo.id}.jpg" # Private Use = smaller rez
   .container
+    .row
+      - if current_user.is_admin?
+        %label.two.columns.offset-by-eight USER INFO:
+        .two.columns
+          %p
+            %span= @order.user.first_name
+            %span= @order.user.last_name
+            %br
+            %span= @order.user.email
+      %label.two.columns.offset-by-eight CONTACT INFO:
+      .two.columns
+        %p
+          %span= @order.order_shipping_info.first_name
+          %span= @order.order_shipping_info.last_name
+          %br
+          %span= @order.order_contact_info.email
+          %br
+          %span= @order.order_shipping_info.street
+          %br
+          %span= @order.order_shipping_info.city
+          %span= @order.order_shipping_info.state
+          %span= @order.order_shipping_info.zipcode
+          %span= @order.order_shipping_info.country
     .row
       %label.two.columns.offset-by-eight ORDER DATE:
       .two.columns= @order.created_at.strftime("%a, %b %d %Y ")
