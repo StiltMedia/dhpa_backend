@@ -6,7 +6,7 @@ staging:
       execute: true
       sudo: true
       #apply_during: build_only # Only need to install once
-  after_rails: # Set up the database once Rails is ready
+  after_symlink: # Set up the database before Rails, to avoid "in use" errors
     - source: /.cloud66/dbsetup.sh
       destination: /tmp/dbsetup.sh
       target: rails
@@ -22,7 +22,7 @@ production:
       execute: true
       sudo: true
       apply_during: build_only # Only need to install once
-  after_rails: # Set up the database once Rails is ready
+  after_symlink: # Set up the database before Rails, to avoid "in use" errors
     - source: /.cloud66/dbsetup.sh
       destination: /tmp/dbsetup.sh
       target: rails
