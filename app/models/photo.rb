@@ -51,7 +51,7 @@ class Photo < ActiveRecord::Base
       if line_items.empty?
         return true
       else
-        errors.add(:base, 'Line Items present')
+        errors.add(:base, "This photo has attached orders, and can't be deleted")
         return false
       end
     end

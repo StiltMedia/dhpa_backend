@@ -1,8 +1,17 @@
 = render "layouts/admin/nav"
 .container
-  %h5 Events
-  - @events.each do |event|
-    %li
-      = link_to admin_event_path(event) do
-        = event.date.to_s+" - "+event.title+" - "+event.location
-      = link_to "X", admin_event_path(event), method: "delete"
+  .row
+    %h5
+      Events
+      = link_to new_admin_event_path, class: "pull-right button "+css_class_active_for(new_admin_event_path) do
+        %span.fa.fa-plus
+        Add Event
+  %table
+    - @events.each do |event|
+      %tr
+        %td
+          = link_to admin_event_path(event) do
+            = event.date.to_s+" - "+event.title+" - "+event.location
+        %td
+          = button_to admin_event_path(event), method: "delete", class: "button-danger button-small" do
+            %i.fa.fa-trash

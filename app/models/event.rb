@@ -28,7 +28,7 @@ class Event < ActiveRecord::Base
     def ensure_photos_not_referenced_by_any_line_item
       result = self.photos.map do |photo|
         if photo.line_items.present?
-          self.errors.add(:base, 'Line Items present')
+          self.errors.add(:base, "Some of this event's photos have attached orders, and can't be deleted")
           return false
         end
       end

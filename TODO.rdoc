@@ -89,7 +89,6 @@
 = TODO List (should reference scoped items only)
 
 * Hourly
-  1. admin - Ability to delete an event
   1. admin - event date - would be better if it was a calendar (no biggie)
   1. admin - instead of having an admin button please make an "events" button and an "orders" button (to separate the two)
   1. admin - make sure footer is always at the bottom of the page when page is short - http://www.screencast.com/t/0k7lEG69KkX
