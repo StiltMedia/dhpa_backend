@@ -7,10 +7,9 @@ Rails.application.routes.draw do
   root 'home#index'
   get 'admin/' => 'admin/home#index', as: "admin"
   get 'about' => 'pages#about', as: "about"
-  get 'hire-dhpa' => 'pages#hire_dhpa', as: "hire_dhpa"
 
-  match '/contact',    to: 'contact#new', via: 'get'
-  resources 'contact', only: [:new, :create]
+  match '/contact',    to: 'contacts#new', via: 'get', as: "contact_us"
+  match '/contact',    to: 'contacts#create', via: 'post', as: "contacts"
 
   namespace :admin do
     resources :events, only: [:new, :create, :show, :update, :destroy] do

@@ -3,8 +3,4 @@ class PagesController < ApplicationController
 
   end
 
-  def hire_dhpa
-
-  end
-
 end

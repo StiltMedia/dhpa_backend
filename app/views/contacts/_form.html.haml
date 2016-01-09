@@ -1,0 +1,17 @@
+= form_for @contact do |f|
+  .row
+    .twelve.columns
+      %p
+        = f.label :name, "* NAME"
+        = f.text_field :name, class: "w-100"
+      %p
+        = f.label :email, "* EMAIL"
+        = f.email_field :email, class: "w-100"
+      %p
+        = f.label :message, "* MESSAGE"
+        = f.text_area :message
+      %div{style: "display: none;"}
+        = f.label :nickname, "Leave this field blank"
+        = f.text_field :nickname, class: "w-100"
+      %p
+        = f.submit 'Send Message', :class => "button w-100"

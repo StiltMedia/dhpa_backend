@@ -1,5 +1,5 @@
-class ContactForm < MailForm::Base
-  attribute :name,      :validate => true
+class Contact < MailForm::Base
+  attribute :name,      :validate => true, message: "Please provide your name."
   attribute :email,     :validate => /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
   attribute :file,      :attachment => true
 
@@ -10,8 +10,8 @@ class ContactForm < MailForm::Base
   # in ActionMailer accepts.
   def headers
     {
-      :subject => "My Contact Form",
-      :to => "your.email@your.domain.com",
+      :subject => "DHPA.com Contact Form",
+      :to => Rails.application.config.contact_form_recipient,
       :from => %("#{name}" <#{email}>)
     }
   end
