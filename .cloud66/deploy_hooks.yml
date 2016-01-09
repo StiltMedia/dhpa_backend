@@ -1,14 +1,30 @@
 staging:
-  after_symlink: # Or use after_rails depending on your application
-    - source: /.cloud66/dbseed.sh
-      destination: /tmp/dbseed.sh
+  first_thing: # Install an SMTP server locally
+    - source: /.cloud66/smtpinstall.sh
+      destination: /tmp/smtpinstall.sh
+      target: rails
+      execute: true
+      sudo: true
+      #apply_during: build_only # Only need to install once
+  after_rails: # Set up the database once Rails is ready
+    - source: /.cloud66/dbsetup.sh
+      destination: /tmp/dbsetup.sh
       target: rails
       execute: true
       run_on: single_server
+      # WARNING: apply_during is nil which means the staging db will be reset each deploy!
+
 production:
-  after_symlink: # Or use after_rails depending on your application
-    - source: /.cloud66/dbseed.sh
-      destination: /tmp/dbseed.sh
+  first_thing: # Install an SMTP server locally
+    - source: /.cloud66/smtpinstall.sh
+      destination: /tmp/smtpinstall.sh
+      target: rails
+      execute: true
+      sudo: true
+      apply_during: build_only # Only need to install once
+  after_rails: # Set up the database once Rails is ready
+    - source: /.cloud66/dbsetup.sh
+      destination: /tmp/dbsetup.sh
       target: rails
       execute: true
       run_on: single_server

@@ -18,7 +18,7 @@ class LightboxesController < ApplicationController
     @lightbox = current_user.lightboxes.build(lightbox_params)
     if @lightbox.save
       flash[:success] = "Created lightbox."
-      redirect_to lightbox_path(@lightbox)
+      redirect_to lightboxes_path
     else
       flash[:error] = "Error: Could not create lightbox."
       redirect_to :back
@@ -31,39 +31,21 @@ class LightboxesController < ApplicationController
   def update
     if @lightbox.update(lightbox_params)
       flash[:success] = "Updated lightbox."
-      redirect_to lightbox_path(@lightbox)
+      redirect_to lightboxes_path
     else
       flash[:error] = "Error: Could not update lightbox."
       redirect_to :back
     end
   end
 
-  def add
-    if params[:id].present?
-      @lightbox = current_user.lightboxes.find(params[:id])
-    else
-      @lightbox = current_user.lightboxes.last
-    end
-
-    if @lightbox.nil?
-      @lightbox = current_user.lightboxes.create
-    end
-
-    @photo = Photo.find(params[:photo])
-
-    begin
-      if @lightbox.present? && @photo.present? && @lightbox.photos << @photo
-        @response = "Photo #{@photo.id} Added."
-      else
-        @response = "Error adding photo."
-      end
-    rescue Exception => e
-      @response = "Error adding photo. (#{e.message})"
-    end
-  end
-
   def destroy
-    @lightbox.destroy
+    if @lightbox.destroy
+      flash[:success] = "Deleted lightbox."
+      redirect_to lightboxes_path
+    else
+      flash[:error] = "Error deleting lightbox: #{@lightbox.errors.full_messages.join('; ')}."
+      redirect_to :back
+    end
   end
 
   private

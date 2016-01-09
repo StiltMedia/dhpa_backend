@@ -1,12 +1,13 @@
 #lightbox{style: "display:none"}
+  - flash.each do |name, msg|
+    = content_tag :div, msg, class: "#{name} center flash-box"
   %section.albumbar.carousel
     .container
       .top-images
         - if @lightbox.nil? then @lightbox = current_user.lightboxes.last end
         - if @lightbox.present?
-          - @lightbox.lightbox_photos.order(created_at: :desc).each do |lbp|
-            - photo = lbp.photo
-            = render partial: "photos/photo_lightbox", object: photo
+          - @lightbox.lightbox_photos.order(created_at: :desc).each do |lightbox_photo|
+            = render lightbox_photo
       %ul.menu
         %li= "#{@response} #{@message}"
         %li= link_to @lightbox.name, lightbox_path(@lightbox)

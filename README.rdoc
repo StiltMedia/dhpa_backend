@@ -16,6 +16,8 @@ Copy env.dist to .env and edit as desired, for development/testing.
 
 * Production/staging only
   * ENV['SECRET_KEY_BASE']
+  * SMTP_HOSTNAME=www.dhpa.com
+    * Needed in cloud66 deploy scripts
 * All Environments
   * ENV['RAILS_SERVE_STATIC_FILES']
   * ENV['INSTAGRAM_ID']

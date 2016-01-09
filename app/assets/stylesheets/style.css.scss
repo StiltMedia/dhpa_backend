@@ -397,6 +397,27 @@ body .bx-wrapper {
 .button-small:active {
   border-width: 1px;
 }
+.button.button-default:hover,
+button.button-default:hover,
+input[type="submit"].button-default:hover,
+input[type="reset"].button-default:hover,
+input[type="button"].button-default:hover,
+.button.button-danger:hover,
+button.button-danger:hover,
+input[type="submit"].button-danger:hover,
+input[type="reset"].button-danger:hover,
+input[type="button"].button-danger:hover {
+  color: #FFF;
+  background-color: #000;
+  border-color: #000; }
+.button.button-default,
+button.button-default,
+input[type="submit"].button-default,
+input[type="reset"].button-default,
+input[type="button"].button-default {
+  color: #000;
+  background-color: #FFF;
+  border-color: #000; }
 .button.button-danger,
 button.button-danger,
 input[type="submit"].button-danger,
@@ -1505,11 +1526,11 @@ table button {
 }
 
 
-
 .lightboxes-list  {
     text-align: center;
 }
 .lightboxes-list li {
+    position: relative;
     display: inline-block;
     width: 24%;
     vertical-align: top;
@@ -1517,6 +1538,22 @@ table button {
     padding-right: 0.9375rem;
     box-sizing: border-box;
     margin: 0
+}
+
+.lightbox-buttons-left {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    z-index: 99999;
+}
+.lightbox-buttons-right {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    z-index: 99999;
+}
+.slick-slide .lightbox-buttons-right {
+    right: 0;
 }
 
 .lightboxes-list li .imagebox {
@@ -1891,6 +1928,11 @@ table button {
 }
 .top-images.slick-slider {
   margin-bottom: 0;
+}
+.top-images .slick-slide {
+    display: block;
+    position: relative;
+    margin-right: 5px;
 }
 .top-images div img {
   height: auto;

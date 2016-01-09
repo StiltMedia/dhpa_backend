@@ -5,7 +5,7 @@
   - if current_user.present? && current_user.lightboxes.count > 0
     %ul
       %li
-        = link_to "", add_to_lightbox_path(id: nil, photo: photo), class: :lamp, method: :post, remote: true
+        = link_to "", create_lightbox_photo_path(lightbox_id: nil, photo_id: photo.id), class: :lamp, method: :post, remote: true
     / %li
     /   %a.cart
   /   %li
