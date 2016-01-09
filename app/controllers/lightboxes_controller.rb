@@ -69,7 +69,7 @@ class LightboxesController < ApplicationController
   private
 
     def lightbox_params
-      params.require(:lightbox).permit(lightbox_photos_attributes: [:photo_id])
+      params.require(:lightbox).permit(:name, lightbox_photos_attributes: [:photo_id])
     end
 
     def set_lightbox

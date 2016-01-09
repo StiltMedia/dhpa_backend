@@ -1,0 +1,4 @@
+- unless photo_lightbox.event.is_private?
+  %div
+    = link_to photo_lightbox do
+      = image_tag attachment_url(photo_lightbox, :file, :fill, 250, 160), oncontextmenu: "return false"

@@ -1,7 +1,4 @@
 = render "layouts/mid_searchbar"
-- if current_user.present? && current_user.lightboxes.count > 0
-  #lightbox-wrapper
-    = render "lightboxes/show_modal"
 %section.darkbar
   .container
     .row
@@ -21,6 +18,9 @@
               %a{:href => "#"} Date
             %li
               %a{:href => "#"} Photographer
+- if current_user.present? && current_user.lightboxes.count > 0
+  #lightbox-wrapper
+    = render "lightboxes/show_modal"
 %section.gallery-box
   .container
     .row.event-header

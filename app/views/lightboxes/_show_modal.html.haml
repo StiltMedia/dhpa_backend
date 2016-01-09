@@ -1,15 +1,14 @@
-%a.toggle-lightbox Show Lightbox
 #lightbox{style: "display:none"}
   %section.albumbar.carousel
     .container
-      %h5 LIGHTBOX
-      %p= "#{@response} #{@message}"
       .top-images
-        %ul.event-list
-          - if @lightbox.nil? then @lightbox = current_user.lightboxes.last end
-          - if @lightbox.present?
-            - @lightbox.photos.each do |photo|
-              = render partial: "photos/photo_search", object: photo
-      / %ul.menu
-      /   %li.nameof
-      /     %a NAME
+        - if @lightbox.nil? then @lightbox = current_user.lightboxes.last end
+        - if @lightbox.present?
+          - @lightbox.lightbox_photos.order(created_at: :desc).each do |lbp|
+            - photo = lbp.photo
+            = render partial: "photos/photo_lightbox", object: photo
+      %ul.menu
+        %li= "#{@response} #{@message}"
+        %li= link_to @lightbox.name, lightbox_path(@lightbox)
+.align-right
+  %a.toggle-lightbox Show Lightbox

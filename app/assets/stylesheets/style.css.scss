@@ -743,8 +743,8 @@ button.button:hover {
     width: 95%;
 }
 .albumbar .menu li {
-    display: inline-block;
-    margin: 0;
+    display: block;
+    margin: 0.1em 0;
 }
 .albumbar .menu li a {
   border: 3px solid rgb(255, 255, 255);
@@ -1514,24 +1514,23 @@ button.button:hover {
   font-weight: 600;
   margin-top: 10px;
 }
-.lightboxes-list li.add-lightbox {
-  height: 191px;
-  border: 3px dashed rgb(240, 240, 240);
-  position: relative;
-}
-.lightboxes-list li.add-lightbox a {
 
-  color: rgb(187, 187, 187);
+.lightboxes-list li.add-lightbox a,
+.lightboxes-list li.blank-lightbox a {
+	padding: 70px 0;
+	text-align: center;
+  height: 10px;
   display: inline-block;
   font-weight: 600;
   text-decoration: none;
   width: 100%;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%,-50%);
+  color: rgb(187, 187, 187);
+  border: 3px dashed rgb(240, 240, 240);
+  position: relative;
 }
-
+.lightboxes-list li.add-lightbox a {
+  height: 40px;
+}
 
 
 .open-image-box{
@@ -1570,10 +1569,6 @@ button.button:hover {
   margin: 0;
   text-transform: uppercase;
   margin-bottom: 2px;
-}
-
-.row {
-  margin-bottom: 1em;
 }
 
 .row.item {

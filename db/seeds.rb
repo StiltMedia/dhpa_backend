@@ -67,7 +67,7 @@ order1 = Order.create user: user1, payment_info: payment_info, order_shipping_in
 lineitem1 = LineItem.create photo: photo1, order: order1
 DeliveryOption.create line_item: lineitem1, option_type: "digital", license: "Personal Use"
 
-lightbox1 = Lightbox.create user: user1
+lightbox1 = Lightbox.create user: user1, name: "Christmas 2015"
 lightbox1.photos << photo2
 lightbox1.photos << photo5
 lightbox1.photos << photo10

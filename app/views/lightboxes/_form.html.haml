@@ -1,0 +1,9 @@
+.container.img-responsive
+  = form_for @lightbox do |f|
+    .row
+      .six.columns
+        = f.label :name
+        = f.text_field :name, class: "w-100"
+    .row
+      .twelve.columns
+        = f.submit 'submit', :class => "button w-100"

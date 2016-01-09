@@ -1,4 +1,9 @@
-%li
-  = link_to lightbox_path(lightbox), class: :imagebox do
-    = image_tag attachment_url(lightbox.photos.first, :file, :fill, 275, 175), oncontextmenu: "return false"
-  %h5= "Lightbox"
+- if lightbox.photos.count > 0
+  %li
+    = link_to lightbox_path(lightbox), class: :imagebox do
+      = image_tag attachment_url(lightbox.photos.first, :file, :fill, 275, 175), oncontextmenu: "return false"
+    %h5= lightbox.name
+- else
+  %li.blank-lightbox
+    = link_to "NO IMAGES YET", lightbox_path(lightbox)
+    %h5= lightbox.name
