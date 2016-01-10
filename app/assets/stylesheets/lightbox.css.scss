@@ -1,6 +1,17 @@
+.toggle-lightbox-wrapper {
+  margin-top: 6px;
+}
+
 .toggle-lightbox {
-  background: black;
-  color: white;
-  padding: 0.5em 1em;
+  background: #000;
+  color: #FFF;
+  padding: 5px 10px;
   cursor: pointer;
+  border: 2px solid #000;
+}
+
+.toggle-lightbox:hover {
+  color: #000;
+  background-color: #FFF;
+  border-color: #000;
 }

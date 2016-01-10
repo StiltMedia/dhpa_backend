@@ -1,5 +1,8 @@
 = render "layouts/mid_searchbar"
-%section
+- if current_user.present? && current_user.lightboxes.count > 0
+  #lightbox-wrapper
+    = render "lightboxes/show_modal"
+%section.open-image-box
   %br
     = render 'show'
 

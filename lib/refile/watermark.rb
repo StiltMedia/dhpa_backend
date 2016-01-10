@@ -92,24 +92,24 @@ module Refile
     def limit_watermark_dhpa(img, width, height, text)
       Refile::MiniMagick.new(:limit).limit(img, width, height)
 
-      text1 = "dhpa.com/photos/"
-      text2 = text
-      text3 = "DHPA"
+      text1 = "DHPA"
+      text2 = "dhpa.com/photos/"+text
 
       boxheight = (img.height.to_i*0.8).round(2) - (img.height.to_i*0.4).round(2)
       boxwidth = (img.width.to_i) - (img.width.to_i*0.6).round(2)
-      fontsize_sm = (boxwidth / 11) # 1pt = 1px at default pixel density (72 ppi)
-      fontsize_lg = (boxwidth / 5)
+      fontsize_sm = (boxwidth / 10) # 1pt = 1px at default pixel density (72 ppi)
+      fontsize_lg = (boxwidth / 3)
 
       img.combine_options do |c|
-        # roundrectangle coordinate order is: x-start,y-start,x-end,y-end roundx,roundy
-        c.draw "fill #808080 fill-opacity 0.4 roundrectangle #{(img.width.to_i*0.6).round(2)},#{(img.height.to_i*0.4).round(2)} #{(img.width.to_i+10)},#{(img.height.to_i*0.8).round(2)} 10,10"
-        c.pointsize fontsize_sm
-        # text coordinate order is: x-start,y-start
-        c.draw "fill #ffffff fill-opacity 1 text #{(img.width.to_i*0.6+10).round(2)},#{(img.height.to_i*0.8-(boxheight/8)-fontsize_lg-fontsize_sm).round(2)} \"#{text1}\""
-        c.draw "fill #ffffff fill-opacity 1 text #{(img.width.to_i*0.6+10).round(2)},#{(img.height.to_i*0.8-(boxheight/8)-fontsize_lg).round(2)} \"#{text2}\""
+        # rectangle coordinate order is: x-start,y-start,x-end,y-end
+        c.draw "fill #ffffff fill-opacity 0.6 rectangle #{(img.width.to_i*0.4).round(2)},#{(img.height.to_i*0.4).round(2)} #{(img.width.to_i+10)},#{(img.height.to_i*0.8).round(2)}"
         c.pointsize fontsize_lg
-        c.draw "fill #000000 fill-opacity 1 text #{(img.width.to_i*0.6+10).round(2)},#{(img.height.to_i*0.8-10).round(2)} \"#{text3}\""
+        c.font "DejaVu-Sans-Bold"
+        # text coordinate order is: x-start,y-start
+        c.draw "fill #000000 fill-opacity 1 text #{(img.width.to_i*0.4+20).round(2)},#{(img.height.to_i*0.4+9+fontsize_lg).round(2)} \"#{text1}\""
+        c.pointsize fontsize_sm
+        c.font "DejaVu-Sans-Book"
+        c.draw "fill #000000 fill-opacity 1 text #{(img.width.to_i*0.4+21).round(2)},#{(img.height.to_i*0.8-fontsize_sm+1).round(2)} \"#{text2}\""
       end
     end
 

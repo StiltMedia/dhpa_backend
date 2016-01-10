@@ -1317,6 +1317,22 @@ button.button:hover {
   background: #10C972;
 }
 
+.open-image-box label {
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+
+.open-image-box select {
+  border: 2px solid black;
+  border-radius: 0;
+  padding: 7px 40px 10px;
+}
+
+.open-image-box select:focus {
+  border-color: #888;
+}
+
 table form,
 table button {
   margin-bottom: 0;
@@ -1516,7 +1532,6 @@ table button {
 }
 
 
-
 .lightboxes-box{
   padding: 3em 0
 }
@@ -1595,16 +1610,6 @@ table button {
 }
 
 
-.open-image-box{
-    content: ""; 
-    display: block;
-    background: rgba(0,0,0,.9);
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0; 
-    z-index: 10;
-    color: #fff;
-    padding-top: 100px;
-}
 .open-image-box .container{
   width: 70%
 }
@@ -1858,9 +1863,6 @@ table button {
   margin-top: 15px;
    font-size: 0.875rem;
    font-weight: bold;
-}
-.open-image-box .button{
-  margin: 30px 0
 }
 
 

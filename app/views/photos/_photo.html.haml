@@ -1,5 +1,5 @@
 %li
-  = link_to photo, remote: true, class: "popup-link" do
+  = link_to photo, class: "popup-link" do
     = image_tag attachment_url(photo, :file, :limit, 270, 270), oncontextmenu: "return false" # The only time photo.file should be shown without thumbnailing or watermarking is on the purchase page
   %span.filename #{photo.id}
   - if current_user.present? && current_user.lightboxes.count > 0

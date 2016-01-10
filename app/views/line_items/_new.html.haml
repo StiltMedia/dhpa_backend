@@ -12,20 +12,7 @@
 
         = delivery_option.hidden_field :option_type, value: "digital"
 
-        = delivery_option.label :license
+        = delivery_option.label :license, "LICENSE"
         = delivery_option.select :license, options_for_select(options_for_license)
 
-        / = delivery_option.label :nationality
-        / = delivery_option.select :nationality, options_for_select(options_for_nationality)
-
-      / #physical-form-elements{style: "display: none;"}
-
-      /   = delivery_option.hidden_field :option_type, value: "print", disabled: true
-
-      /   = delivery_option.label :quantity
-      /   = delivery_option.number_field :quantity, value: 1
-
-      /   = delivery_option.label :border
-      /   = delivery_option.select :border, options_for_select(["yes", "no"])
-
-    = f.submit "Add to Cart" #, class: :button
+        = f.submit "Add to Cart", class: :button
