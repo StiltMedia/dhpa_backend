@@ -2,7 +2,7 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Mailer options
-  config.contact_form_recipient = "test@zyphon.com" #"hiredhpa@dhpa.com"
+  config.contact_form_recipient = "hiredhpa@dhpa.com"
   config.action_mailer.default_url_options = { :host => 'www.dhpa.com' }
 
   # Code is not reloaded between requests.
