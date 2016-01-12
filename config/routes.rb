@@ -25,6 +25,7 @@ Rails.application.routes.draw do
 
   resources :events, only: [:show]
   resources :lightboxes
+  post 'lightbox_switch', to: 'lightboxes#switch_active', as: "switch_active_lightbox"
   resources :lightbox_photos
   post 'lightbox_photos/(:lightbox_id)/:photo_id', to: 'lightbox_photos#create', as: "create_lightbox_photo"
   resources :line_items, only: [:new, :create, :edit, :update, :destroy]

@@ -46,4 +46,8 @@ $(document).on("page:update", function() {
         ]
     });
 
+    $('#active_lightbox').change(function(){
+      $(this).closest("form").submit();
+    });
+
 });
