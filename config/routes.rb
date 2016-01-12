@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   root 'home#index'
   get 'admin/' => 'admin/home#index', as: "admin"
   get 'about' => 'pages#about', as: "about"
+  get 'terms' => 'pages#terms_and_conditions', as: "terms_and_conditions"
+  get 'faq' => 'pages#faq', as: "faq"
+  get 'privacy' => 'pages#privacy', as: "privacy"
 
   match '/contact',    to: 'contacts#new', via: 'get', as: "contact_us"
   match '/contact',    to: 'contacts#create', via: 'post', as: "contacts"

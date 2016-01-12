@@ -16,11 +16,11 @@
         %nav#footer-menu
           %ul
             %li
-              %a{:href => "#"} FAQ
+              = link_to "FAQ", faq_path
             %li
-              %a{:href => "#"} TERMS AND CONDITIONS
+              = link_to "TERMS AND CONDITIONS", terms_and_conditions_path
             %li
-              %a{:href => "#"} PRIVACY POLICY
+              = link_to "PRIVACY POLICY", privacy_path
             %li
               = link_to "CONTACT US", contact_us_path
         %p.copyright Copyright © 2015 DHPA ALL RIGHTS RESERVED
