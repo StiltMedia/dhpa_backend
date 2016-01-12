@@ -89,7 +89,6 @@
 = TODO List (should reference scoped items only)
 
 * Hourly
-  1. be able to choose between active lightboxes
   1. On mobile - there should not be a slider on the landing. Please change to a fixed image (and no pagination)
   1. Please change page title to "DHPA" and when in an event "DHPA - event_name"
   1. search bar and nav dont look great on mobile when logged in - http://www.screencast.com/t/40CikKLZS
