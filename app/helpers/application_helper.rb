@@ -98,6 +98,12 @@ module ApplicationHelper
     what.vips.map(&:name).join(', ')
   end
 
+  def vip_list_links(what)
+    what.vips.map{|v|
+      link_to v.name, search_vip_path(v)
+    }.join(', ').html_safe
+  end
+
   def date_of_event(event)
     event.date.strftime("%a, %b %d %Y ")
   end

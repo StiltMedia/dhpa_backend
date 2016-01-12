@@ -26,7 +26,7 @@
             = display_size(item)
           %p
             %strong People:
-            = vip_list(item.photo)
+            = vip_list_links(item.photo)
         .two.columns
           - if item.is_digital?
             - if item.delivery_option.license == "Commercial Use"

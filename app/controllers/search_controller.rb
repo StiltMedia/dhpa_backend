@@ -14,7 +14,7 @@ class SearchController < ApplicationController
 
   def vip
     @vip = Vip.find(params[:id])
-    @vip_photos = @vip.photos.joins(:event).where("events.password IS NULL").order(created_at: :desc)
+    @vip_photos = @vip.photos.joins(:event).where("events.password IS NULL OR events.password = ''").order(created_at: :desc)
   end
 
 end

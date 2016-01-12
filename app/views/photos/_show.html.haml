@@ -9,7 +9,7 @@
         = @photo.id
       %p
         %b PEOPLE:
-        = vip_list(@photo)
+        = vip_list_links(@photo)
       %p
         %b EVENT:
         = link_to "#{@photo.event.title}", event_path(@photo.event)

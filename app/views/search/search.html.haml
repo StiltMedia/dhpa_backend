@@ -26,7 +26,7 @@
           %row
             %strong= link_to vip.name.upcase, search_vip_path(vip, prev_q: params[:q])
             %ul.event-list
-              - vip_photos = vip.photos.joins(:event).where("events.password IS NULL").order(created_at: :desc)
+              - vip_photos = vip.photos.joins(:event).where("events.password IS NULL OR events.password = ''").order(created_at: :desc)
               - vip_photos.take(photo_limit).each do |photo|
                 = render partial: "photos/photo_vip", object: photo
               - if vip_photos.count > photo_limit
