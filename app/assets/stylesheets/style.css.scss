@@ -172,12 +172,13 @@ header a.logo {
 }
 
 .bxslider li .caption {
-    left: 50%;
-    margin-left: -20%;
-    position: absolute;
-    text-align: center;
-    top: 32%;
-    width: 40%;
+  left: 50%;
+  margin-left: -20%;
+  position: absolute;
+  text-align: center;
+  top: 32%;
+  width: 40%;
+  z-index: 9999;
 }
 
 .bxslider li .caption h5 {
@@ -382,6 +383,13 @@ body .bx-wrapper {
   font-size: 1.188rem;
   font-weight: 600;
   text-align: center;
+}
+.filter-50-dark {
+  -webkit-filter:brightness(50%);
+  -moz-filter:brightness(50%);
+  filter: url(#brightness);
+  filter:brightness(50%);
+  z-index: 1;
 }
 .event-list li a img {
     height: 100%;

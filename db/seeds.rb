@@ -29,7 +29,7 @@ vip_n = Vip.create name: 'Claudia Orrett'
 copy = "David Heischrek / DHPA.com"
 assets_path = "app/assets/images/samples/"
 
-event1 = Event.create title: "Lowline 2015", location: "Angel Orensanz Foundation, NYC", photographer: "Benjamin Lozovsky", date: "2015-10-21", sub_title: "Anti-Gala", slug: "lowline-2015", image_url: File.new(assets_path+'event1.jpg'), is_featured: true, tag_list: "celebrity, gala, Angel Orensanz"
+event1 = Event.create title: "Lowline 2015", location: "Angel Orensanz Foundation, NYC", photographer: "Benjamin Lozovsky", date: "2015-10-21", sub_title: "Anti-Gala", slug: "lowline-2015", image_url: File.new(assets_path+'event1.jpg'), is_featured: true, is_top_featured: true, tag_list: "celebrity, gala, Angel Orensanz"
 
 photo1 = Photo.create event: event1, file: File.new(assets_path+'event1.jpg'), copyright: copy, size: image_size(assets_path+'event1.jpg'), vips: [vip_a, vip_b], commercial_price: 9999, personal_price: 8888, tag_list: "Lorem, ipsum, dolor, sit, amet"
 photo2 = Photo.create event: event1, file: File.new(assets_path+'event2.jpg'), copyright: copy, size: image_size(assets_path+'event2.jpg'), vips: [vip_c, vip_d], tag_list: "laboris, nisi, ut aliquip"
@@ -50,7 +50,7 @@ photo13 = Photo.create event: event2, file: File.new(assets_path+'event12.jpg'),
 photo14 = Photo.create event: event2, file: File.new(assets_path+'event13.jpg'), copyright: copy, size: image_size(assets_path+'event13.jpg'), vips: [vip_d, vip_h], tag_list: "cupidatat non, proident"
 photo15 = Photo.create event: event2, file: File.new(assets_path+'event14.jpg'), copyright: copy, size: image_size(assets_path+'event14.jpg'), vips: [vip_g, vip_h], tag_list: "Lorem, ipsum, dolor, sit, amet"
 
-event3 = Event.create title: "Christmas At The Apollo", location: "Apollo Theater, Birmingham", photographer: "David Heischrek", date: "2015-12-25", sub_title: "feat. Chris Rock", image_url: File.new(assets_path+'event5.jpg'), is_featured: true, password: "password", tag_list: "christmas, Chris Rock, comedian, Alabama"
+event3 = Event.create title: "Christmas At The Apollo", location: "Apollo Theater, Birmingham", photographer: "David Heischrek", date: "2015-12-25", sub_title: "feat. Chris Rock", image_url: File.new(assets_path+'event5.jpg'), is_featured: true, is_top_featured: true, password: "password", tag_list: "christmas, Chris Rock, comedian, Alabama"
 
 photo16 = Photo.create event: event3, file: File.new(assets_path+'featured1.jpg'), copyright: copy, size: image_size(assets_path+'event5.jpg'), vips: [vip_c, vip_h], commercial_price: 5555, personal_price: 4444, tag_list: "sunt in culpa, qui officia, deserunt"
 photo17 = Photo.create event: event3, file: File.new(assets_path+'featured2.jpg'), copyright: copy, size: image_size(assets_path+'event6.jpg'), vips: [vip_d, vip_l], tag_list: "mollit anim id, est laborum"

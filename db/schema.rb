@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160109011434) do
+ActiveRecord::Schema.define(version: 20160112020431) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 20160109011434) do
     t.string  "image_url_id"
     t.boolean "is_featured"
     t.string  "password"
+    t.boolean "is_top_featured"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|

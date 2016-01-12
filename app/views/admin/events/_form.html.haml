@@ -24,6 +24,9 @@
         = f.label :is_featured do
           = f.check_box :is_featured, {}, "true", "false"
           Is this a featured event?
+        = f.label :is_top_featured do
+          = f.check_box :is_top_featured, {}, "true", "false"
+          Feature this event in the top slideshow?
         = f.label :password, "Password (makes event private)"
         = f.text_field :password
       .six.columns
