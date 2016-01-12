@@ -89,7 +89,6 @@
 = TODO List (should reference scoped items only)
 
 * Hourly
-  1. Footer issue still - http://www.screencast.com/t/xrClE3KRX
   1. About page images missing - http://fox.dhpa.staging.c66.me/about
   1. Main slide will be the events set as super featured. The "learn more" button needs to change to "view event" and lead you to that event
   1. When user is in an event - http://fox.dhpa.staging.c66.me/events/high-life-2016 - and can see the names of people tagged, I should be able to click on the name (same results as if I search their name)
