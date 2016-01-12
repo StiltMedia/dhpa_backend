@@ -9,6 +9,8 @@ See TODO.rdoc
 * Perl (for mini_exiftool_vendored)
 
 * libgmp3-dev (.deb)
+* postgresql-contrib (.deb)
+* imagemagick (.deb)
 
 == Environment Variables
 
