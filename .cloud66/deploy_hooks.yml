@@ -1,4 +1,7 @@
 staging:
+  rails:
+    configuration:
+      asset_pipeline_precompile: true
   first_thing: # Install an SMTP server locally
     - source: /.cloud66/smtpinstall.sh
       destination: /tmp/smtpinstall.sh
@@ -15,6 +18,9 @@ staging:
       # WARNING: apply_during is nil which means the staging db will be reset each deploy!
 
 production:
+  rails:
+    configuration:
+      asset_pipeline_precompile: true
   first_thing: # Install an SMTP server locally
     - source: /.cloud66/smtpinstall.sh
       destination: /tmp/smtpinstall.sh
