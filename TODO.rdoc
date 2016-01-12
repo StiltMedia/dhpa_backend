@@ -89,8 +89,7 @@
 = TODO List (should reference scoped items only)
 
 * Hourly
-  1. lightbox - I noticed that I must first create a lightbox before I can add images? The light box icon should be present regardless. If it is clicked then user should be directed to the lightbox page where they will create one.
-  1. lightbox functionality - http://www.screencast.com/t/9XRLjb7AUD
+  1. be able to choose between active lightboxes
   1. On mobile - there should not be a slider on the landing. Please change to a fixed image (and no pagination)
   1. Please change page title to "DHPA" and when in an event "DHPA - event_name"
   1. search bar and nav dont look great on mobile when logged in - http://www.screencast.com/t/40CikKLZS

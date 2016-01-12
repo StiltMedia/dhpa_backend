@@ -6,6 +6,10 @@
     %ul
       %li
         = link_to "", create_lightbox_photo_path(lightbox_id: nil, photo_id: photo.id), class: :lamp, method: :post, remote: true
+  - else
+    %ul
+      %li
+        = link_to "", new_lightbox_path, class: :lamp
     / %li
     /   %a.cart
   /   %li
