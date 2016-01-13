@@ -89,19 +89,20 @@
 = TODO List (should reference scoped items only)
 
 * Hourly
+  1. other photographers can sign in and upload photos (subadmin accounts with add/edit events/photo privileges only - no orders, info, etc)
+  1. write a sentence / make a note on the purchase page that if people / clients want to order prints to email me at support@dhpa.com. 
+  1. Please change page title to "DHPA" and when in an event "DHPA - event_name"
+  1. Homepage needs a "View More" button/page underneath Latest Events
+
   1. if the page is blank, footer should be at the bottom; if the page is long....i should scroll to bottom then see footer.
   1. On mobile - there should not be a slider on the landing. Please change to a fixed image (and no pagination)
-  1. Please change page title to "DHPA" and when in an event "DHPA - event_name"
   1. search bar and nav dont look great on mobile when logged in - http://www.screencast.com/t/40CikKLZS
-  1. write a sentence / make a note on the purchase page that if people / clients want to order prints to email me at support@dhpa.com. 
-  1. other photographers can sign in and upload photos (subadmin accounts with add/edit events/photo privileges only - no orders, info, etc)
-
-  1. Popup disclaimer before checkout
-  1. Most pages are basically blank, most links don't work
-  1. Homepage needs a "View More" button/page underneath Latest Events
-  1. Should have "super-featured" checkbox which shows images in the main page slideshow
-  1. Need social URLs
   1. Make the purchase buttons from the event page match the design
+
+
+  1. Need social URLs
+
+  1. Most pages are basically blank, most links don't work
   1. Ensure purchase page shows image number, credit card number, receipt / invoice number, etc. 
 
   1. people / clients can pay with their credit card AND pay pal accounts. (this is out of scope so please quote first)

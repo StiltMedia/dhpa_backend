@@ -163,10 +163,6 @@ header a.logo {
     background-image: asset_url("menuIcons.png");
 }
 
-#content-wrapper {
-  margin-bottom: 200px;
-}
-
 .bx-wrapper .bx-viewport{
   left: 0 !important
 }
@@ -1042,7 +1038,7 @@ button.button:hover {
 
 .content-box{
   padding: 3em 0;
-  min-height: calc(100% - 225px);
+  min-height: 700px;
   box-sizing: border-box;
 }
 
@@ -1989,10 +1985,6 @@ table button {
 #footer{
   background: #0c0d0d;
   padding: 30px 0;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
 }
 
 #footer .social {
