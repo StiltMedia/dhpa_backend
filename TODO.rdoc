@@ -90,7 +90,6 @@
 
 * Hourly
   1.  (and no pagination)
-  1. search bar and nav dont look great on mobile when logged in - http://www.screencast.com/t/40CikKLZS
   1. Make the purchase buttons from the event page match the design
 
 
