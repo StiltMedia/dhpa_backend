@@ -3,6 +3,11 @@
 :javascript
   $(document).ready(function(){
 
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+      $('.bxslider').remove();
+    
+    } else {
+
       $('.bxslider').bxSlider({
         mode: 'fade',
         infiniteLoop: 'true',
@@ -14,6 +19,8 @@
       });
 
       $("body").attr("class", "home");
+    }
+
   });
 = render "layouts/mid_searchbar"
 %section.events
@@ -23,7 +30,7 @@
       %ul.event-list.three-columns
         = render @latest_events
         = link_to "VIEW MORE", events_path, class: "button"
-
+        %br
 
 %section.bg-dark.homefeatured
   .container
