@@ -1,6 +1,8 @@
 %section.content-box.purchased
   .container
-    %h2.page-title PURCHASE
+    %h2.page-title
+      PURCHASE #
+      = @order.id.to_s.rjust(4, '0')
     - @order.line_items.each do |item|
       .row
         .three.columns

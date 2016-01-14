@@ -89,11 +89,8 @@
 = TODO List (should reference scoped items only)
 
 * Hourly
-
   1. Need social URLs
     - instagram.com/dhpamiami (need password)
 
-  1. Most pages are basically blank, most links don't work
-  1. Ensure purchase page shows image number, credit card number, receipt / invoice number, etc. 
-
-  1. people / clients can pay with their credit card AND pay pal accounts. (this is out of scope so please quote first)
+* Out of scope
+  1. people / clients can pay with their credit card AND pay pal accounts.
