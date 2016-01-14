@@ -89,9 +89,6 @@
 = TODO List (should reference scoped items only)
 
 * Hourly
-  1.  (and no pagination)
-  1. Make the purchase buttons from the event page match the design
-
 
   1. Need social URLs
     - instagram.com/dhpamiami (need password)
