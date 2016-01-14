@@ -15,20 +15,20 @@
 
 * Frontend shall match provided HTML/CSS/JS files as closely as possible
   * Home
-    * *TODO* "Latest Events" needs a "View More" button & page
-    * *TODO* Slideshow at top of homepage should have multiple images (selectable, like featured content)
+    * "Latest Events" needs a "View More" button & page
+    * Slideshow at top of homepage should have multiple images (selectable, like featured content)
     * *TODO* There's no photos/events/refine control on the home search form
-    * *TODO* Need social URLs for links
+    * Need social URLs for links
     * Featured content area
   * *TODO* About
-  * *TODO* Book Now (contact form)
-  * *TODO* Search
+  * Book Now (contact form)
+  * Search
     * Partial exact match based on image tags and fields
     * No autocomplete, autocorrect, or partial match of queries needed
   * Inside Album
     * *TODO* People/Event/Location/Date/Photographer filtering/sorting doesn't work
   * Picture Detail
-    * *TODO* Adjust display of picture detail to match the design from "04 Open Images" -- shouldn't be a popup. Note: no need for S/M/L/XL sizes, just put the image size information underneath the explanatory text (Copyright, Date, Image Size)
+    *  Adjust display of picture detail to match the design from "04 Open Images" -- shouldn't be a popup. Note: no need for S/M/L/XL sizes, just put the image size information underneath the explanatory text (Copyright, Date, Image Size)
     * There should be no digital/physical or nationality options from the detail page -- make those properties blank across the GUI as well (i.e. during checkout)
     * There should be a commercial vs personal license option.
   * Shopping Cart
@@ -36,15 +36,15 @@
     * Global pricing
     * No shipping prices necessary
     * Stripe should work and have correct pricing
-    * *TODO* Before checkout there will be a popup disclaimer (client's attorney is working on it)
+    * Before checkout there will be a popup disclaimer (client's attorney is working on it)
   * Admin Dashboard
-  * *TODO* Registered User Dashboard
+  * Registered User Dashboard
   * Wishlist (lightbox)
     * For registered users only
   * Register/Log in
 * Admin:
   * Ability to create albums (events)
-  * *TODO* Ability to mark albums as public or private
+  * Ability to mark albums as public or private
     * Only accessible via a password (unique password per event)
   * Able to bulk-upload hundreds of images at once (thousands per week)
     * Image uploads are stored in AWS S3.
@@ -57,26 +57,22 @@
   * Tags from EXIF should be automatically parsed and saved in the database for each image:
     * People
     * Copyright
-    * *QUESTION* None of the below tags were provided in the examples:
-      * Location
-      * Subject
-      * Photographer
   * Photographer should be able to edit these "EXIF" tags manually as well, however editing will be on a per-image or per-event basis. No batch-image-editing of tags will be programmed into the website at this time.
   * Other tags should be auto-generated:
     * Image ID (plain database ID, starting at 1)
   * "Other Keywords" should be available at the event and image level.
-  * *TODO* Search should make use of all event and image tags.
+  * Search should make use of all event and image tags.
   * Admin can edit the commercial/personal default prices for images in one place, and also override the default commercial/personal pricing on a per-image basis.
 * Unregistered User:
   * Ability to view all public albums
-  * *TODO* Ability to freely search for public images
-  * *QUESTION* Doesn't have the ability to view purchases afterwards?
+  * Ability to freely search for public images
+  * Doesn't have the ability to view purchases after the current session expires
 * Registered User:
   * Purchased images are viewable afterwards
   * Ability to create a “wish list” of images
 * All users:
-  * *TODO* Only able to view private albums via password
-  * *TODO* Able to send an email via the Contact Us form
+  * Only able to view private albums via password
+  * Able to send an email via the Contact Us form
     * Email sent to an address the client specifies (hardcoded, not editable)
   * Able to purchase and download digital full-resolution copies of images
   * Not able to view or download full-resolution images unless they have purchased them
@@ -88,9 +84,9 @@
 
 = TODO List (should reference scoped items only)
 
-* Hourly
-  1. Need social URLs
-    - instagram.com/dhpamiami (need password)
+* Waiting on client
+  1. Text to replace Lorem Ipsum pages
+  1. Images to add to About page
 
 * Out of scope
   1. people / clients can pay with their credit card AND pay pal accounts.

@@ -50,12 +50,13 @@
     .row
       .three.columns
         %h5
-          %i.fa.fa-instagram>
-          Instagram Feed
+          = link_to "https://www.instagram.com/dhpamiami" do
+            %i.fa.fa-instagram>
+            Instagram Feed
         %p
       .nine.columns
         %ul.instagram-list
-          - @instagram_feed.each do |post|
+          - @instagram_json['items'].each do |item|
             %li
-              = link_to "#{post.link}", target: "_blank" do
-                = image_tag post.images.low_resolution.url
+              = link_to item['link'], target: "_blank", title: item['caption']['text'] do
+                = image_tag item['images']['low_resolution']['url']
