@@ -6,15 +6,16 @@
           = link_to admin_path, class: "button "+css_class_active_for(admin_path) do
             %span.fa.fa-calendar
             Events
-        %li
-          = link_to admin_orders_path, class: "button "+css_class_active_for(admin_orders_path) do
-            %span.fa.fa-money
-            Orders
-        %li
-          = link_to admin_users_path, class: "button "+css_class_active_for(admin_users_path) do
-            %span.fa.fa-user
-            Users
-        %li
-          = link_to admin_settings_path, class: "button "+css_class_active_for(admin_settings_path) do
-            %span.fa.fa-gears
-            Settings
+        - if current_user.is_admin?
+          %li
+            = link_to admin_orders_path, class: "button "+css_class_active_for(admin_orders_path) do
+              %span.fa.fa-money
+              Orders
+          %li
+            = link_to admin_users_path, class: "button "+css_class_active_for(admin_users_path) do
+              %span.fa.fa-user
+              Users
+          %li
+            = link_to admin_settings_path, class: "button "+css_class_active_for(admin_settings_path) do
+              %span.fa.fa-gears
+              Settings

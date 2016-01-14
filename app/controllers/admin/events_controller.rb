@@ -1,4 +1,6 @@
 class Admin::EventsController < AdminsController
+  skip_before_filter :check_if_admin
+  before_filter :check_if_admin_or_photographer
   before_action :set_event, only: [:show, :update, :destroy]
 
   def show # Show is actually the edit form

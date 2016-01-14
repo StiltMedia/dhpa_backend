@@ -89,7 +89,6 @@
 = TODO List (should reference scoped items only)
 
 * Hourly
-  1. other photographers can sign in and upload photos (subadmin accounts with add/edit events/photo privileges only - no orders, info, etc)
   1. write a sentence / make a note on the purchase page that if people / clients want to order prints to email me at support@dhpa.com. 
   1. Please change page title to "DHPA" and when in an event "DHPA - event_name"
   1. Homepage needs a "View More" button/page underneath Latest Events
@@ -101,6 +100,7 @@
 
 
   1. Need social URLs
+    - instagram.com/dhpamiami (need password)
 
   1. Most pages are basically blank, most links don't work
   1. Ensure purchase page shows image number, credit card number, receipt / invoice number, etc. 

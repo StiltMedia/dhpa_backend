@@ -9,6 +9,7 @@ end
 Setting.create commercial_price: 5000, personal_price: 2000, personal_image_size: 500 # $50, $20, and 500px
 
 admin1 = User.create first_name: "Default", last_name: "Admin", email: "admin@example.com", password: "password", is_admin: true
+photog1 = User.create first_name: "Default", last_name: "Photographer", email: "photographer@example.com", password: "password", is_photographer: true
 user1 = User.create first_name: "Default", last_name: "User1", email: "user1@example.com", password: "password"
 
 vip_a = Vip.create name: 'John Smith'
