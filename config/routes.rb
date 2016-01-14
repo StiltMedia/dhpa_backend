@@ -23,7 +23,7 @@ Rails.application.routes.draw do
     resources :settings
   end
 
-  resources :events, only: [:show]
+  resources :events, only: [:index, :show]
   resources :lightboxes
   post 'lightbox_switch', to: 'lightboxes#switch_active', as: "switch_active_lightbox"
   resources :lightbox_photos

@@ -22,6 +22,7 @@
       %h5 LATEST EVENTS
       %ul.event-list.three-columns
         = render @latest_events
+        = link_to "VIEW MORE", events_path, class: "button"
 
 
 %section.bg-dark.homefeatured

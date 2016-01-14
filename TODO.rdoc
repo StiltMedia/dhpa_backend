@@ -89,8 +89,6 @@
 = TODO List (should reference scoped items only)
 
 * Hourly
-  1. Homepage needs a "View More" button/page underneath Latest Events
-
   1. if the page is blank, footer should be at the bottom; if the page is long....i should scroll to bottom then see footer.
   1. On mobile - there should not be a slider on the landing. Please change to a fixed image (and no pagination)
   1. search bar and nav dont look great on mobile when logged in - http://www.screencast.com/t/40CikKLZS
