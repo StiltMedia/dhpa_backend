@@ -89,8 +89,6 @@
 = TODO List (should reference scoped items only)
 
 * Hourly
-  1. write a sentence / make a note on the purchase page that if people / clients want to order prints to email me at support@dhpa.com. 
-  1. Please change page title to "DHPA" and when in an event "DHPA - event_name"
   1. Homepage needs a "View More" button/page underneath Latest Events
 
   1. if the page is blank, footer should be at the bottom; if the page is long....i should scroll to bottom then see footer.
