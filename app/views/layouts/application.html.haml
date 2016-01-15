@@ -20,6 +20,5 @@
     - flash.each do |name, msg|
       = content_tag :div, msg, class: "#{name} center flash-box"
     = render "layouts/header"
-    #content-wrapper
-      = yield
+    = yield
     = render "layouts/footer"
