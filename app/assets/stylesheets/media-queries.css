@@ -211,7 +211,7 @@ html {
   float: none;
   margin-right: 0;
 }
-.albumbar.carousel .menu li a {
+.albumbar.carousel .menu {
   margin-right: 0;
   margin-top: 15px;
 }
@@ -594,10 +594,8 @@ html {
     border: medium none;
 }
 .bg-grey .search-input {
-  margin: 18px 0;
+  margin: 0;
   padding-left: 30px;
-  text-align: center;
-  width: 85px
 
 }
 
@@ -648,7 +646,7 @@ html {
 
 @media (max-width: 360px) {
 .bg-grey .search-input {
-  margin: 25px 0 0px 52px;
+  margin: 0;
   padding-left: 56px;
 }
 #menu li a {
@@ -661,7 +659,7 @@ html {
 #menu ul {
     margin-bottom: 0;
     margin-top: 0;
-    text-align: right;
+    text-align: center;
 }
 
 .featured-list li a {

@@ -7,7 +7,8 @@ class LightboxPhotosController < ApplicationController
     if params[:lightbox_id].present?
       @lightbox = current_user.lightboxes.find(params[:lightbox_id])
     else
-      @lightbox = current_user.lightboxes.last
+      @lightbox = current_user.lightboxes.where(active: true).first
+      @lightbox = current_user.lightboxes.last if @lightbox.nil?
     end
 
     # Create if still none

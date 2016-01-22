@@ -32,13 +32,17 @@ class Admin::UsersController < AdminsController
       redirect_to admin_users_path
     else
       flash[:error] = "Error updating user: #{@user.errors.full_messages.join('; ')}."
-      render :show
+      render :new
     end
   end
 
   private
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :email, :password, :is_admin)
+      filtered_params = params.require(:user).permit(:first_name, :last_name, :email, :password, :is_admin, :is_photographer)
+      
+      filtered_params.delete(:password) if filtered_params[:password].blank?
+      
+      return filtered_params
     end
 
     def set_user

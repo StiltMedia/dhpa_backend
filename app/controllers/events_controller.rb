@@ -1,5 +1,9 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show]
+  before_action :set_event, only: :show
+
+  def index
+    @events = Event.all.order(date: :desc)
+  end
 
   def show
     if @event.is_private? && session[:session_password] != @event.password

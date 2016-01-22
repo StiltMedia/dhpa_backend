@@ -19,7 +19,7 @@
                   = @cart.line_items.count
             - if current_user.present?
               %li= link_to "LIGHTBOXES", lightboxes_path
-              - if current_user.is_admin?
+              - if current_user.is_admin_or_photographer?
                 %li= link_to "ADMIN", admin_path
               - else
                 %li= link_to "PURCHASES", purchases_path

@@ -163,21 +163,18 @@ header a.logo {
     background-image: asset_url("menuIcons.png");
 }
 
-#content-wrapper {
-  min-height: 720px;
-}
-
 .bx-wrapper .bx-viewport{
   left: 0 !important
 }
 
 .bxslider li .caption {
-    left: 50%;
-    margin-left: -20%;
-    position: absolute;
-    text-align: center;
-    top: 32%;
-    width: 40%;
+  left: 50%;
+  margin-left: -20%;
+  position: absolute;
+  text-align: center;
+  top: 32%;
+  width: 40%;
+  z-index: 9999;
 }
 
 .bxslider li .caption h5 {
@@ -382,6 +379,13 @@ body .bx-wrapper {
   font-size: 1.188rem;
   font-weight: 600;
   text-align: center;
+}
+.filter-50-dark {
+  -webkit-filter:brightness(50%);
+  -moz-filter:brightness(50%);
+  filter: url(#brightness);
+  filter:brightness(50%);
+  z-index: 1;
 }
 .event-list li a img {
     height: 100%;
@@ -1006,6 +1010,7 @@ button.button:hover {
     display: inline-block;
     margin: 0;
     width: auto;
+    height: 65px;
 }
 .event-gallery-list li ul li a {
   background: rgba(0, 0, 0, 0) asset_url("photoicons.png") no-repeat scroll 0 0;
@@ -1029,12 +1034,28 @@ button.button:hover {
 .event-gallery-list li ul li a.delete {
   background: rgba(0, 0, 0, 0) asset_url("delete.png") no-repeat scroll 0 0;
 }
-
+.event-gallery-list li ul li input.cart {
+  border: none;
+  padding: none;
+}
+.event-gallery-list li ul li form {
+  margin: 0;
+}
+.event-gallery-list li ul li .cart {
+  background: rgba(0, 0, 0, 0) asset_url("photoicons.png") no-repeat scroll 0 0;
+  display: inline-block;
+  height: 40px;
+  margin: 15px 20px 10px;
+  width: 40px;
+  cursor: pointer;
+  opacity: 1;
+  transition: all ease 0.2s;
+}
 
 
 .content-box{
   padding: 3em 0;
-  min-height: calc(100% - 225px);
+  min-height: 600px;
   box-sizing: border-box;
 }
 
@@ -1917,9 +1938,9 @@ table button {
   width: 25%;
   text-align: right;
 }
-.albumbar.carousel  .menu li a {
+.albumbar.carousel .menu {
   margin-right: 0;
-  margin-top: 55px;
+  margin-top: 22px;
 }
 
 .albumbar.carousel {
@@ -1980,7 +2001,7 @@ table button {
 
 #footer{
   background: #0c0d0d;
-  padding: 30px 0
+  padding: 30px 0;
 }
 
 #footer .social {

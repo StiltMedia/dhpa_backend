@@ -17,6 +17,7 @@ gem 'acts-as-taggable-on', '~> 3.4'
 gem 'textacular', '~> 3.0' # Search
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'turbolinks'
 
 gem 'mail_form'

@@ -38,6 +38,34 @@ class LightboxesController < ApplicationController
     end
   end
 
+  def switch_active
+    valid = false
+    
+    current_user.lightboxes.each do |lightbox|
+      if lightbox.id == params[:active_lightbox].to_i
+        lightbox.active = true
+        valid = true
+        @lightbox = lightbox
+      else
+        lightbox.active = false
+      end
+    end
+
+    @lightbox = current_user.lightboxes.where(active: true).first if @lightbox.nil?
+    @lightbox = current_user.lightboxes.last if @lightbox.nil?
+
+    if valid == true
+      current_user.lightboxes.each do |lightbox|
+        lightbox.save
+      end
+      flash.now[:success] = "Switched lightbox."
+      render 'lightbox_photos/create'
+    else
+      flash.now[:error] = "Error: Could not switch lightbox."
+      render 'lightbox_photos/create'
+    end
+  end
+
   def destroy
     if @lightbox.destroy
       flash[:success] = "Deleted lightbox."

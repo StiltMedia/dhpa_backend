@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   root 'home#index'
   get 'admin/' => 'admin/home#index', as: "admin"
   get 'about' => 'pages#about', as: "about"
+  get 'terms' => 'pages#terms_and_conditions', as: "terms_and_conditions"
+  get 'faq' => 'pages#faq', as: "faq"
+  get 'privacy' => 'pages#privacy', as: "privacy"
 
   match '/contact',    to: 'contacts#new', via: 'get', as: "contact_us"
   match '/contact',    to: 'contacts#create', via: 'post', as: "contacts"
@@ -20,8 +23,9 @@ Rails.application.routes.draw do
     resources :settings
   end
 
-  resources :events, only: [:show]
+  resources :events, only: [:index, :show]
   resources :lightboxes
+  post 'lightbox_switch', to: 'lightboxes#switch_active', as: "switch_active_lightbox"
   resources :lightbox_photos
   post 'lightbox_photos/(:lightbox_id)/:photo_id', to: 'lightbox_photos#create', as: "create_lightbox_photo"
   resources :line_items, only: [:new, :create, :edit, :update, :destroy]

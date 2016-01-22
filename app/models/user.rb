@@ -14,4 +14,8 @@ class User < ActiveRecord::Base
   def is_admin?
     self.is_admin == true
   end
+
+  def is_admin_or_photographer?
+    self.is_admin == true || self.is_photographer == true
+  end
 end

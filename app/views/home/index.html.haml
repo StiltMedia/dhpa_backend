@@ -1,24 +1,12 @@
 %ul.bxslider
-  %li
-    .caption
-      %h5 WELCOME TO DHPA.COM
-      %span Photo Agency
-      %a{:href => "#"} LEARN MORE
-    = image_tag "slide1.jpg"
-  %li
-    .caption
-      %h5 WELCOME TO DHPA.COM
-      %span Photo Agency
-      %a{:href => "#"} LEARN MORE
-    = image_tag "slide2.jpg"
-  %li
-    .caption
-      %h5 WELCOME TO DHPA.COM
-      %span Photo Agency
-      %a{:href => "#"} LEARN MORE
-    = image_tag "slide3.jpg"
+  = render partial: "events/top_slider", collection: @top_featured_events
 :javascript
   $(document).ready(function(){
+
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+      $('.bxslider').remove();
+    
+    } else {
 
       $('.bxslider').bxSlider({
         mode: 'fade',
@@ -31,6 +19,8 @@
       });
 
       $("body").attr("class", "home");
+    }
+
   });
 = render "layouts/mid_searchbar"
 %section.events
@@ -39,7 +29,8 @@
       %h5 LATEST EVENTS
       %ul.event-list.three-columns
         = render @latest_events
-
+        = link_to "VIEW MORE", events_path, class: "button"
+        %br &nbsp;
 
 %section.bg-dark.homefeatured
   .container
@@ -59,12 +50,13 @@
     .row
       .three.columns
         %h5
-          %i.fa.fa-instagram>
-          Instagram Feed
+          = link_to "https://www.instagram.com/dhpamiami" do
+            %i.fa.fa-instagram>
+            Instagram Feed
         %p
       .nine.columns
         %ul.instagram-list
-          - @instagram_feed.each do |post|
+          - @instagram_json['items'].each do |item|
             %li
-              = link_to "#{post.link}", target: "_blank" do
-                = image_tag post.images.low_resolution.url
+              = link_to item['link'], target: "_blank", title: item['caption']['text'] do
+                = image_tag item['images']['low_resolution']['url']

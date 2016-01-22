@@ -6,12 +6,23 @@
     %ul
       %li
         = link_to "", create_lightbox_photo_path(lightbox_id: nil, photo_id: photo.id), class: :lamp, method: :post, remote: true
-    / %li
-    /   %a.cart
+  - else
+    %ul
+      %li
+        = link_to "", new_lightbox_path, class: :lamp
+      %li
+        = form_for LineItem.new do |f|
+          = f.hidden_field :photo_id, value: photo.id
+          = f.fields_for :delivery_option, DeliveryOption.new do |delivery_option|
+            #digital-form-elements
+      
+              = delivery_option.hidden_field :option_type, value: "digital"
+              = delivery_option.hidden_field :license, value: "Commercial Use"
+              = f.submit "", class: :cart
   /   %li
   /     %a.download
   %h5
     = link_to "#{photo.event.title}", event_path(photo.event)
   %span.subtitle #{photo.event.sub_title}
   %span.tags
-    = vip_list(photo)
+    = vip_list_links(photo)

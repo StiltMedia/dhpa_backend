@@ -7,8 +7,6 @@
     = link_to lightbox_path(lightbox), class: :imagebox do
       = image_tag attachment_url(lightbox.photos.first, :file, :fill, 275, 175), oncontextmenu: "return false"
     %h5= lightbox.name
-    = button_to lightbox_path(lightbox), method: "delete", class: "button-danger button-small" do
-      %i.fa.fa-trash
 - else
   %li.blank-lightbox
     = button_to edit_lightbox_path(lightbox), method: "get", class: "button-default button-small", form: { class: "lightbox-buttons-left" } do

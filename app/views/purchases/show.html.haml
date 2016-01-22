@@ -1,6 +1,8 @@
 %section.content-box.purchased
   .container
-    %h2.page-title PURCHASE
+    %h2.page-title
+      PURCHASE #
+      = @order.id.to_s.rjust(4, '0')
     - @order.line_items.each do |item|
       .row
         .three.columns
@@ -26,7 +28,7 @@
             = display_size(item)
           %p
             %strong People:
-            = vip_list(item.photo)
+            = vip_list_links(item.photo)
         .two.columns
           - if item.is_digital?
             - if item.delivery_option.license == "Commercial Use"

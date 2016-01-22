@@ -4,12 +4,19 @@
   %section.albumbar.carousel
     .container
       .top-images
-        - if @lightbox.nil? then @lightbox = current_user.lightboxes.last end
+        - if @lightbox.nil?
+          - @lightbox = current_user.lightboxes.where(active: true).first
+          - if @lightbox.nil?
+            - @lightbox = current_user.lightboxes.last
         - if @lightbox.present?
           - @lightbox.lightbox_photos.order(created_at: :desc).each do |lightbox_photo|
             = render lightbox_photo
       %ul.menu
         %li= "#{@response} #{@message}"
-        %li= link_to @lightbox.name, lightbox_path(@lightbox)
+        %li
+          = form_tag switch_active_lightbox_path, method: :post, remote: true do
+            = select_tag "active_lightbox", options_from_collection_for_select(current_user.lightboxes, "id", "name", @lightbox.id)
+        %li= link_to "New", new_lightbox_path
+
 .align-right.toggle-lightbox-wrapper
   %a.toggle-lightbox Show Lightbox

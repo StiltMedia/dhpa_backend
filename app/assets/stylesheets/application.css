@@ -13,6 +13,8 @@
  *= require font-awesome
  *= require normalize.css
  *= require skeleton.css
+ *= require jquery-ui
+ *= require jquery.modal
  *= require style.css
  *= require media-queries.css
  *= require jquery.bxslider.css

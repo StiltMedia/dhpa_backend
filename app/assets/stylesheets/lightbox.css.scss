@@ -15,3 +15,23 @@
   background-color: #FFF;
   border-color: #000;
 }
+
+#lightbox form {
+  margin-bottom: 0;
+}
+
+#lightbox select {
+  background-color: #000;
+  border: 3px solid #FFF;
+  border-radius: 0;
+  color: #FFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Open Sans;
+  font-size: 1.25rem;
+  font-weight: 600;
+  height: auto;
+  line-height: 20px;
+  padding: 10px 40px;
+  text-decoration: none;
+}

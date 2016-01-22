@@ -1,0 +1,8 @@
+staging:
+  rails:
+    configuration:
+      asset_pipeline_precompile: true
+production:
+  rails:
+    configuration:
+      asset_pipeline_precompile: true
