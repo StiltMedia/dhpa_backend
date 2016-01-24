@@ -22,8 +22,6 @@ Copy env.dist to .env and edit as desired, for development/testing.
     * Needed in cloud66 deploy scripts
 * All Environments
   * ENV['RAILS_SERVE_STATIC_FILES']
-  * ENV['INSTAGRAM_ID']
-  * ENV['INSTAGRAM_TOKEN']
   * ENV['AWS_ACCESS_KEY']
   * ENV['AWS_SECRET_ACCESS_KEY']
   * ENV['AWS_REFILE_BUCKET']
