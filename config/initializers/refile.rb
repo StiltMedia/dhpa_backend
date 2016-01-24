@@ -8,7 +8,7 @@ Refile.secret_key = Rails.application.secrets.secret_key_base
   aws = {
     access_key_id: ENV["AWS_ACCESS_KEY"],
     secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"],
-    region: "us-west-1",
+    region: "us-east-1",
     bucket: ENV["AWS_REFILE_BUCKET"],
   }
   # Refile.cache = Refile::S3.new(prefix: "cache", **aws)

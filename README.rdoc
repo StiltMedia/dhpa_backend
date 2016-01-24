@@ -15,29 +15,48 @@ See TODO.rdoc
 == Environment Variables
 
 Copy env.dist to .env and edit as desired, for development/testing.
+Input into cloud66's Environment Variables GUI for staging/production.
 
 * Production/staging only
-  * ENV['SECRET_KEY_BASE']
+  * SECRET_KEY_BASE
+    * Long random string for encryption purposes
   * SMTP_HOSTNAME=www.dhpa.com
-    * Needed in cloud66 deploy scripts
+    * Needed to install an smtp server locally (see .cloud66/smtpinstall.sh)
 * All Environments
-  * ENV['RAILS_SERVE_STATIC_FILES']
-  * ENV['AWS_ACCESS_KEY']
-  * ENV['AWS_SECRET_ACCESS_KEY']
-  * ENV['AWS_REFILE_BUCKET']
-  * ENV['STRIPE_PUBLISHABLE_KEY']
-  * ENV['STRIPE_SECRET_KEY']
+  * RAILS_SERVE_STATIC_FILES
+    * =0 for dev/test, =1 for staging/prod
+  * AWS_ACCESS_KEY
+    * Access Key of an AWS user with S3 Full Access
+  * AWS_SECRET_ACCESS_KEY
+    * Secret Key of an AWS user with S3 Full Access
+  * AWS_REFILE_BUCKET
+    * S3 bucket name for image uploads (i.e. dhpa-uploads-staging for staging)
+  * STRIPE_PUBLISHABLE_KEY
+    * Public Stripe key (either test keys for test/dev/staging, or live keys for production)
+  * STRIPE_SECRET_KEY
+    * Secret Stripe key (either test keys for test/dev/staging, or live keys for production)
 
 == Configuration
 
-* Ensure there is S3 and Postgres backups/snapshots/recovery before running any of these commands on production.
-* Use postgres for development, testing, staging, and production. Create the database names according to database.yml
-  * To clear the database and run the create/migrate/seed commands, run <tt>rake db:setup</tt> or each of the below steps manually:
-    * Use the normal <tt>rake db:create; rake db:migrate</tt> for database initialization.
-    * See db/seeds.rb for default usernames and <tt>rake db:seed</tt> to insert these defaults into the db.
+* Ensure there are recent and usable S3 and Postgres backups/snapshots/recovery before running any of these commands on production!
+* Use postgres for all environments. Create the database names according to database.yml
 * Use AWS S3 for image uploads
   * Create an IAM user and credentials, with normal "S3 Full Access" permissions.
-  * In the us-west-1 region (Northern California), create test, dev, staging, and production buckets according to the AWS_REFILE_BUCKET environment variable. Beware using production buckets outside of the production webserver.
+  * In the us-east-1 region (Virginia), create test, dev, staging, and production buckets according to the AWS_REFILE_BUCKET environment variable. Beware using production buckets outside of the production webserver.
+
+=== In Test/Dev
+
+* To clear the database and run the create/migrate/seed commands, run <tt>rake db:setup</tt>, OR each of the below steps manually:
+  * <tt>rake db:create && rake db:migrate</tt> for database initialization.
+  * See db/seeds.rb for default usernames and <tt>rake db:seed</tt> to insert these defaults into the db.
+
+
+=== In Staging/Production
+
+* The scripts in the .cloud66 folder should take care of most stuff.
+* Manually ensure that large file uploads are enabled:
+  1. Go to your cloud66 stack, click the web server group page (eg. Rails servers) and click CONFIGURE NGINX at the top right.
+  1. Edit the Nginx configuration to: <tt>client_max_body_size    300m;</tt>
 * *TODO:* CDN for faster image serving
 
 == Testing
@@ -50,7 +69,7 @@ Run <tt>rake doc:app</tt> to generate HTML documentation from classes.
 
 == Running
 
-Run <tt>rails s</tt> for development, or use whatever rails server you like in production.
+Run <tt>rails s</tt> for development. Cloud66 scripts are already present.
 
 == Contributors
 
