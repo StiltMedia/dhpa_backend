@@ -13,7 +13,7 @@
           = @photo.size
         = f.label :copyright
         = f.text_field :copyright, class: "w-100"
-        = f.label :commercial_price_in_dollars, "Custom Commercial Price"
+        = f.label :commercial_price_in_dollars, "Custom Editorial Price"
         = f.number_field :commercial_price_in_dollars, step: 0.01, value: number_with_precision(f.object.commercial_price_in_dollars, :precision => 2), placeholder: "#{number_to_currency default_commercial_price(dollars: true)} default"
         = f.label :personal_price_in_dollars, "Custom Personal Price"
         = f.number_field :personal_price_in_dollars, step: 0.01, value: number_with_precision(f.object.personal_price_in_dollars, :precision => 2), placeholder: "#{number_to_currency default_personal_price(dollars: true)} default"

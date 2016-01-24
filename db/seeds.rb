@@ -66,7 +66,7 @@ order_contact_info = OrderContactInfo.create email: "test@zyphon.com"
 order1 = Order.create user: user1, payment_info: payment_info, order_shipping_info: order_shipping_info, order_contact_info: order_contact_info
 
 lineitem1 = LineItem.create photo: photo1, order: order1
-DeliveryOption.create line_item: lineitem1, option_type: "digital", license: "Personal Use"
+DeliveryOption.create line_item: lineitem1, option_type: "digital", license: LineItem::personal_license
 
 lightbox1 = Lightbox.create user: user1, name: "Christmas 2015"
 lightbox1.photos << photo2
