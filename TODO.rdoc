@@ -84,6 +84,12 @@
 
 = TODO List (should reference scoped items only)
 
+1. Input terms and conditions and privacy policy into site
+1. Change license naming to be "personal license" and "editorial license"
+1. Upload site to production server and send IP to client
+1. Continue with changes listed in doc/DHPA Changes.docx
+
+
 * Waiting on client
   1. Text to replace Lorem Ipsum pages
   1. Images to add to About page
