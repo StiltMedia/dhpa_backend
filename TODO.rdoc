@@ -86,6 +86,7 @@
 
 1. Upload site to production server and send IP to client
 1. Continue with changes listed in doc/DHPA Changes.docx
+1. Notify client that they need to back up S3 (dhpa-uploads-production) and the cloud66 Postgres database regularly
 
 
 * Waiting on client
