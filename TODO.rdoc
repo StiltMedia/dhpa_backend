@@ -85,7 +85,7 @@
 = TODO List (should reference scoped items only)
 
 1. Continue with changes listed in doc/DHPA Changes.docx
-1. Notify client that they need to back up S3 (dhpa-uploads-production) and the cloud66 Postgres database regularly
+1. Notify client that they need to back up S3 (dhpa-photos-production) and the cloud66 Postgres database regularly
 
 * Waiting on client
   1. Text to replace Lorem Ipsum pages

@@ -30,7 +30,7 @@ Input into cloud66's Environment Variables GUI for staging/production.
   * AWS_SECRET_ACCESS_KEY
     * Secret Key of an AWS user with S3 Full Access
   * AWS_REFILE_BUCKET
-    * S3 bucket name for image uploads (i.e. dhpa-uploads-staging for staging)
+    * S3 bucket name for image uploads (i.e. dhpa-photos-staging for staging)
   * STRIPE_PUBLISHABLE_KEY
     * Public Stripe key (either test keys for test/dev/staging, or live keys for production)
   * STRIPE_SECRET_KEY
