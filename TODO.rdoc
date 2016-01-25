@@ -84,8 +84,6 @@
 
 = TODO List (should reference scoped items only)
 
-1. Continue with changes listed in doc/DHPA Changes.docx
-
 * Waiting on client
   1. 250mb test images
   1. Images to add to About page
