@@ -8,7 +8,7 @@
     /   479 x 359 px (6.65 x 4.99 in.) 72 dpi - RGB
     %p
       %strong LICENSE:
-      = item.delivery_option.license
+      = LineItem::license_name(item.delivery_option.license)
   %hr
     #resume
       / %p

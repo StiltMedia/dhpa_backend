@@ -22,7 +22,7 @@
         .three.columns.offset-by-one
           %p
             %strong LICENSE TYPE:
-            = item.delivery_option.license
+            = LineItem::license_name(item.delivery_option.license)
           // %p
           //   %b SIZE:
           //   = display_size(item)
