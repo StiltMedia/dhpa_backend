@@ -33,10 +33,10 @@
         %p= link_to "", create_lightbox_photo_path(lightbox_id: nil, photo_id: @photo.id), class: :lamp, method: :post, remote: true
       - else
         %p= link_to "", new_lightbox_path, class: :lamp
-      %br
-      %p
-        %b SIZE:
-        = display_size_list(@photo)
+      // %br
+      // %p
+      //   %b SIZE:
+      //   = display_size_list(@photo)
       %p= render "line_items/new"
       %p
         %b HOW CAN I USE IT?
