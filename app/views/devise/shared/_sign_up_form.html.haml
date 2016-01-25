@@ -1,0 +1,21 @@
+= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  = devise_error_messages!
+  %span.mandatory
+  * fields with an asterisk are mandatory
+  %p
+  = f.label :first_name, "* FIRST NAME"
+  = f.text_field :first_name, autofocus: true
+  %p
+  = f.label :last_name, "* LAST NAME"
+  = f.text_field :last_name, autofocus: true
+  %p
+  = f.label :email, "* EMAIL"
+  = f.email_field :email, autofocus: true
+  %p
+  = f.label :password, "* PASSWORD"
+  = f.password_field :password, autocomplete: "off"
+  %p
+  = f.label :password_confirmation, "* PASSWORD CONFIRMATION"
+  = f.password_field :password_confirmation, autocomplete: "off"
+  %p
+  = f.submit "SIGN UP", id: "submit"

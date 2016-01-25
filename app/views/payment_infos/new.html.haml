@@ -1,23 +1,23 @@
 %section.content-box
   .container
-    #purchase-terms
-      %h2.page-title Please Accept Before Continuing
-      = render 'pages/terms_and_conditions'
-      .center
-        %a{href:"#close", rel:"modal:close", class: "button"} Accept Terms
-
-    :javascript
-      $(document).ready(function(){
-  
-          $('#purchase-terms').modal({
-            clickClose: false,
-            escapeClose: false,
-            showClose: false,
-          });
-
-      });
 
     - if current_or_guest_user
+      #purchase-terms
+        %h2.page-title Please Accept Before Continuing
+        = render 'pages/terms_and_conditions'
+        .center
+          %a{href:"#close", rel:"modal:close", class: "button"} Accept Terms
+  
+      :javascript
+        $(document).ready(function(){
+    
+            $('#purchase-terms').modal({
+              clickClose: false,
+              escapeClose: false,
+              showClose: false,
+            });
+  
+        });
 
       #checkout-step2
         .row
@@ -83,36 +83,9 @@
                 %li.tab
                   %a{:href => "#signup"} SIGN UP
               #signin
-                = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-                  %p
-                    = f.label "EMAIL"
-                    = f.email_field :email, autofocus: true
-                  %p
-                    = f.label "PASSWORD"
-                    = f.password_field :password, autocomplete: "off"
-                    %span.forgot
-                      Forgot your password?
-                      = link_to "Send reset instructions", new_password_path(resource_name)
-                  = f.submit "Sign in", id: "submit"
-                  %span.mandatory
-                    * fields with an asterisk are mandatory
+                = render 'devise/shared/sign_in_form'
               #signup
-                %form
-                  %p
-                    %label FIRST NAME
-                    %input{:type => "text"}/
-                  %p
-                    %label LAST NAME
-                    %input{:type => "text"}/
-                  %p
-                    %label * EMAIL
-                    %input{:type => "text"}/
-                  %p
-                    %label * PASSWORD
-                    %input{:type => "password"}/
-                  %input#submit{:type => "submit", :value => "SIGN UP"}/
-                  %span.mandatory
-                    * fields with an asterisk are mandatory
+                = render 'devise/shared/sign_up_form'
             :javascript
               $(document).ready(function(){
                   $('#tab-container').easytabs();

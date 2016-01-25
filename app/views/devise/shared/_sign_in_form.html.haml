@@ -1,0 +1,14 @@
+= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  = devise_error_messages!
+  %span.mandatory
+  * fields with an asterisk are mandatory
+  %p
+    = f.label "EMAIL"
+    = f.email_field :email, autofocus: true
+  %p
+    = f.label "PASSWORD"
+    = f.password_field :password, autocomplete: "off"
+    %span.forgot
+      Forgot your password?
+      = link_to "Send reset instructions", new_password_path(resource_name)
+  = f.submit "SIGN IN", id: "submit"
