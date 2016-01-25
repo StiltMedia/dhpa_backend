@@ -1,20 +1,20 @@
 
 /*Small*/
 html {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 /*Medium*/
 @media screen and (min-width: 36.57143em) {
   html {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 
 /*Large*/
 @media screen and (min-width: 73.14286em) {
   html {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 
@@ -412,7 +412,7 @@ html {
     margin-bottom: 0;
 }
 .bxslider li .caption a {
-  font-size: 12px;
+  font-size: 14px;
 }
 .bxslider li .caption {
   left: 35%;
@@ -781,7 +781,7 @@ html {
     padding: 10px 20px;
   }
   #footer-menu li a {
-    font-size: 12px;
+    font-size: 14px;
     padding: 0 12px;
   }
   #tab-container.sign-tab .tab a {
