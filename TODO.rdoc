@@ -88,8 +88,6 @@
 
 * Waiting on client
   1. 250mb test images
-  1. Text to replace Lorem Ipsum pages
-     * FAQ
   1. Images to add to About page
 
 * Out of scope
