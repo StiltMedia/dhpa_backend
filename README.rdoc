@@ -72,6 +72,11 @@ Run <tt>rake doc:app</tt> to generate HTML documentation from classes.
 
 Run <tt>rails s</tt> for development. Cloud66 scripts are already present.
 
+== Maintenance & Backups
+
+* The webserver and database server are both managed via cloud66 and hosted on AWS EC2. I have enabled daily automatic backups via cloud66, but you will need to manually verify that the backups are working and useable on a regular basis (every 3 months, for example.)
+* Your photos are uploaded to Amazon S3; the "production" bucket is the important one. I've enabled versioning on it to avoid a disaster if things are accidentally deleted, but the entire bucket should be manually backed up every 3 months as well.
+
 == Contributors
 
 - Gustavo Pares https://twitter.com/staycreatived (http://staycreativedesign.com/)
