@@ -92,13 +92,13 @@ module Refile
     def limit_watermark_dhpa(img, width, height, text)
       Refile::MiniMagick.new(:limit).limit(img, width, height)
 
-      text1 = "DHPA"
+      text1 = "DHPA.com"
       text2 = "dhpa.com/photos/"+text
 
       boxheight = (img.height.to_i*0.8).round(2) - (img.height.to_i*0.4).round(2)
       boxwidth = (img.width.to_i) - (img.width.to_i*0.6).round(2)
       fontsize_sm = (boxwidth / 10) # 1pt = 1px at default pixel density (72 ppi)
-      fontsize_lg = (boxwidth / 3)
+      fontsize_lg = (boxwidth / 5)
 
       img.combine_options do |c|
         # rectangle coordinate order is: x-start,y-start,x-end,y-end
