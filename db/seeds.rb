@@ -27,7 +27,7 @@ vip_l = Vip.create name: 'Esther Delgado'
 vip_m = Vip.create name: 'Yury Rossi'
 vip_n = Vip.create name: 'Claudia Orrett'
 
-copy = "David Heischrek / DHPA.com"
+copy = "DHPA.com"
 assets_path = "app/assets/images/samples/"
 
 event1 = Event.create title: "Lowline 2015", location: "Angel Orensanz Foundation, NYC", photographer: "Benjamin Lozovsky", date: "2015-10-21", sub_title: "Anti-Gala", slug: "lowline-2015", image_url: File.new(assets_path+'event1.jpg'), is_featured: true, is_top_featured: true, tag_list: "celebrity, gala, Angel Orensanz"
