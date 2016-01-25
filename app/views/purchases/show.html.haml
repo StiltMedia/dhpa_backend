@@ -61,7 +61,7 @@
           %span= @order.order_shipping_info.country
     .row
       %label.two.columns.offset-by-eight ORDER DATE:
-      .two.columns= @order.created_at.strftime("%a, %b %d %Y ")
+      .two.columns= @order.created_at.strftime("%A, %b %d %Y")
     .row
       %label.two.columns.offset-by-eight CREDIT CARD:
       .two.columns= "#{@order.payment_info.brand} ending in #{@order.payment_info.last4}"
