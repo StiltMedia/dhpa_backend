@@ -43,6 +43,7 @@ Input into cloud66's Environment Variables GUI for staging/production.
 * Use AWS S3 for image uploads
   * Create an IAM user and credentials, with normal "S3 Full Access" permissions.
   * In the us-east-1 region (Virginia), create test, dev, staging, and production buckets according to the AWS_REFILE_BUCKET environment variable. Beware using production buckets outside of the production webserver.
+* Use cloud66 for staging/production deployment (in the us-east-1 region; use t2.medium for production server size)
 
 === In Test/Dev
 
