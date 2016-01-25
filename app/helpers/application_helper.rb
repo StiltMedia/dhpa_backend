@@ -95,7 +95,7 @@ module ApplicationHelper
   end
 
   def vip_list(what)
-    what.vips.map(&:name).join(', ')
+    what.vips.map(&:name).uniq.join(', ')
   end
 
   def vip_list_links(what)

@@ -70,7 +70,6 @@ class ApplicationController < ActionController::Base
       if params[:vips].present?
         vips = params[:vips].split(",")
         add_vips(vips, event_or_photo)
-        event_or_photo.save # Save because event was just saved
       end
     end
 
@@ -90,6 +89,8 @@ class ApplicationController < ActionController::Base
             end
           end
         end
+        # Save so that on next run-through the find_by_name doesn't accidentally create duplicates
+        event_or_photo.save
       end
     end
 
