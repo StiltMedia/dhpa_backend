@@ -25,7 +25,7 @@
         = @photo.copyright
       %p
         %b DATE:
-        = @photo.event.date.strftime("%a, %b %d %Y ")
+        = @photo.event.date.strftime("%A, %b %d %Y")
       %p
         %b KEYWORDS:
         = @photo.tag_list
@@ -33,10 +33,13 @@
         %p= link_to "", create_lightbox_photo_path(lightbox_id: nil, photo_id: @photo.id), class: :lamp, method: :post, remote: true
       - else
         %p= link_to "", new_lightbox_path, class: :lamp
-      %br
       %p
-        %b SIZE:
-        = display_size_list(@photo)
+        %b COPYRIGHT:
+        = @photo.copyright
+      // %br
+      // %p
+      //   %b SIZE:
+      //   = display_size_list(@photo)
       %p= render "line_items/new"
       %p
         %b HOW CAN I USE IT?

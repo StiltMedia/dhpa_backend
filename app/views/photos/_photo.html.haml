@@ -17,7 +17,7 @@
             #digital-form-elements
       
               = delivery_option.hidden_field :option_type, value: "digital"
-              = delivery_option.hidden_field :license, value: "Commercial Use"
+              = delivery_option.hidden_field :license, value: LineItem::editorial_license
               = f.submit "", class: :cart
   /   %li
   /     %a.download

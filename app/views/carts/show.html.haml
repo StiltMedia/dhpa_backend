@@ -14,21 +14,24 @@
               %strong Event:
               = item.photo.event.title
             %h5 Date:
-            %p= item.photo.event.date
+            %p= item.photo.event.date.strftime("%A, %b %d %Y")
           .three.columns
             %p
               %strong LICENSE TYPE:
-              = item.delivery_option.license
+              = LineItem::license_name(item.delivery_option.license)
             %p
-              %b SIZE:
-              = display_size(item)
+              %strong COPYRIGHT:
+              = item.photo.copyright
+            // %p
+            //   %b SIZE:
+            //   = display_size(item)
             %p
               %strong People:
               = vip_list(item.photo)
 
           .two.columns
             .change-options
-              = link_to "CHANGE OPTIONS", edit_line_item_path(item), remote: true, class: "button"
+              = link_to "CHANGE LICENSE", edit_line_item_path(item), remote: true, class: "button"
             %h5 ITEM PRICE:
             %span.price= number_to_currency calculate_price(item, dollars: true)
           .one.columns

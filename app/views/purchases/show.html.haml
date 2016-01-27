@@ -6,8 +6,8 @@
     - @order.line_items.each do |item|
       .row
         .three.columns
-          - if item.delivery_option.license == "Commercial Use"
-            = image_tag attachment_url(item.photo, :file, format: "jpg") # Commercial Use = full rez
+          - if item.delivery_option.license == LineItem::editorial_license
+            = image_tag attachment_url(item.photo, :file, format: "jpg") # Editorial Use = full rez
           - else
             = image_tag attachment_url(item.photo, :file, :limit, personal_image_size, personal_image_size, format: "jpg") # Private Use = smaller rez
         .three.columns
@@ -18,21 +18,24 @@
             %strong Event:
             = item.photo.event.title
           %h5 Date:
-          %p= item.photo.event.date
+          %p= item.photo.event.date.strftime("%A, %b %d %Y")
         .three.columns.offset-by-one
           %p
             %strong LICENSE TYPE:
-            = item.delivery_option.license
+            = LineItem::license_name(item.delivery_option.license)
           %p
-            %b SIZE:
-            = display_size(item)
+            %strong COPYRIGHT:
+            = item.photo.copyright
+          // %p
+          //   %b SIZE:
+          //   = display_size(item)
           %p
             %strong People:
             = vip_list_links(item.photo)
         .two.columns
           - if item.is_digital?
-            - if item.delivery_option.license == "Commercial Use"
-              = link_to "DOWNLOAD", attachment_url(item.photo, :file, format: "jpg"), class: "button", download: "dhpa_photo_#{item.photo.id}.jpg" # Commercial Use = full rez
+            - if item.delivery_option.license == LineItem::editorial_license
+              = link_to "DOWNLOAD", attachment_url(item.photo, :file, format: "jpg"), class: "button", download: "dhpa_photo_#{item.photo.id}.jpg" # Editorial Use = full rez
             - else
               = link_to "DOWNLOAD", attachment_url(item.photo, :file, :limit, personal_image_size, personal_image_size, format: "jpg"), class: "button", download: "dhpa_photo_#{item.photo.id}.jpg" # Private Use = smaller rez
   .container
@@ -61,7 +64,7 @@
           %span= @order.order_shipping_info.country
     .row
       %label.two.columns.offset-by-eight ORDER DATE:
-      .two.columns= @order.created_at.strftime("%a, %b %d %Y ")
+      .two.columns= @order.created_at.strftime("%A, %b %d %Y")
     .row
       %label.two.columns.offset-by-eight CREDIT CARD:
       .two.columns= "#{@order.payment_info.brand} ending in #{@order.payment_info.last4}"

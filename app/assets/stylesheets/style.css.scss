@@ -35,6 +35,21 @@ body{
   display: none;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+.hidden {
+    display: none;
+}
+
 #header{
   border-bottom: 2px solid #e1e1e1;
 }
@@ -48,7 +63,7 @@ header a.logo {
     color: rgb(0, 0, 0);
     display: inline-block;
     font-family: Open Sans;
-    font-size: 2.875rem;
+    font-size: 2.5rem;
     font-weight: bold;
     margin-top: 20px;
     text-decoration: none;
@@ -71,7 +86,7 @@ header a.logo {
 #menu li a {
   color: rgb(24, 26, 26);
   font-family: Open Sans;
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: 600;
   margin-left: 15px;
   padding: 5px 18px;
@@ -1085,6 +1100,10 @@ button.button:hover {
   margin: 0 0 50px;
 }
 
+
+#purchase-terms {
+  width: 80%;
+}
 
 .purchased img{
   display: inline-block;

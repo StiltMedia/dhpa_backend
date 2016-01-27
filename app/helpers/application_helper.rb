@@ -1,9 +1,9 @@
 module ApplicationHelper
 
   def default_personal_or_commercial_price(item, dollars=false)
-    if item.delivery_option.license == "Commercial Use"
+    if item.delivery_option.license == LineItem::editorial_license
       default_commercial_price(dollars)
-    elsif item.delivery_option.license == "Personal Use"
+    elsif item.delivery_option.license == LineItem::personal_license
       default_personal_price(dollars)
     else
       return nil
@@ -42,9 +42,9 @@ module ApplicationHelper
   def display_size_list(photo)
     personal_size = calculate_personal_size(photo.size)
     if personal_size != photo.size
-      "#{photo.size} commercial, #{personal_size} personal"
+      "#{photo.size} #{LineItem::editorial_license_name}, #{personal_size} #{LineItem::personal_license_name}"
     else
-      "#{photo.size} commercial & personal"
+      "#{photo.size} #{LineItem::editorial_license_name} & #{LineItem::personal_license_name}"
     end
   end
 
@@ -87,7 +87,7 @@ module ApplicationHelper
   end
 
   def options_for_license
-    ["Commercial Use", "Personal Use"]
+    LineItem::licenses.invert
   end
 
   def options_for_nationality
@@ -95,7 +95,7 @@ module ApplicationHelper
   end
 
   def vip_list(what)
-    what.vips.map(&:name).join(', ')
+    what.vips.map(&:name).uniq.join(', ')
   end
 
   def vip_list_links(what)
@@ -105,7 +105,7 @@ module ApplicationHelper
   end
 
   def date_of_event(event)
-    event.date.strftime("%a, %b %d %Y ")
+    event.date.strftime("%A, %b %d %Y")
   end
 
   def css_class_active_for link_path

@@ -27,7 +27,7 @@ vip_l = Vip.create name: 'Esther Delgado'
 vip_m = Vip.create name: 'Yury Rossi'
 vip_n = Vip.create name: 'Claudia Orrett'
 
-copy = "David Heischrek / DHPA.com"
+copy = "DHPA.com"
 assets_path = "app/assets/images/samples/"
 
 event1 = Event.create title: "Lowline 2015", location: "Angel Orensanz Foundation, NYC", photographer: "Benjamin Lozovsky", date: "2015-10-21", sub_title: "Anti-Gala", slug: "lowline-2015", image_url: File.new(assets_path+'event1.jpg'), is_featured: true, is_top_featured: true, tag_list: "celebrity, gala, Angel Orensanz"
@@ -66,7 +66,7 @@ order_contact_info = OrderContactInfo.create email: "test@zyphon.com"
 order1 = Order.create user: user1, payment_info: payment_info, order_shipping_info: order_shipping_info, order_contact_info: order_contact_info
 
 lineitem1 = LineItem.create photo: photo1, order: order1
-DeliveryOption.create line_item: lineitem1, option_type: "digital", license: "Personal Use"
+DeliveryOption.create line_item: lineitem1, option_type: "digital", license: LineItem::personal_license
 
 lightbox1 = Lightbox.create user: user1, name: "Christmas 2015"
 lightbox1.photos << photo2
