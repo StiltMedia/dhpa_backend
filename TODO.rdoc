@@ -11,7 +11,15 @@
 
 * The very first thing I'm going to do once we actually get started is upload it somewhere so you and/or the client can play around with it as we finish it; ideally each chunk gets tested and approved before moving on so we don't have delivery-day "this isn't anything like what I asked for" syndrome.
 
-= Scope
+= TODO List
+
+* CDN for faster image serving
+* Waiting on client
+  1. Images to add to About page
+* Out of scope
+  1. people / clients can pay with their credit card AND paypal accounts.
+
+= Scope/Specs
 
 * Frontend shall match provided HTML/CSS/JS files as closely as possible
   * Home
@@ -20,7 +28,7 @@
     * *TODO* There's no photos/events/refine control on the home search form
     * Need social URLs for links
     * Featured content area
-  * *TODO* About
+  * About
   * Book Now (contact form)
   * Search
     * Partial exact match based on image tags and fields
@@ -81,14 +89,3 @@
     * Will NOT be able to “drag and drop” any unpurchased photos
     * No physical products will be sold, only digital downloads.
 * No CMS feature will be programmed at this time -- text and style changes will require a Rails programmer.
-
-= TODO List (should reference scoped items only)
-
-1. Inform client that they must perform monthly security updates:
-   * http://help.cloud66.com/managing-your-stack/applying-upgrades
-
-* Waiting on client
-  1. Images to add to About page
-
-* Out of scope
-  1. people / clients can pay with their credit card AND paypal accounts.

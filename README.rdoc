@@ -1,3 +1,16 @@
+== Mandatory Regular Maintenance
+
+1. You must perform monthly security updates of your cloud66 AWS servers in order to avoid being hacked:
+   * http://help.cloud66.com/managing-your-stack/applying-upgrades
+2. The webserver and database server are both managed via cloud66 and hosted on AWS EC2.
+   I have enabled daily automatic backups via cloud66, but you will need to manually verify
+   that the backups are working and useable on a regular basis (every 3 months, for example.)
+3. Your photos are being saved on Amazon S3; the "production" bucket is the important one.
+   I've enabled versioning on it to avoid a disaster if things are accidentally deleted,
+   but the entire bucket should be manually backed up every 3 months as well.
+4. It's a very good idea to copy the S3 (photo) and Cloud66 (Postgres Database) backups to your home
+   computer every month, so that if Cloud66 or Amazon have trouble you still have a recent copy of your site.
+
 == Todo & Scope
 
 See TODO.rdoc
@@ -42,8 +55,7 @@ Input into cloud66's Environment Variables GUI for staging/production.
 * Use postgres for all environments. Create the database names according to database.yml
 * Use AWS S3 for image uploads
   * Create an IAM user and credentials, with normal "S3 Full Access" permissions.
-  * In the us-east-1 region (Virginia), create test, dev, staging, and production buckets according to the AWS_REFILE_BUCKET environment variable. Beware using production buckets outside of the production webserver.
-* Use cloud66 for staging/production deployment (in the us-east-1 region; use t2.medium for production server size)
+  * In the us-east-1 region (Virginia), create test, dev, staging, and production buckets according to the AWS_REFILE_BUCKET environment variable. Do not use production buckets outside of the production webserver.
 
 === In Test/Dev
 
@@ -51,10 +63,10 @@ Input into cloud66's Environment Variables GUI for staging/production.
   * <tt>rake db:create && rake db:migrate</tt> for database initialization.
   * See db/seeds.rb for default usernames and <tt>rake db:seed</tt> to insert these defaults into the db.
 
-
 === In Staging/Production
 
-* The scripts in the .cloud66 folder should take care of most stuff.
+* Use cloud66 for staging/production deployment (in the us-east-1 region; use t2.medium for production server size and t2.small for staging.)
+  * The scripts in the .cloud66 folder should take care of most stuff.
 * Manually ensure that large file uploads are enabled:
   1. Go to your cloud66 stack, click the web server group page (eg. Rails servers) and click CONFIGURE NGINX at the top right.
   1. Edit the Nginx configuration to: <tt>client_max_body_size    300m;</tt> *IN BOTH THE HTTP AND SERVER SECTIONS OF THE CONFIG FILE.*
@@ -70,12 +82,7 @@ Run <tt>rake doc:app</tt> to generate HTML documentation from classes.
 
 == Running
 
-Run <tt>rails s</tt> for development. Cloud66 scripts are already present.
-
-== Maintenance & Backups
-
-* The webserver and database server are both managed via cloud66 and hosted on AWS EC2. I have enabled daily automatic backups via cloud66, but you will need to manually verify that the backups are working and useable on a regular basis (every 3 months, for example.)
-* Your photos are uploaded to Amazon S3; the "production" bucket is the important one. I've enabled versioning on it to avoid a disaster if things are accidentally deleted, but the entire bucket should be manually backed up every 3 months as well.
+Run <tt>rails s</tt> for development. Cloud66 scripts are already present for staging/production.
 
 == Contributors
 
