@@ -23,6 +23,9 @@
           %p
             %strong LICENSE TYPE:
             = LineItem::license_name(item.delivery_option.license)
+          %p
+            %strong COPYRIGHT:
+            = item.photo.copyright
           // %p
           //   %b SIZE:
           //   = display_size(item)
