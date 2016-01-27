@@ -85,8 +85,7 @@
 = TODO List (should reference scoped items only)
 
 1. what is the max Bulk Upload amount of photos I can do at one time, in MB ?
-1. when photo is in Cart (cart view):
-   * also add the Copyright Holder, as on the previous page: Copyright: DHPA.com
+   * 413 Request Entity Too Large at ~5%
 1. Checkout & Users page:
    * for Sign In ONLY, either add the asterisk next to Email & Password. OR take out the sentence on both pages that says *fields with an asterisk are mandatory"
 
