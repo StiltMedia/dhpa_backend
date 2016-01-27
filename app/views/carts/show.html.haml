@@ -14,7 +14,7 @@
               %strong Event:
               = item.photo.event.title
             %h5 Date:
-            %p= item.photo.event.date
+            %p= item.photo.event.date.strftime("%A, %b %d %Y")
           .three.columns
             %p
               %strong LICENSE TYPE:
