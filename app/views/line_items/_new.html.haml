@@ -5,6 +5,7 @@
   /   %li.tab
   /     %a{id: "physical", :href => "#"} PHYSICAL PRINT
 
+  %br
   = form_for LineItem.new do |f|
     = f.hidden_field :photo_id, value: @photo.id
     = f.fields_for :delivery_option, DeliveryOption.new do |delivery_option|
@@ -12,9 +13,9 @@
 
         = delivery_option.hidden_field :option_type, value: "digital"
 
-        = delivery_option.label :license, "LICENSE"
+        = delivery_option.label :license, "LICENSE:"
         = delivery_option.select :license, options_for_select(options_for_license)
-
+        %br
         = f.submit "Add to Cart", class: :button
         
         %p
