@@ -88,6 +88,8 @@
    * 413 Request Entity Too Large at ~5%
 1. Checkout & Users page:
    * for Sign In ONLY, either add the asterisk next to Email & Password. OR take out the sentence on both pages that says *fields with an asterisk are mandatory"
+1. Inform client that they must perform monthly security updates:
+   * http://help.cloud66.com/managing-your-stack/applying-upgrades
 
 * Waiting on client
   1. Images to add to About page

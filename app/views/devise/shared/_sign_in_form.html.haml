@@ -1,7 +1,6 @@
 = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
   = devise_error_messages!
   %span.mandatory
-  * fields with an asterisk are mandatory
   %p
     = f.label "EMAIL"
     = f.email_field :email, autofocus: true
