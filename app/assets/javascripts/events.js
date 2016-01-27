@@ -85,7 +85,7 @@ $(document).on("upload:complete", "form", function(e) {
 
   if(!$(this).find("input.uploading").length) {
     $(this).find("input[type=submit]").removeAttr("disabled");
-    finishedMessage = '<b> -- Please click Submit to finish the upload.</b>';
+    finishedMessage = '<b> -- Please click Submit to finish the upload, and wait while the images are processed.</b>';
   }
 
   // add to completed count

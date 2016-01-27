@@ -84,10 +84,6 @@
 
 = TODO List (should reference scoped items only)
 
-1. what is the max Bulk Upload amount of photos I can do at one time, in MB ?
-   * 413 Request Entity Too Large at ~5%
-1. Checkout & Users page:
-   * for Sign In ONLY, either add the asterisk next to Email & Password. OR take out the sentence on both pages that says *fields with an asterisk are mandatory"
 1. Inform client that they must perform monthly security updates:
    * http://help.cloud66.com/managing-your-stack/applying-upgrades
 
