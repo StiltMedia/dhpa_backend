@@ -4,7 +4,7 @@
     - if current_or_guest_user
       #purchase-terms
         %h2.page-title Please Accept Before Continuing
-        = render 'pages/terms_and_conditions'
+        = render 'pages/terms_and_conditions', licenses_only: true
         .center
           %a{href:"#close", rel:"modal:close", class: "button"} Accept Terms
   

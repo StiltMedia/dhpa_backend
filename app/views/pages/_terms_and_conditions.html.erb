@@ -87,28 +87,34 @@
 </style>
 
 
-        <h2 class="page-title center">DHPA<br/>
-        Terms and Conditions<br/>
-        Last Modified: January 7, 2016</h2>
-        <P class="p3 ft3">Thank you for using DHPA.com. We value your use of our site and provide these Terms <SPAN class="ft2">and Conditions </SPAN>(the "Agreement") as an agreement between you and DHPA.com ("DHPA" or "we") regarding your use of the DHPA.com website (the "Site"). By using or accessing the Site in any way, you agree to be bound by this Agreement in full.</P>
-        <P class="p5 ft3">We may modify this Agreement at any time by updating this document. If you continue using the Site in any way following an update, you agree to be bound by the new Agreement.</P>
-        <P class="p6 ft0"><SPAN class="ft0">1.</SPAN><SPAN class="ft4">Use of the Site</SPAN></P>
-        <P class="p7 ft3"><SPAN class="ft0">(a)</SPAN><SPAN class="ft5">By using, accessing or viewing the Site in any way, you agree that:</SPAN></P>
-        <P class="p8 ft3"><SPAN class="ft0">i.</SPAN><SPAN class="ft6">You are at least 13 years of age or older and may enter into legally binding contracts.</SPAN></P>
-        <P class="p9 ft3"><SPAN class="ft0">ii.</SPAN><SPAN class="ft6">You will not use the Site or any of its content in any way that is, or facilitates, illegal or prohibited activities.</SPAN></P>
-        <P class="p10 ft3"><SPAN class="ft0">iii.</SPAN><SPAN class="ft6">You will not disrupt the Site or attempt to circumvent, hack, or unlawfully access the Site or its content.</SPAN></P>
-        <P class="p11 ft3"><SPAN class="ft0">iv.</SPAN><SPAN class="ft6">You will not violate the intellectual property rights, including copyright, trademark, and patent rights, of DHPA. This includes DHPA's rights to all photographs and images on the Site.</SPAN></P>
-        <P class="p12 ft3"><SPAN class="ft0">(b)</SPAN><SPAN class="ft7">Your access to the Site may be limited or terminated at any time and for any reason.</SPAN></P>
-        <P class="p13 ft0"><SPAN class="ft0">2.</SPAN><SPAN class="ft4">Purchase and Use of Photographs</SPAN></P>
-        <P class="p14 ft3"><SPAN class="ft0">(a)</SPAN><SPAN class="ft5">All photos, images, and graphics found throughout the Site (collectively, “Works”) are owned by DHPA and are protected by United States and international copyright law. Use of any image as the basis for another photographic concept or illustration (digital, artist rendering or alike) is a violation of the applicable copyright laws. All images are copyrighted © 2016 DHPA.com</SPAN></P>
-        <P class="p15 ft10"><SPAN class="ft8">(b)</SPAN><SPAN class="ft9">You may purchase the Works featured on the Site in the form of digital image files, or such other products as we may offer from time to time, subject to a specific license. We offer several licenses, which are described more fully in Section 3 of this Agreement and on the Site at the time any purchase is made (each a “License”).</P>
+        <% if not defined?(licenses_only) or licenses_only != true %>
+          <h2 class="page-title center">DHPA<br/>
+          Terms and Conditions<br/>
+          Last Modified: January 7, 2016</h2>
         
-        
-        <P class="p17 ft3"><SPAN class="ft0">(c)</SPAN><SPAN class="ft11">If you purchase Works, you agree to abide by the terms of the applicable License in full and without modification.</SPAN></P>
-        <P class="p18 ft3"><SPAN class="ft0">(d)</SPAN><SPAN class="ft7">By making any purchase through the Site, you agree that DHPA is authorized to charge a fee to the payment method (such as credit card) you provide. By making any purchase, you represent and warrant that you are authorized to make such purchase with the specified payment method you provide.</SPAN></P>
-        <P class="p19 ft3"><SPAN class="ft0">(e)</SPAN><SPAN class="ft11">Prices found throughout the Site are subject to change with notice.</SPAN></P>
-        <P class="p20 ft3"><SPAN class="ft0">(f)</SPAN><SPAN class="ft12">All purchases and sales through the Site are final and no refunds shall be made under any circumstance.</SPAN></P>
-        <P class="p21 ft0"><SPAN class="ft0">3.</SPAN><SPAN class="ft4">Licenses</SPAN></P>
+          <P class="p3 ft3">Thank you for using DHPA.com. We value your use of our site and provide these Terms <SPAN class="ft2">and Conditions </SPAN>(the "Agreement") as an agreement between you and DHPA.com ("DHPA" or "we") regarding your use of the DHPA.com website (the "Site"). By using or accessing the Site in any way, you agree to be bound by this Agreement in full.</P>
+          <P class="p5 ft3">We may modify this Agreement at any time by updating this document. If you continue using the Site in any way following an update, you agree to be bound by the new Agreement.</P>
+          <P class="p6 ft0"><SPAN class="ft0">1.</SPAN><SPAN class="ft4">Use of the Site</SPAN></P>
+          <P class="p7 ft3"><SPAN class="ft0">(a)</SPAN><SPAN class="ft5">By using, accessing or viewing the Site in any way, you agree that:</SPAN></P>
+          <P class="p8 ft3"><SPAN class="ft0">i.</SPAN><SPAN class="ft6">You are at least 13 years of age or older and may enter into legally binding contracts.</SPAN></P>
+          <P class="p9 ft3"><SPAN class="ft0">ii.</SPAN><SPAN class="ft6">You will not use the Site or any of its content in any way that is, or facilitates, illegal or prohibited activities.</SPAN></P>
+          <P class="p10 ft3"><SPAN class="ft0">iii.</SPAN><SPAN class="ft6">You will not disrupt the Site or attempt to circumvent, hack, or unlawfully access the Site or its content.</SPAN></P>
+          <P class="p11 ft3"><SPAN class="ft0">iv.</SPAN><SPAN class="ft6">You will not violate the intellectual property rights, including copyright, trademark, and patent rights, of DHPA. This includes DHPA's rights to all photographs and images on the Site.</SPAN></P>
+          <P class="p12 ft3"><SPAN class="ft0">(b)</SPAN><SPAN class="ft7">Your access to the Site may be limited or terminated at any time and for any reason.</SPAN></P>
+          <P class="p13 ft0"><SPAN class="ft0">2.</SPAN><SPAN class="ft4">Purchase and Use of Photographs</SPAN></P>
+          <P class="p14 ft3"><SPAN class="ft0">(a)</SPAN><SPAN class="ft5">All photos, images, and graphics found throughout the Site (collectively, “Works”) are owned by DHPA and are protected by United States and international copyright law. Use of any image as the basis for another photographic concept or illustration (digital, artist rendering or alike) is a violation of the applicable copyright laws. All images are copyrighted © 2016 DHPA.com</SPAN></P>
+          <P class="p15 ft10"><SPAN class="ft8">(b)</SPAN><SPAN class="ft9">You may purchase the Works featured on the Site in the form of digital image files, or such other products as we may offer from time to time, subject to a specific license. We offer several licenses, which are described more fully in Section 3 of this Agreement and on the Site at the time any purchase is made (each a “License”).</P>
+  
+          <P class="p17 ft3"><SPAN class="ft0">(c)</SPAN><SPAN class="ft11">If you purchase Works, you agree to abide by the terms of the applicable License in full and without modification.</SPAN></P>
+          <P class="p18 ft3"><SPAN class="ft0">(d)</SPAN><SPAN class="ft7">By making any purchase through the Site, you agree that DHPA is authorized to charge a fee to the payment method (such as credit card) you provide. By making any purchase, you represent and warrant that you are authorized to make such purchase with the specified payment method you provide.</SPAN></P>
+          <P class="p19 ft3"><SPAN class="ft0">(e)</SPAN><SPAN class="ft11">Prices found throughout the Site are subject to change with notice.</SPAN></P>
+          <P class="p20 ft3"><SPAN class="ft0">(f)</SPAN><SPAN class="ft12">All purchases and sales through the Site are final and no refunds shall be made under any circumstance.</SPAN></P>
+
+          <P class="p21 ft0"><SPAN class="ft0">3.</SPAN><SPAN class="ft4">Licenses</SPAN></P>
+        <% else %>
+          <h4 class="page-title center">Section 3: Licenses</h4>
+        <% end %>
+
         <P class="p22 ft10"><SPAN class="ft8">(a)</SPAN><SPAN class="ft13">You may purchase any of the images found on DHPA.com subject to either our</SPAN></P>
         <P class="p23 ft3"><SPAN class="ft3">(1)</SPAN><SPAN class="ft7">Personal License or our (2) Editorial License. By selecting either license option during checkout, you agree to abide by the below corresponding terms at all times, in full, and without modification.</SPAN></P>
         <P class="p24 ft3"><SPAN class="ft0">(b)</SPAN><SPAN class="ft14">Personal License</SPAN>: Please choose this option if you'd like to use the photographs for your own personal use. If you purchase any of our images with a Personal License you agree that DHPA.com is granting you a revocable, worldwide, license to use the purchased image subject to the following conditions:</P>
@@ -136,16 +142,21 @@
         
         
         <P class="p42 ft18"><SPAN class="ft0">v.</SPAN><SPAN class="ft6">Please contact </SPAN><A href="mailto:support@dhpa.com"><SPAN class="ft16">support@dhpa.com </SPAN></A>if you wish you purchase a <SPAN class="ft17">C</SPAN>ommercial <SPAN class="ft17">L</SPAN>icense which will enable you to use the images in ways other than those granted in the Personal License and Editorial License.</P>
-        <P class="p43 ft19"><SPAN class="ft19">4.</SPAN><SPAN class="ft20">No Warranties; Disclaimers</SPAN></P>
-        <P class="p44 ft18"><SPAN class="ft19">(a)</SPAN><SPAN class="ft21">DHPA PROVIDES THE SITE AND ALL OF ITS CONTENT, INCLUDING THE WORKS, “AS IS” AND “WHERE IS” WITH NO REPRESENTATIONS OR WARRANTIES OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR </SPAN><NOBR>NON-INFRINGEMENT,</NOBR> TO THE FULLEST EXTENT PERMISSIBLE UNDER APPLICABLE LAW.</P>
-        <P class="p45 ft18"><SPAN class="ft19">(b)</SPAN><SPAN class="ft22">DHPA uses its reasonable efforts to ensure compliance with applicable laws relating to licensing and rights of privacy and publicity for its Works, including necessary releases and permits, but makes no guarantees as to such compliance.</SPAN></P>
-        <P class="p46 ft18"><SPAN class="ft19">(c)</SPAN><SPAN class="ft23">If you believe any content or works on the Site infringe upon your rights, please promptly contact us via email at: </SPAN><A href="mailto:support@dhpa.com"><SPAN class="ft16">support@dhpa.com</SPAN></A></P>
-        <P class="p47 ft18"><SPAN class="ft19">(d)</SPAN><SPAN class="ft22">You acknowledge and agree that your use of the Site and the Work is solely at your own risk. DHPA, and its owners, affiliated companies, officers, directors, employees, subsidiaries, and representatives, shall under no circumstance be liable or responsible for any losses, injuries, or damages of any kind including, without limitation, lost business or profits, direct, indirect, incidental, consequential, compensatory, exemplary, special or punitive damages that may result from your use or reliance on the Site or the Work.</SPAN></P>
-        <P class="p48 ft19"><SPAN class="ft19">5.</SPAN><SPAN class="ft20">Miscellaneous</SPAN></P>
-        <P class="p49 ft26"><SPAN class="ft24">(a)</SPAN><SPAN class="ft25">This Agreement shall be governed exclusively by the law of the state of Florida without regard for the conflict of laws. Any dispute arising under, or related to, this Agreement shall be brought exclusively in the state and federal courts of </SPAN><NOBR>Miami-Dade</NOBR> County, Florida. This Section 5(a) notwithstanding, DHPA retains the right to bring an individual action to seek injunctive or other relief in any court of competent jurisdiction to prevent the actual or threatened infringement, misappropriation or violation of a party's copyrights, trademarks, trade secrets, patents or other intellectual property rights.</P>
-        <P class="p50 ft18"><SPAN class="ft19">(b)</SPAN><SPAN class="ft22">This Agreement constitutes the full and complete understanding of the parties with respect to the use of the Site and the Work.</SPAN></P>
-        <P class="p51 ft18"><SPAN class="ft19">(c)</SPAN><SPAN class="ft23">If any provision of this Agreement is held invalid, the remainder of this Agreement shall continue in full force and effect to the maximum extent allowed by law.</SPAN></P>
-        
-        
-        <P class="p52 ft3"><SPAN class="ft0">(d)</SPAN><SPAN class="ft7">Any delay or failure of the parties to exercise or enforce any portion of this Agreement shall in no way constitute any waiver of rights.</SPAN></P>
-        <P class="p21 ft3"><SPAN class="ft0">(e)</SPAN><SPAN class="ft11">Notice may be sent to DHPA at </SPAN><A href="mailto:support@dhpa.com"><SPAN class="ft16">support@dhpa.com</SPAN></A><A href="mailto:support@dhpa.com"><SPAN class="ft18">.</SPAN></A></P>
+
+
+
+        <% if not defined?(licenses_only) or licenses_only != true %>
+          <P class="p43 ft19"><SPAN class="ft19">4.</SPAN><SPAN class="ft20">No Warranties; Disclaimers</SPAN></P>
+          <P class="p44 ft18"><SPAN class="ft19">(a)</SPAN><SPAN class="ft21">DHPA PROVIDES THE SITE AND ALL OF ITS CONTENT, INCLUDING THE WORKS, “AS IS” AND “WHERE IS” WITH NO REPRESENTATIONS OR WARRANTIES OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR </SPAN><NOBR>NON-INFRINGEMENT,</NOBR> TO THE FULLEST EXTENT PERMISSIBLE UNDER APPLICABLE LAW.</P>
+          <P class="p45 ft18"><SPAN class="ft19">(b)</SPAN><SPAN class="ft22">DHPA uses its reasonable efforts to ensure compliance with applicable laws relating to licensing and rights of privacy and publicity for its Works, including necessary releases and permits, but makes no guarantees as to such compliance.</SPAN></P>
+          <P class="p46 ft18"><SPAN class="ft19">(c)</SPAN><SPAN class="ft23">If you believe any content or works on the Site infringe upon your rights, please promptly contact us via email at: </SPAN><A href="mailto:support@dhpa.com"><SPAN class="ft16">support@dhpa.com</SPAN></A></P>
+          <P class="p47 ft18"><SPAN class="ft19">(d)</SPAN><SPAN class="ft22">You acknowledge and agree that your use of the Site and the Work is solely at your own risk. DHPA, and its owners, affiliated companies, officers, directors, employees, subsidiaries, and representatives, shall under no circumstance be liable or responsible for any losses, injuries, or damages of any kind including, without limitation, lost business or profits, direct, indirect, incidental, consequential, compensatory, exemplary, special or punitive damages that may result from your use or reliance on the Site or the Work.</SPAN></P>
+          <P class="p48 ft19"><SPAN class="ft19">5.</SPAN><SPAN class="ft20">Miscellaneous</SPAN></P>
+          <P class="p49 ft26"><SPAN class="ft24">(a)</SPAN><SPAN class="ft25">This Agreement shall be governed exclusively by the law of the state of Florida without regard for the conflict of laws. Any dispute arising under, or related to, this Agreement shall be brought exclusively in the state and federal courts of </SPAN><NOBR>Miami-Dade</NOBR> County, Florida. This Section 5(a) notwithstanding, DHPA retains the right to bring an individual action to seek injunctive or other relief in any court of competent jurisdiction to prevent the actual or threatened infringement, misappropriation or violation of a party's copyrights, trademarks, trade secrets, patents or other intellectual property rights.</P>
+          <P class="p50 ft18"><SPAN class="ft19">(b)</SPAN><SPAN class="ft22">This Agreement constitutes the full and complete understanding of the parties with respect to the use of the Site and the Work.</SPAN></P>
+          <P class="p51 ft18"><SPAN class="ft19">(c)</SPAN><SPAN class="ft23">If any provision of this Agreement is held invalid, the remainder of this Agreement shall continue in full force and effect to the maximum extent allowed by law.</SPAN></P>
+          
+          
+          <P class="p52 ft3"><SPAN class="ft0">(d)</SPAN><SPAN class="ft7">Any delay or failure of the parties to exercise or enforce any portion of this Agreement shall in no way constitute any waiver of rights.</SPAN></P>
+          <P class="p21 ft3"><SPAN class="ft0">(e)</SPAN><SPAN class="ft11">Notice may be sent to DHPA at </SPAN><A href="mailto:support@dhpa.com"><SPAN class="ft16">support@dhpa.com</SPAN></A><A href="mailto:support@dhpa.com"><SPAN class="ft18">.</SPAN></A></P>
+        <% end %>

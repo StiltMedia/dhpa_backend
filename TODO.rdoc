@@ -84,8 +84,17 @@
 
 = TODO List (should reference scoped items only)
 
+1. what is the max Bulk Upload amount of photos I can do at one time, in MB ?
+1. About page:
+   * change the writing from "book a photographer" to "hire dhpa"
+1. when photo is in Cart (cart view):
+   * I want the Date like the previous page: Wednesday, Oct 21, 2015.
+   * Not the way it is written on the page as 2015-10-21.
+   * also add the Copyright Holder, as on the previous page: Copyright: DHPA.com
+1. Checkout & Users page:
+   * for Sign In ONLY, either add the asterisk next to Email & Password. OR take out the sentence on both pages that says *fields with an asterisk are mandatory"
+
 * Waiting on client
-  1. 250mb test images
   1. Images to add to About page
 
 * Out of scope
