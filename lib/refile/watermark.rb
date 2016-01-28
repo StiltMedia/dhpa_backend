@@ -104,11 +104,11 @@ module Refile
         # rectangle coordinate order is: x-start,y-start,x-end,y-end
         c.draw "fill #ffffff fill-opacity 0.6 rectangle #{(img.width.to_i*0.4).round(2)},#{(img.height.to_i*0.4).round(2)} #{(img.width.to_i+10)},#{(img.height.to_i*0.8).round(2)}"
         c.pointsize fontsize_lg
-        c.font "DejaVu-Sans-Bold"
+        c.font "Open-Sans-Bold"
         # text coordinate order is: x-start,y-start
         c.draw "fill #000000 fill-opacity 1 text #{(img.width.to_i*0.4+20).round(2)},#{(img.height.to_i*0.4+9+fontsize_lg).round(2)} \"#{text1}\""
         c.pointsize fontsize_sm
-        c.font "DejaVu-Sans-Book"
+        c.font "Open-Sans-Light"
         c.draw "fill #000000 fill-opacity 1 text #{(img.width.to_i*0.4+21).round(2)},#{(img.height.to_i*0.8-fontsize_sm+1).round(2)} \"#{text2}\""
       end
     end
