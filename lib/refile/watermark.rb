@@ -104,7 +104,7 @@ module Refile
 
       boxheight = boxendy-boxstarty
       boxwidth = boxendx-boxstartx
-      fontsize_sm = (boxwidth / 15) # 1pt = 1px at default pixel density (72 ppi)
+      fontsize_sm = (boxwidth / 14) # 1pt = 1px at default pixel density (72 ppi)
       fontsize_lg = (boxwidth / 6.5)
 
       img.combine_options do |c|
