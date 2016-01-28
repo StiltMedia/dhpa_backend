@@ -1,6 +1,6 @@
-%section.bg-grey
+%section{style: "background-color: #f9f9f9"}
   .container
     .row
-      .four.columns
+      .twelve.columns
         = form_tag search_path, method: :get do
-          = text_field_tag :q, nil, class: "search-input u-pull-left u-full-width", placeholder: "Search photos and events...", value: params[:q]
+          = text_field_tag :q, nil, class: "search-input", placeholder: "Search photos and events...", value: params[:q]

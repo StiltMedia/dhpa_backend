@@ -13,6 +13,8 @@
 
 = TODO List
 
+* Make top slideshow 600px high
+* Make the watermark font the same as the webpage logo font
 * CDN for faster image serving
 * Waiting on client
   1. Images to add to About page

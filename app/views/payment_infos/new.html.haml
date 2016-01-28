@@ -24,7 +24,7 @@
           .six.columns.align-left
             = form_for @payment_info, url: payment_infos_path, html: { id: "payment-form", "data-stripe-key": "#{ENV['STRIPE_PUBLISHABLE_KEY']}"} do |f|
               %h2.page-title PAYMENT INFO
-              %span.mandatory * fields with an asterisk are mandatory
+              %p * FIELDS WITH AN ASTERISK ARE MANDATORY
               %p
               %p
                 = f.label :first_name, "* FIRST NAME"

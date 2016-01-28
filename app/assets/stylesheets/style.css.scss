@@ -254,6 +254,17 @@ body .bx-wrapper {
     max-width: 1920px;
     width: 95%;
 }
+.search-input {
+  border: 2px solid black !important;
+  border-radius: 0px !important;
+  font-family: Open Sans;
+  font-size: 1.125rem;
+  font-weight: normal;
+  margin: 1.5rem auto;
+  padding: 2rem !important;
+  width: 40em;
+  display: block;
+}
 .bg-grey {
     background: rgb(247, 247, 247) none repeat scroll 0 0;
 
@@ -272,6 +283,7 @@ body .bx-wrapper {
   padding-left: 3em;
   float: left;
 }
+
 .bg-grey .photos {
   background-image: asset_url("droparrow.png");
   background-position: right center;

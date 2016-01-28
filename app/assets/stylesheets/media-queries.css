@@ -425,6 +425,9 @@ html {
 .bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto {
   bottom: 8px !important;
 }
+.search-input {
+  width: 100%;
+}
 .bg-grey .search-input {
   margin: 18px 0;
   padding-left: 56px;
@@ -593,6 +596,9 @@ html {
 .bg-grey .refine {
     border: medium none;
 }
+.search-input {
+  width: 100%;
+}
 .bg-grey .search-input {
   margin: 0;
   padding-left: 30px;
@@ -645,6 +651,9 @@ html {
 
 
 @media (max-width: 360px) {
+.search-input {
+  width: 100%;
+}
 .bg-grey .search-input {
   margin: 0;
   padding-left: 56px;

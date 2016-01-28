@@ -1,7 +1,6 @@
 = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   = devise_error_messages!
-  %span.mandatory
-  * fields with an asterisk are mandatory
+  %p * FIELDS WITH AN ASTERISK ARE MANDATORY
   %p
   = f.label :first_name, "* FIRST NAME"
   = f.text_field :first_name, autofocus: true
