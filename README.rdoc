@@ -86,5 +86,5 @@ Run <tt>rails s</tt> for development. Cloud66 scripts are already present for st
 
 == Contributors
 
-- Gustavo Pares https://twitter.com/staycreatived (http://staycreativedesign.com/)
-- Will Bradley (will@zyphon.com)
+- Gustavo Pares, http://staycreativedesign.com
+- Will Bradley via Stilt Media, info@stiltmedia.com
