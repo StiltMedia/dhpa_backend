@@ -30,7 +30,7 @@ html {
 
 @media (max-width: 1300px) {
 .bxslider li .caption {
-  top: 20%;
+  top: 23%;
 }
 
 .top-images {
@@ -161,12 +161,12 @@ html {
   margin: 7px 10px -4px;
 }
 .bxslider li .caption {
-    left: 35%;
-    margin-left: -20%;
+    left: 0;
+    margin-left: 0;
     position: absolute;
     text-align: center;
     top: 23%;
-    width: 70%;
+    width: 100%;
 }
 .home .events {
   padding: 60px 0;

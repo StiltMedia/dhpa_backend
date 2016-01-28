@@ -183,12 +183,12 @@ header a.logo {
 }
 
 .bxslider li .caption {
-  left: 50%;
+  left: 30%;
   margin-left: -20%;
   position: absolute;
   text-align: center;
-  top: 32%;
-  width: 40%;
+  top: 23%;
+  width: 80%;
   z-index: 9999;
 }
 
@@ -274,7 +274,7 @@ body .bx-wrapper {
 .search-button {
   display: inline-block;
   background-color: #000;
-  margin: 0;
+  margin: 0 0 0 -4px; /* Get rid of space between button and input */
   color: #FFF;
   padding: 1rem !important;
   border: 2px solid black !important;
@@ -284,7 +284,6 @@ body .bx-wrapper {
   vertical-align: middle;
   line-height: 0.1rem;
   font-size: 1.4rem;
-  position: absolute;
 }
 .bg-grey {
     background: rgb(247, 247, 247) none repeat scroll 0 0;
