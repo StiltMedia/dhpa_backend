@@ -254,16 +254,37 @@ body .bx-wrapper {
     max-width: 1920px;
     width: 95%;
 }
+.search-wrapper {
+  margin: 1.5rem 0;
+  text-align: center;
+}
 .search-input {
   border: 2px solid black !important;
   border-radius: 0px !important;
   font-family: Open Sans;
   font-size: 1.125rem;
   font-weight: normal;
-  margin: 1.5rem auto;
-  padding: 2rem !important;
+  padding: 1rem !important;
   width: 40em;
-  display: block;
+  margin: 0;
+  display: inline-block;
+  height: 4rem !important;
+  vertical-align: middle;
+}
+.search-button {
+  display: inline-block;
+  background-color: #000;
+  margin: 0;
+  color: #FFF;
+  padding: 1rem !important;
+  border: 2px solid black !important;
+  border-radius: 0px !important;
+  height: 4rem !important;
+  width: 5rem;
+  vertical-align: middle;
+  line-height: 0.1rem;
+  font-size: 1.4rem;
+  position: absolute;
 }
 .bg-grey {
     background: rgb(247, 247, 247) none repeat scroll 0 0;
