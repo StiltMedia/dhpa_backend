@@ -2,7 +2,7 @@
   .container
     .row
       .twelve.columns
-        = form_tag search_path, method: :get, class: "search-wrapper" do
+        = form_tag search_path, method: :get, class: "search-wrapper", id: "search-form" do
           = text_field_tag :q, nil, class: "search-input", placeholder: "Search photos and events...", value: params[:q]
-          = button_tag class: "search-button" do
+          = button_tag class: "search-button", onclick: "document.getElementById('search-form').submit();" do
             %i.fa.fa-search
