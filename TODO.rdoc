@@ -5,7 +5,6 @@
 = TODO List
 
 3. Please add favicon (see downloaded zip)
-4. delete the 2 test events that have been renamed DELETE (they have fake purchases attached so he can't delete them)
 
 * CDN for faster image serving
 * Waiting on client
