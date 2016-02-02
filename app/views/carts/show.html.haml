@@ -13,15 +13,26 @@
             %p
               %strong Event:
               = item.photo.event.title
-            %h5 Date:
-            %p= item.photo.event.date.strftime("%A, %b %d %Y")
+            %p
+              %strong Date:
+              = item.photo.event.date.strftime("%A, %b %d %Y")
+            %p
+              %strong COPYRIGHT:
+              = item.photo.copyright
+            %p
+              %b LOCATION:
+              = item.photo.event.location
           .three.columns
             %p
               %strong LICENSE TYPE:
               = LineItem::license_name(item.delivery_option.license)
             %p
-              %strong COPYRIGHT:
-              = item.photo.copyright
+              %b PHOTOGRAPHER:
+              = item.photo.event.photographer
+            %p
+              %b KEYWORDS:
+              = item.photo.tag_list
+            %p
             // %p
             //   %b SIZE:
             //   = display_size(item)
