@@ -8,7 +8,7 @@
         = @event.title
     - else
       %title DHPA
-    = favicon_link_tag("favicon.ico")
+    = render 'layouts/favicons'
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
