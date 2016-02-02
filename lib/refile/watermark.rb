@@ -93,23 +93,30 @@ module Refile
       Refile::MiniMagick.new(:limit).limit(img, width, height)
 
       text1 = "DHPA.com"
+      text1fontpath = Rails.root.join("app", "assets", "fonts", "OpenSans-Bold.ttf")
       text2 = "dhpa.com/photos/"+text
+      text2fontpath = Rails.root.join("app", "assets", "fonts", "OpenSans-Light.ttf")
 
-      boxheight = (img.height.to_i*0.8).round(2) - (img.height.to_i*0.4).round(2)
-      boxwidth = (img.width.to_i) - (img.width.to_i*0.6).round(2)
-      fontsize_sm = (boxwidth / 10) # 1pt = 1px at default pixel density (72 ppi)
-      fontsize_lg = (boxwidth / 5)
+      boxstartx = (img.width.to_i*0.4).round(2)
+      boxstarty = (img.height.to_i*0.4).round(2)
+      boxendx = (img.width.to_i)
+      boxendy = (img.height.to_i*0.8).round(2)
+
+      boxheight = boxendy-boxstarty
+      boxwidth = boxendx-boxstartx
+      fontsize_sm = (boxwidth / 14) # 1pt = 1px at default pixel density (72 ppi)
+      fontsize_lg = (boxwidth / 6.5)
 
       img.combine_options do |c|
         # rectangle coordinate order is: x-start,y-start,x-end,y-end
-        c.draw "fill #ffffff fill-opacity 0.6 rectangle #{(img.width.to_i*0.4).round(2)},#{(img.height.to_i*0.4).round(2)} #{(img.width.to_i+10)},#{(img.height.to_i*0.8).round(2)}"
+        c.draw "fill #ffffff fill-opacity 0.6 rectangle #{boxstartx},#{boxstarty} #{boxendx},#{boxendy}"
         c.pointsize fontsize_lg
-        c.font "Open-Sans-Bold"
+        c.font text1fontpath
         # text coordinate order is: x-start,y-start
-        c.draw "fill #000000 fill-opacity 1 text #{(img.width.to_i*0.4+20).round(2)},#{(img.height.to_i*0.4+9+fontsize_lg).round(2)} \"#{text1}\""
+        c.draw "fill #000000 fill-opacity 1 text #{boxstartx+20},#{boxstarty+11+fontsize_lg} \"#{text1}\""
         c.pointsize fontsize_sm
-        c.font "Open-Sans-Light"
-        c.draw "fill #000000 fill-opacity 1 text #{(img.width.to_i*0.4+21).round(2)},#{(img.height.to_i*0.8-fontsize_sm+1).round(2)} \"#{text2}\""
+        c.font text2fontpath
+        c.draw "fill #000000 fill-opacity 1 text #{boxstartx+20},#{boxendy-20} \"#{text2}\""
       end
     end
 

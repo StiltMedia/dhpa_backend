@@ -2,18 +2,10 @@
 
 * A photography website similar to bfa.com, having photographs available for purchase as well as other informational (static) pages.
 
-= Disclaimer
-
-* Zyphon LLC is being hired in an hourly capacity to improve upon existing code written by a third party, and so cannot warranty that the resulting code or website will be free from defects. Zyphon LLC is not selling the website, just consultation hours.
-* As this is an eCommerce website which makes use of credit card payments but which Zyphon LLC did not entirely program, Zyphon LLC cannot accept liability for any breaches or failures which may occur, and cannot guarantee that this website is PCI compliant or follows security best practices. We recommend an independent code audit by a PCI-certified security professional to verify PCI compliance.
-
-= Methodology
-
-* The very first thing I'm going to do once we actually get started is upload it somewhere so you and/or the client can play around with it as we finish it; ideally each chunk gets tested and approved before moving on so we don't have delivery-day "this isn't anything like what I asked for" syndrome.
-
 = TODO List
 
-* Make the watermark font the same as the webpage logo font
+3. Please add favicon (see downloaded zip)
+
 * CDN for faster image serving
 * Waiting on client
   1. Images to add to About page
