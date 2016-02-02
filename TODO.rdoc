@@ -4,8 +4,6 @@
 
 = TODO List
 
-3. Please add favicon (see downloaded zip)
-
 * CDN for faster image serving
 * Waiting on client
   1. Images to add to About page
