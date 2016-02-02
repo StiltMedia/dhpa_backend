@@ -4,6 +4,12 @@
 
 = TODO List
 
+1. cart page - please display Location, Photographer, and Keywords for Images
+2. check out pop up - the last sentence on the bottom, there is a misspelling: Please contact support@dhpa.com if you wish you (replace "you" with "to"). 
+3. Please add favicon (see downloaded zip)
+4. delete the 2 test events that have been renamed DELETE (they have fake purchases attached so he can't delete them)
+5. Make sure the events always are arranges in chronological order (so he can add past events)
+
 * CDN for faster image serving
 * Waiting on client
   1. Images to add to About page
