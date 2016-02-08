@@ -44,10 +44,13 @@
         %label.two.columns.offset-by-eight USER INFO:
         .two.columns
           %p
-            %span= @order.user.first_name
-            %span= @order.user.last_name
-            %br
-            %span= @order.user.email
+            - if @order.user.present?
+              %span= @order.user.first_name
+              %span= @order.user.last_name
+              %br
+              %span= @order.user.email
+            - else
+              %span NO USER
       %label.two.columns.offset-by-eight CONTACT INFO:
       .two.columns
         %p
@@ -67,7 +70,10 @@
       .two.columns= @order.created_at.strftime("%A, %b %d %Y")
     .row
       %label.two.columns.offset-by-eight CREDIT CARD:
-      .two.columns= "#{@order.payment_info.brand} ending in #{@order.payment_info.last4}"
+      - if @order.payment_info.present?
+        .two.columns= "#{@order.payment_info.brand} ending in #{@order.payment_info.last4}"
+      - else
+        .two.columns NO PAYMENT INFO
     .row
       %label.two.columns.offset-by-eight ORDER TOTAL:
       .two.columns#price.price= number_to_currency calculate_subtotal(@order, dollars: true) #+ Order::SHIPPING_PRICE

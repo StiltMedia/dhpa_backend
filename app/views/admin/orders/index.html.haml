@@ -4,5 +4,5 @@
   - @orders.each do |order|
     %li
       = link_to purchase_path(order) do
-        = "#{order.created_at.strftime("%A, %b %d %Y")} - #{order.user.email} - #{number_to_currency calculate_subtotal(order, dollars: true)}"
+        = "#{order.created_at.strftime("%A, %b %d %Y")} - #{order.user.present? ? order.user.email : "NO USER"} - #{number_to_currency calculate_subtotal(order, dollars: true)}"
   %br
