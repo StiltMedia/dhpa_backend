@@ -4,10 +4,6 @@
 
 = TODO List
 
-* Make event index (not main page) look like this: https://www.upwork.com/api/v3/wp-files/direct/room_1be3a281b12e661a25431a20b1b0d7a1/1d30d779-9488-44b7-a1f9-946188ca0d96/02+Inside+All+Events.jpg
-  * Four images per line
-  * No mouseover required to see event details
-  * More event details shown
 * CDN for faster image serving
 * Waiting on client
   1. Images to add to About page
