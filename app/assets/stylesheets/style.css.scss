@@ -995,9 +995,20 @@ button.button:hover {
 }
 .event-gallery-list li {
     display: inline-block;
-    margin: 0 20px 80px;
+    margin: 0;
+    padding: 0 20px 40px 0;
     overflow: hidden;
     width: 360px;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+
+.event-gallery-list.three-columns li {
+  width: calc(98.2% / 3);
+}
+
+.event-gallery-list.four-columns li{
+   width: calc(97.6% / 4);
 }
 
 .event-gallery-list li .imagebox {

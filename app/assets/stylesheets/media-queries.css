@@ -171,7 +171,8 @@ html {
 .home .events {
   padding: 60px 0;
 }
-.event-list.four-columns li {
+.event-list.four-columns li,
+.event-gallery-list.four-columns li {
     width: calc(93.6% / 4);
 }
 .event-list li {
@@ -469,7 +470,8 @@ html {
 .instagramfeed .nine.columns {
   width: 100%;
 }
-.event-list.four-columns li {
+.event-list.four-columns li,
+.event-gallery-list.four-columns li {
   width: 100%;
 }
 

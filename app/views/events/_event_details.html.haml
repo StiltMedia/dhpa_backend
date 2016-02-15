@@ -7,8 +7,8 @@
   %h5
     = link_to event_path(event_details) do
       = event_details.title
-      %br
-        - if event_details.sub_title.present?
-          = "(#{event_details.sub_title})"
+      - if event_details.sub_title.present?
+        %br
+        = "(#{event_details.sub_title})"
   %span.subtitle #{event_details.location}
   %span.muted.strong= date_of_event(event_details)
