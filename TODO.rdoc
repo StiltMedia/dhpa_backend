@@ -4,9 +4,31 @@
 
 = TODO List
 
+1. When a photo has names which are missing, visitors should be able to click a "Whats my Name" link under a photo to email the client the missing name - like http://www.patrickmcmullan.com/whoami/index.aspx
+   * Question: does it need to be email? What if it just puts a message into a list on the admin panel?
+1. Admin should be able to change the Price for each individual Folder
+   * Question: what does "individual folder" mean? Changing prices for all photos in each event?
+1. Assistant Photographers, Editors, Staff, etc. should only be able to:
+   * Access the Events Tab (not Orders, Users, Settings)
+   * Add or Delete an Event.
+   * See the last 3-5 Events.
+   * Question: can they edit those last 3-5 events? What about editing the event they just added 5 minutes ago? Is there any difference between Assistant Photographers, Editors, and Staff?
+1. Admin can overwrite everything that the Assistant Photographers, Editors,
+Staff, do on the Website. (Unlock Passwords, adjust prices back to Default, etc.)
+   * Question: By overwrite, do you mean simply make those changes, or prevent others from making changes once you've made them? For example if you and a photographer can both edit pricing on an item, you'll both be able to continue editing pricing on that item unless I program some sort of per-item "locked by Admin" functionality.
+1. (0.5hr) The Logo on the Upper Left Corner has to be replaced (with the one that is attached in this email), or add this text manually "David Heischrek Photo Agency" below DHPA.com (in the same exact font as in the logo that is attached). The font is Dosis, medium, sharp.
+1. (0.75hr) Add the Name to the Events that are rotating on the Top Feature Slide (same as BFA.com). Then take out the Welcome to DHPA.com.
+1. (4hr) Re-add physical print options to checkout: selecting Sizes, Paper, and custom/default pricing of Prints, etc. Size options: 5x7, 8x10, 11x14, 16x20. Paper options: Luster & Deep Matte.
+1. Add a Blog page (if html is provided)
+   * Question: Unless you have a ~$2500 creation and ~$1000/year maintenance budget, I suggest hiring someone to create a custom Wordpress or Squarespace or Wix theme and simply linking back and forth between that site (i.e. blog.dhpa.com) and your main site. A blog engine is a totally different piece of software and a nearly-infinite amount of work.
+1. (2hr) After 1-5 minutes of visiting the website, a Pop-Up Box should appear asking visitors for their Email address
+1. (0.5hr) Fix the Favicon. The way it looks now nobody can read what is says. Take out the .com in DHPA, and just put DHPA. And if DHPA is still not readable, then just make the Favicon a Photo Camera as a Logo (white camera, black background), or something that fits the look of my Website.
+1. (0.75hr) When searching for photos (for example a person's Name), and the photos that are then found pop up, the Horizontal photos display the correct way, but the Vertical photos don't, and the heads are usually cut off.
+
 * CDN for faster image serving
 * Waiting on client
   1. Images to add to About page
+  1. (1hr) Add Text about myself on the About page. In the middle, between the 4 photos (Studio, Video, Weddings, Social Media), and Have an Upcoming Event?
 * Out of scope
   1. people / clients can pay with their credit card AND paypal accounts.
 
@@ -28,8 +50,9 @@
     * *TODO* People/Event/Location/Date/Photographer filtering/sorting doesn't work
   * Picture Detail
     *  Adjust display of picture detail to match the design from "04 Open Images" -- shouldn't be a popup. Note: no need for S/M/L/XL sizes, just put the image size information underneath the explanatory text (Copyright, Date, Image Size)
-    * There should be no digital/physical or nationality options from the detail page -- make those properties blank across the GUI as well (i.e. during checkout)
+    * There should be no nationality options from the detail page -- make those properties blank across the GUI as well (i.e. during checkout)
     * There should be a commercial vs personal license option.
+    * *TODO* When a photo has names which are missing, visitors should be able to click a "Whats my Name" link under a photo to email the client the missing name - like http://www.patrickmcmullan.com/whoami/index.aspx
   * Shopping Cart
   * Checkout
     * Global pricing
@@ -56,7 +79,7 @@
   * Tags from EXIF should be automatically parsed and saved in the database for each image:
     * People
     * Copyright
-  * Photographer should be able to edit these "EXIF" tags manually as well, however editing will be on a per-image or per-event basis. No batch-image-editing of tags will be programmed into the website at this time.
+  * Admin should be able to edit these "EXIF" tags manually as well, however editing will be on a per-image or per-event basis. No batch-image-editing of tags will be programmed into the website at this time.
   * Other tags should be auto-generated:
     * Image ID (plain database ID, starting at 1)
   * "Other Keywords" should be available at the event and image level.
@@ -69,14 +92,19 @@
 * Registered User:
   * Purchased images are viewable afterwards
   * Ability to create a “wish list” of images
+* Photographers:
+  * *TODO*: Assistant Photographers, Editors, Staff, etc. should only be able to:
+    * Access the Events Tab (not Orders, Users, Settings)
+    * Add or Delete an Event.
+    * See the last 3-5 Events.
 * All users:
   * Only able to view private albums via password
   * Able to send an email via the Contact Us form
     * Email sent to an address the client specifies (hardcoded, not editable)
   * Able to purchase and download digital full-resolution copies of images
+  * *TODO* Able to purchase physical prints [see original code]: selecting Sizes, Paper, and custom/default pricing of Prints, etc. Size options: 5x7, 8x10, 11x14, 16x20. Paper options: Luster & Deep Matte.
   * Not able to view or download full-resolution images unless they have purchased them
     * Image URLs cannot be guessed: each file has a random ID.
     * Will NOT be able to “right click > save” any unpurchased photos
     * Will NOT be able to “drag and drop” any unpurchased photos
-    * No physical products will be sold, only digital downloads.
 * No CMS feature will be programmed at this time -- text and style changes will require a Rails programmer.
