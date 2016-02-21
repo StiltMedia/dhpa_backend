@@ -13,8 +13,7 @@
    * Add or Delete an Event.
    * See the last 3-5 Events.
    * Question: can they edit those last 3-5 events? What about editing the event they just added 5 minutes ago? Is there any difference between Assistant Photographers, Editors, and Staff?
-1. Admin can overwrite everything that the Assistant Photographers, Editors,
-Staff, do on the Website. (Unlock Passwords, adjust prices back to Default, etc.)
+1. Admin can overwrite everything that the Assistant Photographers, Editors, Staff, do on the Website. (Unlock Passwords, adjust prices back to Default, etc.)
    * Question: By overwrite, do you mean simply make those changes, or prevent others from making changes once you've made them? For example if you and a photographer can both edit pricing on an item, you'll both be able to continue editing pricing on that item unless I program some sort of per-item "locked by Admin" functionality.
 1. (0.5hr) The Logo on the Upper Left Corner has to be replaced (with the one that is attached in this email), or add this text manually "David Heischrek Photo Agency" below DHPA.com (in the same exact font as in the logo that is attached). The font is Dosis, medium, sharp.
 1. (0.75hr) Add the Name to the Events that are rotating on the Top Feature Slide (same as BFA.com). Then take out the Welcome to DHPA.com.
