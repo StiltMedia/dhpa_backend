@@ -3,6 +3,5 @@
   .container
     .events-content
       %h5 ALL EVENTS
-      %ul.event-list.three-columns
-        = render @events
-
+      %ul.event-gallery-list.event-details.four-columns
+        = render partial: 'event_details', collection: @events

@@ -50,6 +50,14 @@ body{
     display: none;
 }
 
+.muted {
+  color: #999;
+}
+
+.strong {
+  font-weight: 600;
+}
+
 #header{
   border-bottom: 2px solid #e1e1e1;
 }
@@ -331,6 +339,9 @@ body .bx-wrapper {
   font-size: 1.125rem;
   margin-top: 1rem;
   padding: 3px 2.5em 3px 2em;
+}
+section.events {
+  min-height: 600px;
 }
 .home .events {
     padding: 3em 0;
@@ -979,14 +990,25 @@ button.button:hover {
 }
 
 
-.event-gallery-list{
+.event-gallery-list {
   text-align: center;
 }
 .event-gallery-list li {
     display: inline-block;
-    margin: 0 20px 80px;
+    margin: 0;
+    padding: 0 20px 40px 0;
     overflow: hidden;
     width: 360px;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+
+.event-gallery-list.three-columns li {
+  width: calc(98.2% / 3);
+}
+
+.event-gallery-list.four-columns li{
+   width: calc(97.6% / 4);
 }
 
 .event-gallery-list li .imagebox {
@@ -1033,7 +1055,7 @@ button.button:hover {
   text-decoration: none;
   font-family: Open Sans;
   font-weight: 600;
-  font-size: 1.188rem;
+  font-size: 1rem;
 }
 .event-gallery-list li .tags{
   display: inline-block;
@@ -1097,6 +1119,21 @@ button.button:hover {
   cursor: pointer;
   opacity: 1;
   transition: all ease 0.2s;
+}
+
+.event-details li {
+  text-align: left;
+}
+
+.event-details li a {
+  display: inline-block;
+  height: auto;
+  position: relative;
+}
+
+.event-details h5,
+.event-details .subtitle {
+  text-transform: uppercase;
 }
 
 
