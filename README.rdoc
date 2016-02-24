@@ -1,15 +1,33 @@
 == Mandatory Regular Maintenance
 
+* To make security updates quicker:
+  * Please change DHPA.com's GoDaddy DNS to:
+    * A
+      * @    50.63.202.1
+    * CNAME
+      * www    658-915-814.cloud66.net
+  * Immediately set up domain forwarding:
+    * See https://www.godaddy.com/help/manually-forwarding-or-masking-your-domain-name-422
+    * Select "http://" as your Forward to option.
+    * Enter the URL: "http://www.dhpa.com"
+    * Select Redirect type of 301 (Permanent)
+    * Select Forward only
 1. You must perform monthly security updates of your cloud66 AWS servers in order to avoid being hacked:
    * http://help.cloud66.com/managing-your-stack/applying-upgrades
+   * Estimate: (1.5hr/mo)
 2. The webserver and database server are both managed via cloud66 and hosted on AWS EC2.
    I have enabled daily automatic backups via cloud66, but you will need to manually verify
    that the backups are working and useable on a regular basis (every 3 months, for example.)
+   * (2hr/3mo)
 3. Your photos are being saved on Amazon S3; the "production" bucket is the important one.
    I've enabled versioning on it to avoid a disaster if things are accidentally deleted,
    but the entire bucket should be manually backed up every 3 months as well.
+   * (1hr/3mo)
 4. It's a very good idea to copy the S3 (photo) and Cloud66 (Postgres Database) backups to your home
    computer every month, so that if Cloud66 or Amazon have trouble you still have a recent copy of your site.
+   * (1hr/mo)
+5. Basic website uptime monitoring is recommended (to get alerts if the site goes completely offline)
+   * ($10/mo)
 
 == Todo & Scope
 

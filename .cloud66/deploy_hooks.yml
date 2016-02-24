@@ -29,3 +29,4 @@ production:
       execute: true
       run_on: single_server
       apply_during: build_only # Definitely don't want to db-seed on production except for the first build
+      # DANGER: IF YOU REMOVE OR CHANGE APPLY_DURING YOU MIGHT DELETE THE PRODUCTION DB ON DEPLOY
