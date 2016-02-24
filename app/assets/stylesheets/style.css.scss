@@ -1037,14 +1037,13 @@ button.button:hover {
   text-align: center;
 }
 .event-gallery-list li h5 {
-  margin-bottom: 0 !important;
+  margin-bottom: 0;
 }
 .event-gallery-list li h5 a {
   display: inline-block;
   width: 100%;
   color: #000000;
   text-decoration: none;
-  text-align: left;
   font-family: Open Sans;
   font-weight: 600;
   font-size: 1.188rem;
@@ -1137,6 +1136,10 @@ button.button:hover {
   text-transform: uppercase;
 }
 
+.event-details.event-gallery-list li h5 {
+  margin-bottom: 0;
+  text-align: left;
+}
 
 .content-box{
   padding: 3em 0;
