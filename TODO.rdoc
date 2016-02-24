@@ -4,18 +4,21 @@
 
 = TODO List
 
-0. Please make the same change you did to the events page to the home page.
+0. (1.5hr) Please make the same change you did to the events page to the home page.
 1. When a photo has names which are missing, visitors should be able to click a "Whats my Name" link under a photo to provide the Admin the missing name - like http://www.patrickmcmullan.com/whoami/index.aspx
    * Would Admin be able to edit the name right there and have the system auto-update the corresponding photo?
    * QUESTION: Does Admin still need an email notification?
-2. Admin should be able to change the Price for all photos in each event
-   * Batch update? Override?
+2. (1hr) Admin should be able to change the Price for all photos in each event
+   * Quote is for a simple batch update, not an override; the pricing would still be per-image, but all images in an event would get set to the same price. An actual event-level override of the pricing would take more time.
 3. Assistant Photographers, Editors, Staff, etc. should only be able to:
    *  Access the Events Tab (not Orders, Users, Settings)
    *  Add or Delete an Event.
    *  View and Edit the last 3-5 Events.
+   *  (1hr) for this section
    1. Admin can overwrite everything that the Assistant Photographers, Editors, Staff, do on the Website. (Unlock Passwords, adjust prices back to Default, etc.)
+      * (0.5hr) for this section
       * Optional: when admin overwrites something, optionally allow the Admin to lock it so others can't change it back.
+        * (3hr) for this optional part
 4. (0.5hr) The Logo on the Upper Left Corner has to be replaced (attached), or add this text manually "David Heischrek Photo Agency" below DHPA.com in the font: Dosis, medium, sharp.
    * Files in doc/design
 5. (0.75hr) Add the Name to the Events that are rotating on the Top Feature Slide (same as BFA.com). Then take out the Welcome to DHPA.com.
