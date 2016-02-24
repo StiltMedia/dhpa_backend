@@ -27,8 +27,8 @@
   .container
     .events-content
       %h5 LATEST EVENTS
-      %ul.event-list.three-columns
-        = render @latest_events
+      %ul.event-gallery-list.event-details.four-columns
+        = render partial: 'events/event_details', collection: @latest_events
     .row.center
       = link_to "VIEW MORE", events_path, class: "button"
       %br &nbsp;

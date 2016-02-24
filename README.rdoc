@@ -20,15 +20,14 @@ See TODO.rdoc
 * Ruby 2.2.4 (see .versions.conf and rvm)
 * Gems from gemfile (see bundler)
 * Perl (for mini_exiftool_vendored)
-
-* libgmp3-dev (.deb)
-* postgresql-contrib (.deb)
-* imagemagick (.deb)
+* Ubuntu Packages:
+  * sudo apt-get install libgmp3-dev postgresql-contrib imagemagick
 
 == Environment Variables
 
 Copy env.dist to .env and edit as desired, for development/testing.
 Input into cloud66's Environment Variables GUI for staging/production.
+Stored in Will Bradley's LastPass under "DHPA Cloud66" for easy copy-pasting.
 
 * Production/staging only
   * SECRET_KEY_BASE
@@ -43,7 +42,7 @@ Input into cloud66's Environment Variables GUI for staging/production.
   * AWS_SECRET_ACCESS_KEY
     * Secret Key of an AWS user with S3 Full Access
   * AWS_REFILE_BUCKET
-    * S3 bucket name for image uploads (i.e. dhpa-photos-staging for staging)
+    * S3 bucket name for image uploads (i.e. dhpa-photos-development for dev, dhpa-photos-staging for staging, dhpa-photos-production for production)
   * STRIPE_PUBLISHABLE_KEY
     * Public Stripe key (either test keys for test/dev/staging, or live keys for production)
   * STRIPE_SECRET_KEY

@@ -4,7 +4,6 @@
 
 = TODO List
 
-0. (1.5hr) Please make the same change you did to the events page to the home page.
 1. When a photo has names which are missing, visitors should be able to click a "Whats my Name" link under a photo to provide the Admin the missing name - like http://www.patrickmcmullan.com/whoami/index.aspx
    * Would Admin be able to edit the name right there and have the system auto-update the corresponding photo?
    * QUESTION: Does Admin still need an email notification?

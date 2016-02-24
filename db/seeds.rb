@@ -60,6 +60,12 @@ photo19 = Photo.create event: event3, file: File.new(assets_path+'lightbox1.jpg'
 photo20 = Photo.create event: event3, file: File.new(assets_path+'lightbox2.jpg'), copyright: copy, size: image_size(assets_path+'event12.jpg'), vips: [vip_b, vip_g], tag_list: "commodo, consequat"
 photo21 = Photo.create event: event3, file: File.new(assets_path+'portrait.jpg'), copyright: copy, size: image_size(assets_path+'portrait.jpg'), vips: [vip_c, vip_h], tag_list: "Ut, enim, ad minim, veniam"
 
+
+event4 = Event.create title: "Summer in July", location: "Jim's Bungalow, Selma", photographer: "David Heischrek", date: "2015-11-11", sub_title: "The Original Fever", image_url: File.new(assets_path+'event3.jpg'), is_featured: true, is_top_featured: true, tag_list: "Alabama, Bungalow, Food"
+
+photo22 = Photo.create event: event4, file: File.new(assets_path+'event3.jpg'), copyright: copy, size: image_size(assets_path+'event3.jpg'), vips: [vip_c, vip_d], tag_list: "Lorem, qui officia"
+photo23 = Photo.create event: event4, file: File.new(assets_path+'lightbox3.jpg'), copyright: copy, size: image_size(assets_path+'lightbox3.jpg'), vips: [vip_g, vip_m], tag_list: "Ut, enim, amore"
+
 payment_info = PaymentInfo.create user: user1, brand: "Visa", exp_month: 12, exp_year: 17, last4: "4242"
 order_shipping_info = OrderShippingInfo.create first_name: "John", last_name: "Smith", street: "123 Main St", city: "Phoenix", state: "AZ", zipcode: "85013", country: "USA"
 order_contact_info = OrderContactInfo.create email: "test@zyphon.com"
