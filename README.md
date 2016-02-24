@@ -1,17 +1,18 @@
-== Mandatory Regular Maintenance
+## Mandatory Regular Maintenance
 
 * To make security updates quicker:
   * Please change DHPA.com's GoDaddy DNS to:
     * A
-      * <tt>@ </tt> <tt> 50.63.202.1</tt>
+      * <pre>@    50.63.202.1</pre>
     * CNAME
-      * <tt>www </tt> <tt> 658-915-814.cloud66.net</tt>
+      * <pre>www    658-915-814.cloud66.net</pre>
   * Immediately set up domain forwarding:
     * See https://www.godaddy.com/help/manually-forwarding-or-masking-your-domain-name-422
-    * Select <tt>http://</tt> as your Forward to option.
+    * Select `http://` as your Forward to option.
     * Enter the URL: http:// www.dhpa.com
-    * Select Redirect type of <tt>301 (Permanent)</tt>
-    * Select <tt>Forward only</tt>
+    * Select Redirect type of `301 (Permanent)`
+    * Select `Forward only`
+
 1. You must perform monthly security updates of your cloud66 AWS servers in order to avoid being hacked:
    * http://help.cloud66.com/managing-your-stack/applying-upgrades
    * Estimate: (1.5hr/mo)
@@ -29,11 +30,11 @@
 5. Basic website uptime monitoring is recommended (to get alerts if the site goes completely offline)
    * ($10/mo)
 
-== Todo & Scope
+## Todo & Scope
 
 See TODO.rdoc
 
-== Dependencies
+## Dependencies
 
 * Ruby 2.2.4 (see .versions.conf and rvm)
 * Gems from gemfile (see bundler)
@@ -41,32 +42,32 @@ See TODO.rdoc
 * Ubuntu Packages:
   * sudo apt-get install libgmp3-dev postgresql-contrib imagemagick
 
-== Environment Variables
+## Environment Variables
 
 Copy env.dist to .env and edit as desired, for development/testing.
 Input into cloud66's Environment Variables GUI for staging/production.
 Stored in Will Bradley's LastPass under "DHPA Cloud66" for easy copy-pasting.
 
 * Production/staging only
-  * SECRET_KEY_BASE
+  * `SECRET_KEY_BASE`
     * Long random string for encryption purposes
-  * SMTP_HOSTNAME=www.dhpa.com
+  * `SMTP_HOSTNAME=www.dhpa.com`
     * Needed to install an smtp server locally (see .cloud66/smtpinstall.sh)
 * All Environments
-  * RAILS_SERVE_STATIC_FILES
+  * `RAILS_SERVE_STATIC_FILES`
     * 0 for dev/test, 1 for staging/prod
-  * AWS_ACCESS_KEY
+  * `AWS_ACCESS_KEY`
     * Access Key of an AWS user with S3 Full Access
-  * AWS_SECRET_ACCESS_KEY
+  * `AWS_SECRET_ACCESS_KEY`
     * Secret Key of an AWS user with S3 Full Access
-  * AWS_REFILE_BUCKET
-    * S3 bucket name for image uploads (i.e. dhpa-photos-development for dev, dhpa-photos-staging for staging, dhpa-photos-production for production)
-  * STRIPE_PUBLISHABLE_KEY
+  * `AWS_REFILE_BUCKET`
+    * S3 bucket name for image uploads (i.e. `dhpa-photos-development` for dev, `dhpa-photos-staging` for staging, `dhpa-photos-production` for production)
+  * `STRIPE_PUBLISHABLE_KEY`
     * Public Stripe key (either test keys for test/dev/staging, or live keys for production)
-  * STRIPE_SECRET_KEY
+  * `STRIPE_SECRET_KEY`
     * Secret Stripe key (either test keys for test/dev/staging, or live keys for production)
 
-== Configuration
+## Configuration
 
 * Ensure there are recent and usable S3 and Postgres backups/snapshots/recovery before running any of these commands on production!
 * Use postgres for all environments. Create the database names according to database.yml
@@ -74,34 +75,34 @@ Stored in Will Bradley's LastPass under "DHPA Cloud66" for easy copy-pasting.
   * Create an IAM user and credentials, with normal "S3 Full Access" permissions.
   * In the us-east-1 region (Virginia), create test, dev, staging, and production buckets according to the AWS_REFILE_BUCKET environment variable. Do not use production buckets outside of the production webserver.
 
-=== In Test/Dev
+### In Test/Dev
 
-* To clear the database and run the create/migrate/seed commands, run <tt>rake db:setup</tt>, OR each of the below steps manually:
-  * <tt>rake db:create && rake db:migrate</tt> for database initialization.
-  * See db/seeds.rb for default usernames and <tt>rake db:seed</tt> to insert these defaults into the db.
+* To clear the database and run the create/migrate/seed commands, run `rake db:setup`, OR each of the below steps manually:
+  * `rake db:create && rake db:migrate` for database initialization.
+  * See db/seeds.rb for default usernames and `rake db:seed` to insert these defaults into the db.
 
-=== In Staging/Production
+### In Staging/Production
 
 * Use cloud66 for staging/production deployment (in the us-east-1 region; use t2.medium for production server size and t2.small for staging.)
   * The scripts in the .cloud66 folder should take care of most stuff.
 * Manually ensure that large file uploads are enabled:
   1. Go to your cloud66 stack, click the web server group page (eg. Rails servers) and click CONFIGURE NGINX at the top right.
-  1. Edit the Nginx configuration to: <tt>client_max_body_size    300m;</tt> *IN BOTH THE HTTP AND SERVER SECTIONS OF THE CONFIG FILE.*
+  1. Edit the Nginx configuration to: `client_max_body_size    300m;` *IN BOTH THE HTTP AND SERVER SECTIONS OF THE CONFIG FILE.*
 * *TODO:* CDN for faster image serving
 
-== Testing
+## Testing
 
 No tests created yet. Please create tests, tests are good.
 
-== Documentation
+## Documentation
 
-Run <tt>rake doc:app</tt> to generate HTML documentation from classes.
+Run `rake doc:app` to generate HTML documentation from classes.
 
-== Running
+## Running
 
-Run <tt>rails s</tt> for development. Cloud66 scripts are already present for staging/production.
+Run `rails s` for development. Cloud66 scripts are already present for staging/production.
 
-== Contributors
+## Contributors
 
 - Gustavo Pares, http://staycreativedesign.com
 - Will Bradley via Stilt Media, info@stiltmedia.com
