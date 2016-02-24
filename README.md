@@ -9,7 +9,7 @@
   * Immediately set up domain forwarding:
     * See https://www.godaddy.com/help/manually-forwarding-or-masking-your-domain-name-422
     * Select `http://` as your Forward to option.
-    * Enter the URL: http:// www.dhpa.com
+    * Enter the URL: `http://www.dhpa.com`
     * Select Redirect type of `301 (Permanent)`
     * Select `Forward only`
 
