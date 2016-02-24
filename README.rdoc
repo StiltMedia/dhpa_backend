@@ -3,15 +3,15 @@
 * To make security updates quicker:
   * Please change DHPA.com's GoDaddy DNS to:
     * A
-      * @    50.63.202.1
+      * <tt>@    50.63.202.1</tt>
     * CNAME
-      * www    658-915-814.cloud66.net
+      * <tt>www    658-915-814.cloud66.net</tt>
   * Immediately set up domain forwarding:
     * See https://www.godaddy.com/help/manually-forwarding-or-masking-your-domain-name-422
-    * Select "http://" as your Forward to option.
-    * Enter the URL: "http://www.dhpa.com"
-    * Select Redirect type of 301 (Permanent)
-    * Select Forward only
+    * Select <tt>http://</tt> as your Forward to option.
+    * Enter the URL: <tt>http://www.dhpa.com</tt>
+    * Select Redirect type of <tt>301 (Permanent)</tt>
+    * Select <tt>Forward only</tt>
 1. You must perform monthly security updates of your cloud66 AWS servers in order to avoid being hacked:
    * http://help.cloud66.com/managing-your-stack/applying-upgrades
    * Estimate: (1.5hr/mo)
