@@ -4,7 +4,7 @@
 
 = TODO List
 
-1. When a photo has names which are missing, visitors should be able to click a "Whats my Name" link under a photo to provide the Admin the missing name - like http://www.patrickmcmullan.com/whoami/index.aspx
+1. When a photo has names which are missing (indicated by "No ID"), visitors should be able to click a "Whats my Name" link under a photo to provide the Admin the missing name - like http://www.patrickmcmullan.com/whoami/index.aspx
    * Would Admin be able to edit the name right there and have the system auto-update the corresponding photo?
    * QUESTION: Does Admin still need an email notification?
 2. (1hr) Admin should be able to change the Price for all photos in each event
@@ -22,7 +22,16 @@
    * Files in doc/design
 5. (0.75hr) Add the Name to the Events that are rotating on the Top Feature Slide (same as BFA.com). Then take out the Welcome to DHPA.com.
 6. (4hr) Re-add physical print options to checkout: selecting Sizes, Paper, and custom/default pricing of Prints, etc. Size options: 5x7, 8x10, 11x14, 16x20. Paper options: Luster & Deep Matte.
-   * QUESTION: Do size and paper both affect pricing? Please provide the pricing matrix.
+   * Pricing matrix:
+
+```
+4x6 = $ TBD
+5x7 = $ TBD
+8x10 = $ TBD
+11x14 = $ TBD
+16x20 = $ TBD
+```
+
 8. Add a Blog page (if html is provided)
    * Question: Unless you have a ~$2500 creation and ~$1000/year maintenance budget, I suggest hiring someone to create a custom Wordpress or Squarespace or Wix theme and simply linking back and forth between that site (i.e. blog.dhpa.com) and your main site. A blog engine is a totally different piece of software and a nearly-infinite amount of work.
 9. (2hr) After 1-5 minutes of visiting the website, a Pop-Up Box should appear asking visitors for their Email address
