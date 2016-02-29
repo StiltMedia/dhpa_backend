@@ -4,9 +4,9 @@
 
 = TODO List
 
-1. When a photo has names which are missing (indicated by "No ID"), visitors should be able to click a "Whats my Name" link under a photo to provide the Admin the missing name - like http://www.patrickmcmullan.com/whoami/index.aspx
+1. (4hr) When a photo has names which are missing (indicated by "No ID"), visitors should be able to click a "Whats my Name" link under a photo to provide the Admin the missing name - like http://www.patrickmcmullan.com/whoami/index.aspx
    * Would Admin be able to edit the name right there and have the system auto-update the corresponding photo?
-   * QUESTION: Does Admin still need an email notification?
+     * Unknown, depends on how the implementation goes.
 2. (1hr) Admin should be able to change the Price for all photos in each event
    * Quote is for a simple batch update, not an override; the pricing would still be per-image, but all images in an event would get set to the same price. An actual event-level override of the pricing would take more time.
 3. Assistant Photographers, Editors, Staff, etc. should only be able to:
