@@ -40,7 +40,7 @@
               = link_to "DOWNLOAD", attachment_url(item.photo, :file, :limit, personal_image_size, personal_image_size, format: "jpg"), class: "button", download: "dhpa_photo_#{item.photo.id}.jpg" # Private Use = smaller rez
   .container
     .row
-      - if current_user.is_admin?
+      - if current_user.present? && current_user.is_admin?
         %label.two.columns.offset-by-eight USER INFO:
         .two.columns
           %p
