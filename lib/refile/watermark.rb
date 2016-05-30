@@ -89,12 +89,12 @@ module Refile
     # @param [string] text                     the text to use as the watermark
     # @return [void]
     # @see http://www.imagemagick.org/script/command-line-options.php#gravity
-    def limit_watermark_dhpa(img, width, height, text)
+    def limit_watermark_dhpa(img, width, height, text = nil)
       Refile::MiniMagick.new(:limit).limit(img, width, height)
 
       text1 = "DHPA.com"
       text1fontpath = Rails.root.join("app", "assets", "fonts", "OpenSans-Bold.ttf")
-      text2 = "dhpa.com/photos/"+text
+      text2 = "dhpa.com/photos/"+text if text
       text2fontpath = Rails.root.join("app", "assets", "fonts", "OpenSans-Light.ttf")
 
       boxstartx = (img.width.to_i*0.4).round(2)
