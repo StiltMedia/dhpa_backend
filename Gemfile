@@ -18,6 +18,7 @@ gem 'textacular', '~> 3.0' # Search
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'turbolinks'
+gem 'jquery-turbolinks'
 
 gem 'mail_form'
 
