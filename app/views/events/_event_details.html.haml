@@ -3,7 +3,7 @@
     - if event_details.is_private?
       .image-overlay-wrapper
         .image-overlay= "PRIVATE"
-    = image_tag attachment_url(event_details, :image_url, :fill, 800, 480), oncontextmenu: "return false"
+    = image_tag attachment_url(event_details, :image_url, :limit_watermark_dhpa, 800, 480), oncontextmenu: "return false"
   %h5
     = link_to event_path(event_details) do
       = event_details.title

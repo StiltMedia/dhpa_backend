@@ -1,7 +1,7 @@
 - unless photo_search.event.is_private?
   %li
     = link_to photo_search do
-      = image_tag attachment_url(photo_search, :file, :fill, 275, 175), oncontextmenu: "return false"
+      = image_tag attachment_url(photo_search, :file, :limit_watermark_dhpa, 275, 175), oncontextmenu: "return false"
       %span.caption
         IMAGE ID
         = photo_search.id

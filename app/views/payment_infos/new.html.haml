@@ -72,10 +72,10 @@
 
 
     - else
-      %h2.page-title CHECK OUT
+      %h2.page-title.center CHECK OUT
       #checkout-step1
         .row
-          .six.columns.align-left
+          .twelve.columns.align-center
             #tab-container.sign-tab.tab-container
               %ul.etabs
                 %li.tab
@@ -90,6 +90,6 @@
               $(document).ready(function(){
                   $('#tab-container').easytabs();
               });
-          .six.columns.align-right
-            %span.mandatory +PROCEED TO CHECK OUT AS A GUEST
-            = link_to "CONTINUE AS A GUEST", create_guest_user_path, class: "blackbutton"
+          /.six.columns.align-right
+          /  %span.mandatory +PROCEED TO CHECK OUT AS A GUEST
+          /  = link_to "CONTINUE AS A GUEST", create_guest_user_path, class: "blackbutton"

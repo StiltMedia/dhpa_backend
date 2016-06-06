@@ -1,5 +1,5 @@
 %div
   = link_to lightbox_photo.photo do
-    = image_tag attachment_url(lightbox_photo.photo, :file, :fill, 250, 160), oncontextmenu: "return false"
+    = image_tag attachment_url(lightbox_photo.photo, :file, :limit_watermark_dhpa, 250, 160, lightbox_photo.photo.id), oncontextmenu: "return false"
   = button_to lightbox_photo_path(lightbox_photo), method: "delete", remote: true, class: "button-danger button-small", form: { class: "lightbox-buttons-right" } do
     %i.fa.fa-trash

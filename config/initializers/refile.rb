@@ -3,7 +3,7 @@ require "refile/watermark"
 
 Refile.secret_key = Rails.application.secrets.secret_key_base
 
-# if Rails.env.production? || Rails.env.staging?
+if Rails.env.production? || Rails.env.staging?
 
   aws = {
     access_key_id: ENV["AWS_ACCESS_KEY"],
@@ -14,9 +14,9 @@ Refile.secret_key = Rails.application.secrets.secret_key_base
   # Refile.cache = Refile::S3.new(prefix: "cache", **aws)
   Refile.store = Refile::S3.new(prefix: "store", **aws)
 
-# else # Dev, Test
+ else # Dev, Test
 
-  # Refile.cache = Refile::Backend::FileSystem.new(Rails.root.join('tmp','uploads','cache').to_s)
-  # Refile.store = Refile::Backend::FileSystem.new(Rails.root.join('tmp','uploads','store').to_s)
+   Refile.cache = Refile::Backend::FileSystem.new(Rails.root.join('tmp','uploads','cache').to_s)
+   Refile.store = Refile::Backend::FileSystem.new(Rails.root.join('tmp','uploads','store').to_s)
 
-# end
+end

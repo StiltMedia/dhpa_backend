@@ -18,6 +18,43 @@
 /               %a{:href => "#"} Date
 /             %li
 /               %a{:href => "#"} Photographer
+- unless current_user.present?
+  #sign-in-form
+    = render "devise/shared/sign_up"
+  #sign-up-form
+    = render "devise/shared/sign_in"
+
+
+  :javascript
+    $(document).ready(function(){
+      function showSignInForm() {
+        $('#sign-in-form').modal({
+          clickClose: false,
+          escapeClose: false,
+          showClose: false,
+        });
+      }
+
+      function showSignUpForm() {
+        $('#sign-up-form').modal({
+          clickClose: false,
+          escapeClose: false,
+          showClose: false,
+        })
+      }
+
+      showSignUpForm();
+
+      $('#sign-up').click(function(e) {
+        e.preventDefault();
+        showSignInForm();
+      })
+
+      $('#sign-in').click(function(e) {
+        e.preventDefault();
+        showSignUpForm();
+      })
+    });
 - if current_user.present? && current_user.lightboxes.count > 0
   #lightbox-wrapper
     = render "lightboxes/show_modal"

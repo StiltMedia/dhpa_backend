@@ -5,7 +5,7 @@
       - @cart.line_items.each do |item|
         %div{:id => "item_#{item.id}", :class => "row item"}
           .three.columns
-            = image_tag attachment_url(item.photo, :file, :limit, 270, 270), oncontextmenu: "return false" # The only time photo.file should be shown without thumbnailing or watermarking is on the purchase page
+            = image_tag attachment_url(item.photo, :file, :limit_watermark_dhpa, 270, 270, item.photo.id), oncontextmenu: "return false" # The only time photo.file should be shown without thumbnailing or watermarking is on the purchase page
           .three.columns
             %p
               %strong Image ID:

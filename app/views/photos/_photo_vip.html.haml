@@ -1,6 +1,6 @@
 - unless photo_vip.event.is_private?
   %li
     = link_to photo_vip do
-      = image_tag attachment_url(photo_vip, :file, :fill, 150, 95), oncontextmenu: "return false"
+      = image_tag attachment_url(photo_vip, :file, :limit_watermark_dhpa, 150, 95, photo_vip.id), oncontextmenu: "return false"
       %span.caption
         = photo_vip.event.title
