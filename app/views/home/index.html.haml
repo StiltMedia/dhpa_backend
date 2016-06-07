@@ -44,7 +44,7 @@
               .image-overlay= "PRIVATE"
           = link_to event do
             %span.caption= event.title
-          = image_tag attachment_url(event, :image_url, :limit_watermark_dhpa, 800, 480), oncontextmenu: "return false" # The only time photo.file should be shown without thumbnailing or watermarking is on the purchase page
+          = image_tag attachment_url(event, :image_url, :limit, 800, 480), oncontextmenu: "return false" # The only time photo.file should be shown without thumbnailing or watermarking is on the purchase page
 
 %section.instagramfeed
   .container

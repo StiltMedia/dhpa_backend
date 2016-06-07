@@ -12,9 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.turbolinks
 //= require jquery-ui
+//= require jquery.turbolinks
 //= require jquery.modal
+//= require turbolinks
 //= require jquery.bxslider
 //= require jquery.easytabs
 //= require slick
